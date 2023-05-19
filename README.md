@@ -15,11 +15,11 @@ https://ui.dev/amiresponsive?url=https://dougyb83.github.io/minesweeper
 
 ## UX
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+As this websites purpose is to provide a gaming experience for the user I have decided to make the home page in the style of a gaming main menu. It will be simple and easy to understand with options provided for different game difficulty levels followed by an explaination of how to play the game.
 
-In this section, you will briefly explain your design processes.
+Once the difficulty setting has been selected the appropriate game page will load. The game board will occupy most of the screen on mobile devices while still making navigation buttons and infomation displays available. This will give the user the best gameplay experience while still giving them full navigation.
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+On desktop and laptop there is more screen real-estate so the game board wwon't fill the screen in the same way but will be more central with space on all four sides. This will be more pleasing to the users eye and will provide a better gameplay experience by keeping the mouse movements within a smaller area.
 
 ### Colour Scheme
 
