@@ -259,7 +259,8 @@ For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 The site was deployed to GitHub Pages. The steps to deploy are as follows:
 - In the [GitHub repository](https://github.com/dougyb83/minesweeper), navigate to the Settings tab 
-- From the source section drop-down menu, select the **Main** Branch, then click "Save".
+- Under the heading "Code and automation", select "Pages".
+- From the source section drop-down menu, select the Main Branch, then click "Save".
 - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
 The live link can be found [here](https://dougyb83.github.io/minesweeper)
@@ -294,7 +295,7 @@ By forking the GitHub Repository, we make a copy of the original repository on o
 You can fork this repository by using the following steps:
 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/dougyb83/minesweeper)
-2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+2. At the top right of the repository but below the navbar, locate the "Fork" button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
 ### Local VS Deployment
