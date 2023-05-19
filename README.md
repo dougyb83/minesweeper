@@ -111,27 +111,47 @@ Example:
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
-### Home Page Wireframes
+### Mobile Wireframes
 
-| Size | Screenshot |
-| --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-home.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-home.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-home.png) |
+<details>
+<summary>Click here to see the Mobile Wireframes</summary>
 
-### Game Page Wireframes
+- Home Page
+  - ![screenshot](documentation/wireframes/mobile-home.png)
+- Game Page
+  - ![screenshot](documentation/wireframes/mobile-game.png)
+- Contact Page
+  - ![screenshot](documentation/wireframes/mobile-contact.png)
 
-| Size | Screenshot |
-| --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-game.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-game.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-game.png) |
+</details>
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+### Tablet Wireframes
 
-Repeat for any addition wireframe pages you have.
+<details>
+<summary>Click here to see the Tablet Wireframes</summary>
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+- Home Page
+  - ![screenshot](documentation/wireframes/tablet-home.png)
+- Game Page
+  - ![screenshot](documentation/wireframes/tablet-game.png)
+- Contact Page
+  - ![screenshot](documentation/wireframes/tablet-contact.png)
+
+</details>
+
+### Desktop Wireframes
+
+<details>
+<summary>Click here to see the Desktop Wireframes</summary>
+
+- Home Page
+  - ![screenshot](documentation/wireframes/desktop-home.png)
+- Game Page
+  - ![screenshot](documentation/wireframes/desktop-game.png)
+- Contact Page
+  - ![screenshot](documentation/wireframes/desktop-contact.png)
+
+</details>
 
 ## Features
 
