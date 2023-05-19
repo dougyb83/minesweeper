@@ -1,32 +1,17 @@
 # MINESWEEPER
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+Minesweeper is a classic puzzle game that challenges players to uncover hidden mines on a grid by strategically revealing tiles. 
 
-In this section, you will include a few paragraphs providing an overview of your project.
-Essentially, this part is your "sales pitch".
+Our target audience includes both casual gamers looking for a quick mental challenge, puzzle enthusiasts and retro game lovers seeking a nostalgic experience. Whether you're a seasoned minesweeper veteran or a newcomer to the game, our project caters to all skill levels. With its responsive design, the game can be played on a variety of devices, including desktops, laptops, tablets, and mobile phones, making it accessible to players on the go.
 
-At this stage, you should have a name for your project so use it!
-Don't introduce the project as a "portfolio project" for the diploma.
+The game not only provides entertainment but also serves as a mental exercise, promoting strategic thinking, problem-solving, and pattern recognition skills. Players can compete against themselves by aiming for faster completion times.
 
-In this section, describe what the project hopes to accomplish, who it is intended to target, and how it will be useful to the target audience.
-
-Consider adding a mockup image using the "Am I Responsive" website.
-Here's your deployed site as an example:
-https://ui.dev/amiresponsive?url=https://dougyb83.github.io/minesweeper
-
-Screenshots for the README and testing should not be inside of `assets/` or `static/` image folders.
-(reminder: `assets/` and `static/` are for files used on the live site, not documentation)
-Consider adding a new folder called `documentation`, and add the amiresponsive screenshot inside of that folder.
-To add the image into your README, use this format:
-(assuming you have a new folder called `documentation` with an image called "mockup.png")
+In summary, our web-based responsive minesweeper game is designed to appeal to a wide range of players, from casual and retro gamers to puzzle enthusiasts, offering an engaging and accessible experience.
 
 ![screenshot](documentation/mockup.png)
+https://ui.dev/amiresponsive?url=https://dougyb83.github.io/minesweeper
 
-Note: Markdown files (.md) should not contain HTML elements like `img`, `br`, `div`, `a`, etc, only Markdown formatting.
-Find out more about using Markdown elements here:
-https://pandao.github.io/editor.md/en.html
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+[View the live site here.](https://dougyb83.github.io/minesweeper/)
 
 ## UX
 
@@ -135,6 +120,14 @@ In this section, list all of your user stories for the project.
 - As a site administrator, I should be able to ____________, so that I can ____________.
 
 ## Wireframes
+
+⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+
+In this section, display your wireframe screenshots using a Markdown `table`.
+
+Instructions on how to do Markdown `tables` start on line #213 on this site: https://pandao.github.io/editor.md/en.html
+
+🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
