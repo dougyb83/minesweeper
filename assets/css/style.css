@@ -18,7 +18,7 @@ h1 {
     font-family: 'Play', sans-serif;
     font-size: 50px;
     border: 2px solid;
-    border-radius: 10px
+    border-radius: 10px;
     margin: 30px;
     padding: 60px 80px;
     background-color: #444c54;
@@ -26,7 +26,7 @@ h1 {
     box-shadow: 10px 10px 5px #aaaaaa;    
 }
 
-.how-to-play {
+.how-to-play-instructions {
     margin-top: 10px;
     text-align: center;
 }
@@ -77,4 +77,9 @@ footer {
     width: 100%;
     height: 60vh;
     border: 2px solid;
+}
+
+.how-to-play-button {
+    margin-top: 20px;
+    text-align: center;
 }
