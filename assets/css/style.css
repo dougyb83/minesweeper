@@ -1,18 +1,33 @@
 .heading {
     text-align: center;
-    margin: 30px;
+    margin-top: 30px;
 }
 
 h1 {
     font-family: 'Black Ops One', cursive;
     font-size: 90px;
+    margin: 25px;
 }
 
 .game-menu {
     text-align: center;
 }
 
+.play-button {
+    width: 25%;
+    font-family: 'Play', sans-serif;
+    font-size: 50px;
+    border: 2px solid;
+    margin: 30px;
+    padding: 60px 80px;
+    background-color: #444c54;
+    color: #ffffff;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    border-radius: 10px
+}
+
 .how-to-play {
+    margin: 50px;
     text-align: center;
 }
 
