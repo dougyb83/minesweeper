@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="description" content="Play the classic windows game of minesweeper">
-<!-- <script src="https://kit.fontawesome.com/140b1c302f.js" crossorigin="anonymous"></script> -->
+<script src="https://kit.fontawesome.com/140b1c302f.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -13,7 +13,7 @@
 </head>
 <body>
     <main>
-        <section>
+        <section class="container-fluid heading">
             <div class="row">
                 <div class="col-12">
                     <img src="assets/images/minesweeper-logo.png" alt="image of a mine">
@@ -21,14 +21,14 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section class="container-fluid game-select">
             <div class="row">
                 <div class="col-12">
                     buttons
                 </div>
             </div>
         </section>
-        <section>
+        <section class="container-fluid how-to-play">
             <div class="row">
                 <div class="col-12">
                     <h2>How to play</h2>
@@ -36,8 +36,29 @@
             </div>
         </section>
         <footer>
-            Socials
-        </footer>
+        <div class="container-fluid socials">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="https://www.facebook.com/" target="_blank">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <span class="sr-only">Link to Facebook</span></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span class="sr-only">Link to Instagram</span></a>
+                </li>                    
+                <li class="list-inline-item">
+                    <a href="https://twitter.com/" target="_blank">
+                    <i class="fa-brands fa-square-twitter"></i>
+                    <span class="sr-only">Link to Twitter</span></a>
+                </li>
+                </ul>   
+            <small class="copyright-info col-12">
+                &copy; Copyright 2023. Douglas Benson.
+            </small>                      
+        </div>
+    </footer>
     </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
