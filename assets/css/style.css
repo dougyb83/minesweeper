@@ -63,19 +63,20 @@ footer {
 
 .controls {
     width: 100%;
-    height: 65vh;
+    height: 67vh;
     border: 2px solid;
 }
 
 .game-board-container {
     width: 100%;
-    height: 65vh;
+    height: 67vh;
     border: 2px solid;
+    padding: 0;
 }
 
 .info-display {
     width: 100%;
-    height: 65vh;
+    height: 67vh;
     border: 2px solid;
 }
 
@@ -85,17 +86,17 @@ footer {
 }
 
 .game-board {
-    height: 600px;
-    width: 600px;
-    border: 2px solid;
+    height: 620px;
+    width: 620px;
+    border: 10px solid;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
 }
 
 .game-board div {
-    height: 73px;
-    width: 73px;
+    height: 75px;
+    width: 75px;
     border: 1px solid #504d4d;
     display: flex;
     justify-content: center;
