@@ -12,27 +12,30 @@
 // $("#8x8").click(function () {    
 //     openGame(8);    
 // });
+$(document).ready(function () {
+    if (window.location.href.indexOf("8x8game") > 1) {
+        // let board = getElementsByClassName("game-board")
+        createGrid();
+        // makeTile(gameArr);
+    };
+}); 
+let boardArr = [];
 
-if (window.location.href.indexOf("8x8game") > 1) {
-    // let board = getElementsByClassName("game-board")
-    let gameArr = makeGameArr();
-    makeTile(gameArr);
-};
-
-function makeGameArr() {
-    let boardArray = [];
+function createGrid() {
     for (let i = 0; i < 8; i++) {
+        let row = [];
         for (let j = 0; j < 8; j++) {
-            let cellArr = [];
-            cellArr.push(i);
-            cellArr.push(j);
-            boardArray.push(cellArr);
+            let boardSquare = document.createElement("div");
+            boardSquare.id = i.toString() + "-" + j.toString();
+            document.getElementById("game-board").append(boardSquare);            
+            row.push(boardSquare);
         }
-    }
-    return boardArray;
+        boardArr.push(row);
+    }  
+    console.log(boardArr);
 }
 
-function makeTile(arr) {
-    let gameBoard = document.getElementsByClassName('game-board');
-    gameBoard.innerhtml = <div></div>
-}
+// function makeTile(arr) {
+//     let gameBoard = document.getElementsByClassName('game-board');
+//     gameBoard.innerhtml = <div></div>
+// }

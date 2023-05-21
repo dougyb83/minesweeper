@@ -93,7 +93,7 @@ footer {
     flex-wrap: wrap;
 }
 
-.board-square{
+.game-board div {
     height: 73px;
     width: 73px;
     border: 1px solid #504d4d;
