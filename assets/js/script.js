@@ -16,6 +16,7 @@
 if (window.location.href.indexOf("8x8game") > 1) {
     // let board = getElementsByClassName("game-board")
     let gameArr = makeGameArr();
+    makeTile(gameArr);
 };
 
 function makeGameArr() {
@@ -31,6 +32,7 @@ function makeGameArr() {
     return boardArray;
 }
 
-function makeTile() {
-
+function makeTile(arr) {
+    let gameBoard = document.getElementsByClassName('game-board');
+    gameBoard.innerhtml = <div></div>
 }
