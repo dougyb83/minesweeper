@@ -1,18 +1,36 @@
-// function openGame() {
-//     window.location.href = "game.html";
+// $(document).ready(function () {
+// }); 
+
+
+// function openGame(tile) {
+//     window.location.href = "8x8game.html";
+//     tileCount = tile;
 // }
 
 // let tileCount = 0;
 
-// $("#8x8").click(function() {
-//     tileCount = 8;
-//     // openGame();
-//     $("#8x8").css("color", "red");
+// $("#8x8").click(function () {    
+//     openGame(8);    
 // });
 
-$("p").on("click", function () {
+if (window.location.href.indexOf("8x8game") > 1) {
+    // let board = getElementsByClassName("game-board")
+    let gameArr = makeGameArr();
+};
 
-    $("p").css("color", "red");
+function makeGameArr() {
+    let boardArray = [];
+    for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+            let cellArr = [];
+            cellArr.push(i);
+            cellArr.push(j);
+            boardArray.push(cellArr);
+        }
+    }
+    return boardArray;
+}
 
-}); 
+function makeTile() {
 
+}
