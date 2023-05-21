@@ -12,14 +12,22 @@
 // $("#8x8").click(function () {    
 //     openGame(8);    
 // });
+let boardArr = [];
+let mines = 0;
+let mineLocation = [];
+
 $(document).ready(function () {
     if (window.location.href.indexOf("8x8game") > 1) {
         // let board = getElementsByClassName("game-board")
+        mines = 10;
         createGrid();
+        setMines(boardArr)
         // makeTile(gameArr);
+        console.log(boardArr);
+        console.log(mineLocation);
     };
 }); 
-let boardArr = [];
+
 
 function createGrid() {
     for (let i = 0; i < 8; i++) {
@@ -28,11 +36,22 @@ function createGrid() {
             let boardSquare = document.createElement("div");
             boardSquare.id = i.toString() + "-" + j.toString();
             document.getElementById("game-board").append(boardSquare);            
-            row.push(boardSquare);
+            row.push(boardSquare.id);
         }
         boardArr.push(row);
     }  
-    console.log(boardArr);
+    return boardArr;
+}
+
+function setMines(arr) {
+    const flatArr = arr.flat();
+    for (let i = 0; i < mines; i++) {
+        const randomIndex = Math.floor(Math.random() * flatArr.length);
+        let randomPosition = flatArr[randomIndex]
+        mineLocation.push(randomPosition);
+        let emptySquare = document.getElementById(randomPosition);
+        emptySquare.innerHTML = "💣";
+    }    
 }
 
 // function makeTile(arr) {
