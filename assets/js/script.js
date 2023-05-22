@@ -56,7 +56,8 @@ function setMines(arr) {
 
 function placeMineHints() { 
     let count = 0; 
-    let rowLength = boardArr[0].length;  
+    let rowLength = boardArr[0].length;
+    let colLength = boardArr.length;
     for (let row = 0; row < boardArr.length; row++) {
         for (let col = 0; col < rowLength; col++) {            
             //if current square is top left corner
@@ -104,21 +105,202 @@ function placeMineHints() {
             }
 
             //if current square is bottom left corner
-
+            if (row == (colLength - 1) && col == 0) {
+                if (checkForMine(row, col)) {
+                    continue;
+                }
+                else {
+                    if (checkForMine(row, (col + 1))) { //check right of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row - 1), col)) { //check top of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row - 1), (col + 1))) { //check top right of square for mine
+                        count++;
+                    }
+                }
+                //  insert count into current square div
+                if (count > 0) {
+                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    count = 0;
+                }
+            }
             //if current square is bottom right corner
-
+            if (row == (colLength - 1) && col == (rowLength - 1)) {
+                if (checkForMine(row, col)) {
+                    continue;
+                } else {
+                    if (checkForMine(row, (col - 1))) { //check left of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row - 1), col)) { //check top of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row - 1), (col - 1))) { //check top left of square for mine
+                        count++;
+                    }
+                }
+                //  insert count into current square div
+                if (count > 0) {
+                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    count = 0;
+                }
+            }
             //if current square on top row but not a corner
-
+            if (row == 0 && col != 0 || row == 0 && col != (rowLength - 1)) {
+                if (checkForMine(row, col)) {
+                    continue;
+                }
+                else {
+                    if (checkForMine(row, (col + 1))) { //check right of square for mine
+                        count++;
+                    }
+                    if (checkForMine(row, (col- 1))) { //check left of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row + 1), (col - 1))) { //check bottom left of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row + 1), col)) { //check bottom of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row + 1), (col + 1))) { //check bottom right of square for mine
+                        count++;
+                    }
+                }
+                //  insert count into current square div
+                if (count > 0) {
+                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    count = 0;
+                }
+            }
             //if current square on bottom row but not a corner
-
+            if (row == (colLength - 1) && col != 0 || row == (colLength - 1) && col != (rowLength - 1)) {
+                if (checkForMine(row, col)) {
+                    continue;
+                }
+                else {
+                    if (checkForMine(row, (col + 1))) { //check right of square for mine
+                        count++;
+                    }
+                    if (checkForMine(row, (col - 1))) { //check left of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row - 1), (col - 1))) { //check top left of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row - 1), col)) { //check top of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row - 1), (col + 1))) { //check top right of square for mine
+                        count++;
+                    }
+                }
+                //  insert count into current square div
+                if (count > 0) {
+                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    count = 0;
+                }
+            }
             //if current square on left column but not a corner
-
+            if (col == 0 && row != 0 || col == 0 && row != (colLength - 1)) {
+                if (checkForMine(row, col)) {
+                    continue;
+                }
+                else {
+                    if (checkForMine((row - 1), col)) { //check top of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row + 1), col)) { //check bottom of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row - 1), (col + 1))) { //check top right of square for mine
+                        count++;
+                    }
+                    if (checkForMine(row, (col + 1))) { //check right of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row + 1), (col + 1))) { //check bottom right of square for mine
+                        count++;
+                    }
+                }
+                //  insert count into current square div
+                if (count > 0) {
+                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    count = 0;
+                }
+            }
             //if current square on right column but not a corner
-
+            if (row != 0 && col == (colLength - 1) || row != (rowLength - 1) && col == (rowLength - 1)) {
+                if (checkForMine(row, col)) {
+                    continue;
+                }
+                else {
+                    if (checkForMine((row - 1), col)) { //check top of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row + 1), col)) { //check bottom of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row - 1), (col - 1))) { //check top left of square for mine
+                        count++;
+                    }
+                    if (checkForMine(row, (col - 1))) { //check left of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row + 1), (col - 1))) { //check bottom left of square for mine
+                        count++;
+                    }
+                }
+                //  insert count into current square div
+                if (count > 0) {
+                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    count = 0;
+                }
+            }
             //all other squares
+            if (row != 0 && col != 0 && row != (rowLength - 1) && col != (colLength - 1)) {
+                if (checkForMine(row, col)) {
+                    continue;
+                }
+                else {
+                    if (checkForMine((row - 1), col)) { //check top of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row + 1), col)) { //check bottom of square for mine
+                        count++;
+                    }
+                    if (checkForMine(row, (col - 1))) { //check left of square for mine
+                        count++;
+                    }
+                    if (checkForMine(row, (col + 1))) { //check right of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row - 1), (col - 1))) { //check top left of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row - 1), (col + 1))) { //check top right of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row + 1), (col - 1))) { //check bottom left of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row + 1), (col + 1))) { //check bottom right of square for mine
+                        count++;
+                    }
+                }
+                //  insert count into current square div
+                if (count > 0) {
+                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    count = 0;
+                }
+            }
         }
     }
 }
+
+
 
 function checkForMine(row, col) {
     let id = row.toString() + "-" + col.toString();
@@ -127,7 +309,6 @@ function checkForMine(row, col) {
         console.log("mine");
         return true
     }
-
 }
 
 // function makeTile(arr) {
