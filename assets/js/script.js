@@ -21,10 +21,10 @@ $(document).ready(function () {
         // let board = getElementsByClassName("game-board")
         mines = 10;
         createGrid();
-        setMines(boardArr)
+        setMines(boardArr);
+        placeMineHints();
         // makeTile(gameArr);
-        console.log(boardArr);
-        console.log(mineLocation);
+
     };
 }); 
 
@@ -52,6 +52,82 @@ function setMines(arr) {
         let emptySquare = document.getElementById(randomPosition);
         emptySquare.innerHTML = "💣";
     }    
+}
+
+function placeMineHints() { 
+    let count = 0; 
+    let rowLength = boardArr[0].length;  
+    for (let row = 0; row < boardArr.length; row++) {
+        for (let col = 0; col < rowLength; col++) {            
+            //if current square is top left corner
+            if (row == 0 && col == 0) {
+                if (checkForMine(row, col)) {
+                    continue
+                } 
+                else {
+                    if (checkForMine(row, (col+1))) { //check right of square for mine
+                        count++
+                    } 
+                    if (checkForMine((row + 1), col)) { //check bottom of square for mine
+                        count++
+                    } 
+                    if (checkForMine((row + 1), (col + 1))) { //check bottom right of square for mine
+                        count++
+                    }                    
+                }
+                //  insert count into current square div
+                if (count > 0) {
+                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    count = 0
+                }
+            }
+            // if current square is top right corner
+            if (row == 0 && col == (rowLength - 1)) {
+                if (checkForMine(row, col)) {
+                    continue;
+                } else {
+                    if (checkForMine(row, (col - 1))) { //check left of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row + 1), col)) { //check bottom of square for mine
+                        count++;
+                    }
+                    if (checkForMine((row + 1), (col - 1))) { //check bottom left of square for mine
+                        count++;
+                    }
+                }
+                //  insert count into current square div
+                if (count > 0) {
+                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    count = 0;
+                }
+            }
+
+            //if current square is bottom left corner
+
+            //if current square is bottom right corner
+
+            //if current square on top row but not a corner
+
+            //if current square on bottom row but not a corner
+
+            //if current square on left column but not a corner
+
+            //if current square on right column but not a corner
+
+            //all other squares
+        }
+    }
+}
+
+function checkForMine(row, col) {
+    let id = row.toString() + "-" + col.toString();
+    console.log(id);
+    if (mineLocation.includes(id)) {
+        console.log("mine");
+        return true
+    }
+
 }
 
 // function makeTile(arr) {
