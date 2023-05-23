@@ -26,26 +26,31 @@ $(document).ready(function () {
     let query = location.search;
     tileCount = query.split("=")[1];
     if (tileCount == 8) {   
+        mines = 9;
+    }
+    else if (tileCount == 9) {
         mines = 10;
-        createGrid();
-        setMines(boardArr);
-        placeMineHints();
-    };
+    }
+    else {
+        mines = 40;
+    }
+    createGrid();
+    setMines(boardArr);
+    placeMineHints();
 }); 
 
 
 function createGrid() {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < tileCount; i++) {
         let row = [];
-        for (let j = 0; j < 8; j++) {
+        for (let j = 0; j < tileCount; j++) {
             let boardSquare = document.createElement("div");
             boardSquare.id = i.toString() + "-" + j.toString();
             document.getElementById("game-board").append(boardSquare);            
             row.push(boardSquare.id);
         }
         boardArr.push(row);
-    }  
-    return boardArr;
+    }
 }
 
 function setMines(arr) {
