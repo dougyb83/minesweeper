@@ -1,30 +1,35 @@
 // $(document).ready(function () {
 // }); 
 
-
-// function openGame(tile) {
-//     window.location.href = "8x8game.html";
-//     tileCount = tile;
-// }
-
-// let tileCount = 0;
-
-// $("#8x8").click(function () {    
-//     openGame(8);    
-// });
 let boardArr = [];
 let mines = 0;
 let mineLocation = [];
+let tileCount = 0;
+
+$("#8x8").click(function () {
+    let tileCount = 8; 
+    window.location.href = "game.html?tileCount=" + tileCount;
+});
+
+$("#9x9").click(function () {
+    let tileCount = 9;
+    window.location.href = "game.html?tileCount=" + tileCount; 
+});
+
+$("#16x16").click(function () {
+    let tileCount = 16;
+    window.location.href = "game.html?tileCount=" + tileCount; 
+});
+
 
 $(document).ready(function () {
-    if (window.location.href.indexOf("8x8game") > 1) {
-        // let board = getElementsByClassName("game-board")
+    let query = location.search;
+    tileCount = query.split("=")[1];
+    if (tileCount == 8) {   
         mines = 10;
         createGrid();
         setMines(boardArr);
         placeMineHints();
-        // makeTile(gameArr);
-
     };
 }); 
 
@@ -303,9 +308,7 @@ function placeMineHints() {
 
 function checkForMine(row, col) {
     let id = row.toString() + "-" + col.toString();
-    console.log(id);
     if (mineLocation.includes(id)) {
-        console.log("mine");
         return true;
     }
 }
