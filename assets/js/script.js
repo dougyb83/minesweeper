@@ -54,32 +54,32 @@ function setMines(arr) {
     }    
 }
 
-function placeMineHints() { 
-    let count = 0; 
+function placeMineHints() {
+    let count = 0;
     let rowLength = boardArr[0].length;
     let colLength = boardArr.length;
     for (let row = 0; row < boardArr.length; row++) {
-        for (let col = 0; col < rowLength; col++) {            
+        for (let col = 0; col < rowLength; col++) {
             //if current square is top left corner
             if (row == 0 && col == 0) {
                 if (checkForMine(row, col)) {
-                    continue
-                } 
+                    continue;
+                }
                 else {
-                    if (checkForMine(row, (col+1))) { //check right of square for mine
-                        count++
-                    } 
-                    if (checkForMine((row + 1), col)) { //check bottom of square for mine
-                        count++
-                    } 
-                    if (checkForMine((row + 1), (col + 1))) { //check bottom right of square for mine
-                        count++
-                    }                    
+                    if (checkForMine(row, (col + 1))) { //check right of square for mine
+                        count++;
+                    }
+                    if (CheckBottom(row, col)) { //check bottom of square for mine
+                        count++;
+                    }
+                    if (CheckBottomRight(row, col)) { //check bottom right of square for mine
+                        count++;
+                    }
                 }
                 //  insert count into current square div
                 if (count > 0) {
                     document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
-                    count = 0
+                    count = 0;
                 }
             }
             // if current square is top right corner
@@ -87,13 +87,13 @@ function placeMineHints() {
                 if (checkForMine(row, col)) {
                     continue;
                 } else {
-                    if (checkForMine(row, (col - 1))) { //check left of square for mine
+                    if (CheckLeft(row, col)) { //check left of square for mine
                         count++;
                     }
-                    if (checkForMine((row + 1), col)) { //check bottom of square for mine
+                    if (CheckBottom(row, col)) { //check bottom of square for mine
                         count++;
                     }
-                    if (checkForMine((row + 1), (col - 1))) { //check bottom left of square for mine
+                    if (CheckBottomLeft(row, col)) { //check bottom left of square for mine
                         count++;
                     }
                 }
@@ -110,13 +110,13 @@ function placeMineHints() {
                     continue;
                 }
                 else {
-                    if (checkForMine(row, (col + 1))) { //check right of square for mine
+                    if (CheckRight(row, col)) { //check right of square for mine
                         count++;
                     }
-                    if (checkForMine((row - 1), col)) { //check top of square for mine
+                    if (CheckTop(row, col)) { //check top of square for mine
                         count++;
                     }
-                    if (checkForMine((row - 1), (col + 1))) { //check top right of square for mine
+                    if (CheckTopRight(row, col)) { //check top right of square for mine
                         count++;
                     }
                 }
@@ -131,13 +131,13 @@ function placeMineHints() {
                 if (checkForMine(row, col)) {
                     continue;
                 } else {
-                    if (checkForMine(row, (col - 1))) { //check left of square for mine
+                    if (CheckLeft(row, col)) { //check left of square for mine
                         count++;
                     }
-                    if (checkForMine((row - 1), col)) { //check top of square for mine
+                    if (CheckTop(row, col)) { //check top of square for mine
                         count++;
                     }
-                    if (checkForMine((row - 1), (col - 1))) { //check top left of square for mine
+                    if (CheckTopLeft(row, col)) { //check top left of square for mine
                         count++;
                     }
                 }
@@ -153,19 +153,19 @@ function placeMineHints() {
                     continue;
                 }
                 else {
-                    if (checkForMine(row, (col + 1))) { //check right of square for mine
+                    if (CheckRight(row, col)) { //check right of square for mine
                         count++;
                     }
-                    if (checkForMine(row, (col- 1))) { //check left of square for mine
+                    if (checkForMine(row, (col - 1))) { //check left of square for mine
                         count++;
                     }
-                    if (checkForMine((row + 1), (col - 1))) { //check bottom left of square for mine
+                    if (CheckBottomLeft(row, col)) { //check bottom left of square for mine
                         count++;
                     }
-                    if (checkForMine((row + 1), col)) { //check bottom of square for mine
+                    if (CheckBottom(row, col)) { //check bottom of square for mine
                         count++;
                     }
-                    if (checkForMine((row + 1), (col + 1))) { //check bottom right of square for mine
+                    if (CheckBottomRight(row, col)) { //check bottom right of square for mine
                         count++;
                     }
                 }
@@ -181,19 +181,19 @@ function placeMineHints() {
                     continue;
                 }
                 else {
-                    if (checkForMine(row, (col + 1))) { //check right of square for mine
+                    if (CheckRight(row, col)) { //check right of square for mine
                         count++;
                     }
-                    if (checkForMine(row, (col - 1))) { //check left of square for mine
+                    if (CheckLeft(row, col)) { //check left of square for mine
                         count++;
                     }
-                    if (checkForMine((row - 1), (col - 1))) { //check top left of square for mine
+                    if (CheckTopLeft(row, col)) { //check top left of square for mine
                         count++;
                     }
-                    if (checkForMine((row - 1), col)) { //check top of square for mine
+                    if (CheckTop(row, col)) { //check top of square for mine
                         count++;
                     }
-                    if (checkForMine((row - 1), (col + 1))) { //check top right of square for mine
+                    if (CheckTopRight(row, col)) { //check top right of square for mine
                         count++;
                     }
                 }
@@ -209,19 +209,19 @@ function placeMineHints() {
                     continue;
                 }
                 else {
-                    if (checkForMine((row - 1), col)) { //check top of square for mine
+                    if (CheckTop(row, col)) { //check top of square for mine
                         count++;
                     }
-                    if (checkForMine((row + 1), col)) { //check bottom of square for mine
+                    if (CheckBottom(row, col)) { //check bottom of square for mine
                         count++;
                     }
-                    if (checkForMine((row - 1), (col + 1))) { //check top right of square for mine
+                    if (CheckTopRight(row, col)) { //check top right of square for mine
                         count++;
                     }
-                    if (checkForMine(row, (col + 1))) { //check right of square for mine
+                    if (CheckRight(row, col)) { //check right of square for mine
                         count++;
                     }
-                    if (checkForMine((row + 1), (col + 1))) { //check bottom right of square for mine
+                    if (CheckBottomRight(row, col)) { //check bottom right of square for mine
                         count++;
                     }
                 }
@@ -237,19 +237,19 @@ function placeMineHints() {
                     continue;
                 }
                 else {
-                    if (checkForMine((row - 1), col)) { //check top of square for mine
+                    if (CheckTop(row, col)) { //check top of square for mine
                         count++;
                     }
-                    if (checkForMine((row + 1), col)) { //check bottom of square for mine
+                    if (CheckBottom(row, col)) { //check bottom of square for mine
                         count++;
                     }
-                    if (checkForMine((row - 1), (col - 1))) { //check top left of square for mine
+                    if (CheckTopLeft(row, col)) { //check top left of square for mine
                         count++;
                     }
-                    if (checkForMine(row, (col - 1))) { //check left of square for mine
+                    if (CheckLeft(row, col)) { //check left of square for mine
                         count++;
                     }
-                    if (checkForMine((row + 1), (col - 1))) { //check bottom left of square for mine
+                    if (CheckBottomLeft(row, col)) { //check bottom left of square for mine
                         count++;
                     }
                 }
@@ -265,28 +265,28 @@ function placeMineHints() {
                     continue;
                 }
                 else {
-                    if (checkForMine((row - 1), col)) { //check top of square for mine
+                    if (CheckTop(row, col)) { //check top of square for mine
                         count++;
                     }
-                    if (checkForMine((row + 1), col)) { //check bottom of square for mine
+                    if (CheckBottom(row, col)) { //check bottom of square for mine
                         count++;
                     }
-                    if (checkForMine(row, (col - 1))) { //check left of square for mine
+                    if (CheckLeft(row, col)) { //check left of square for mine
                         count++;
                     }
-                    if (checkForMine(row, (col + 1))) { //check right of square for mine
+                    if (CheckRight(row, col)) { //check right of square for mine
                         count++;
                     }
-                    if (checkForMine((row - 1), (col - 1))) { //check top left of square for mine
+                    if (CheckTopLeft(row, col)) { //check top left of square for mine
                         count++;
                     }
-                    if (checkForMine((row - 1), (col + 1))) { //check top right of square for mine
+                    if (CheckTopRight(row, col)) { //check top right of square for mine
                         count++;
                     }
-                    if (checkForMine((row + 1), (col - 1))) { //check bottom left of square for mine
+                    if (CheckBottomLeft(row, col)) { //check bottom left of square for mine
                         count++;
                     }
-                    if (checkForMine((row + 1), (col + 1))) { //check bottom right of square for mine
+                    if (CheckBottomRight(row, col)) { //check bottom right of square for mine
                         count++;
                     }
                 }
@@ -301,15 +301,63 @@ function placeMineHints() {
 }
 
 
-
 function checkForMine(row, col) {
     let id = row.toString() + "-" + col.toString();
     console.log(id);
     if (mineLocation.includes(id)) {
         console.log("mine");
-        return true
+        return true;
     }
 }
+
+function CheckTopLeft(row, col) {
+    if (checkForMine((row - 1), (col - 1))) {
+        return true;
+    }
+}
+
+function CheckTop(row, col) {
+    if (checkForMine((row - 1), col)) {
+        return true;
+    }
+}
+
+function CheckTopRight(row, col) {
+    if (checkForMine((row - 1), (col + 1))) {
+        return true;
+    }
+}
+
+function CheckLeft(row, col) {
+    if (checkForMine(row, (col - 1))) {
+        return true;
+    }
+}
+
+function CheckRight(row, col) {
+    if (checkForMine(row, (col + 1))) {
+        return true;
+    }
+}
+
+function CheckBottomLeft(row, col) {
+    if (checkForMine((row + 1), (col - 1))) {
+        return true;
+    }
+}
+
+function CheckBottom(row, col) {
+    if (checkForMine((row + 1), col)) {
+        return true;
+    }
+}
+
+function CheckBottomRight(row, col) {
+    if (checkForMine((row + 1), (col + 1))) {
+        return true;
+    }
+}
+
 
 // function makeTile(arr) {
 //     let gameBoard = document.getElementsByClassName('game-board');
