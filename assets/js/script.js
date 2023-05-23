@@ -7,26 +7,30 @@ let mineLocation = [];
 let tileCount = 0;
 
 $("#8x8").click(function () {
-    let tileCount = 8;    window.location.href = "game.html?tileCount=" + tileCount;
+    let tileCount = 8;
+    window.location.href = "game.html?tileCount=" + tileCount;
 });
 
 $("#9x9").click(function () {
     let tileCount = 9;
-    window.location.href = "game.html?tileCount=" + tileCount;});
+    window.location.href = "game.html?tileCount=" + tileCount;
+});
 
 $("#16x16").click(function () {
     let tileCount = 16;
-    window.location.href = "game.html?tileCount=" + tileCount;});
+    window.location.href = "game.html?tileCount=" + tileCount;
+});
 
 
 $(document).ready(function () {
     let query = location.search;
     tileCount = query.split("=")[1];
-    if (tileCount == 8) {        mines = 9;
+    if (tileCount == 8) {
+        mines = 9;
     }
     else if (tileCount == 9) {
         mines = 10;
-        document.getElementsByClassName;;
+        document.getElementsByClassName;
     }
     else {
         mines = 40;
@@ -36,16 +40,18 @@ $(document).ready(function () {
     placeMineHints();
 });
 
+
 function createGrid() {
     for (let i = 0; i < tileCount; i++) {
         let row = [];
         for (let j = 0; j < tileCount; j++) {
             let boardSquare = document.createElement("div");
-            boardSquare.classList.add("cell");;
+            boardSquare.classList.add("cell");
             boardSquare.id = i.toString() + "-" + j.toString();
             document.getElementById("game-board").append(boardSquare);
             $(".cell").css("width", 100 / tileCount + "%");
-            $(".cell").css("height", 100 / tileCount + "%");            row.push(boardSquare.id);
+            $(".cell").css("height", 100 / tileCount + "%");
+            row.push(boardSquare.id);
         }
         boardArr.push(row);
     }
@@ -55,11 +61,12 @@ function setMines(arr) {
     const flatArr = arr.flat();
     for (let i = 0; i < mines; i++) {
         const randomIndex = Math.floor(Math.random() * flatArr.length);
-        let randomPosition = flatArr[randomIndex];;
+        let randomPosition = flatArr[randomIndex];
         mineLocation.push(randomPosition);
         let emptySquare = document.getElementById(randomPosition);
         emptySquare.innerHTML = "💣";
-    }}
+    }
+}
 
 function placeMineHints() {
     let count = 0;
