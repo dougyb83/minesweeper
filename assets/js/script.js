@@ -67,6 +67,7 @@ function tileClick() {
     col = divId[1];
     if (checkForMine(row, col)) {
         this.style.backgroundColor = "#e80202";
+        this.innerHTML = "💣";
     }
 }
 
@@ -76,8 +77,8 @@ function setMines(arr) {
         const randomIndex = Math.floor(Math.random() * flatArr.length);
         let randomPosition = flatArr[randomIndex];
         mineLocation.push(randomPosition);
-        let emptySquare = document.getElementById(randomPosition);
-        emptySquare.innerHTML = "💣";
+        // let emptySquare = document.getElementById(randomPosition);
+        // emptySquare.innerHTML = "💣";
     }
 }
 
