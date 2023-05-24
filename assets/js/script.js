@@ -45,15 +45,28 @@ function createGrid() {
     for (let i = 0; i < tileCount; i++) {
         let row = [];
         for (let j = 0; j < tileCount; j++) {
-            let boardSquare = document.createElement("div");
-            boardSquare.classList.add("cell");
-            boardSquare.id = i.toString() + "-" + j.toString();
-            document.getElementById("game-board").append(boardSquare);
+            let cell = document.createElement("div");
+            cell.classList.add("cell");
+            let divId = i.toString() + "-" + j.toString();
+            cell.id = divId;
+            document.getElementById("game-board").append(cell);
             $(".cell").css("width", 100 / tileCount + "%");
             $(".cell").css("height", 100 / tileCount + "%");
-            row.push(boardSquare.id);
+            row.push(cell.id);
+            let tile = document.getElementById(divId);
+            tile.addEventListener('click', tileClick);
         }
         boardArr.push(row);
+    }
+}
+
+function tileClick() {    
+    this.style.backgroundColor = "#19ad45";
+    let divId = this.id.split("-");
+    row = divId[0];
+    col = divId[1];
+    if (checkForMine(row, col)) {
+        this.style.backgroundColor = "#e80202";
     }
 }
 

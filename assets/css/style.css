@@ -88,19 +88,18 @@ footer {
 .game-board {
     height: 620px;
     width: 619px;
-    border: 10px solid;
+    border: 10px solid #2e2e33;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
 }
 
 .cell {
-    border: 1px solid #504d4d;
+    background-color: #504d4d;
+    border: 1px solid #33322e;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.tile {
 
-}
