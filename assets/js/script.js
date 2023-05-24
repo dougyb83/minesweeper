@@ -103,7 +103,7 @@ function placeMineHints() {
                     continue;
                 }
                 else {
-                    if (checkForMine(row, (col + 1))) { //check right of square for mine
+                    if (CheckRight(row, col)) { //check right of square for mine
                         count++;
                     }
                     if (CheckBottom(row, col)) { //check bottom of square for mine
@@ -193,7 +193,7 @@ function placeMineHints() {
                     if (CheckRight(row, col)) { //check right of square for mine
                         count++;
                     }
-                    if (checkForMine(row, (col - 1))) { //check left of square for mine
+                    if (CheckLeft(row, col)) { //check left of square for mine
                         count++;
                     }
                     if (CheckBottomLeft(row, col)) { //check bottom left of square for mine
