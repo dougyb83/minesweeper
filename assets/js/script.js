@@ -5,6 +5,7 @@ let boardArr = [];
 let mines = 0;
 let mineLocation = [];
 let tileCount = 0;
+let flatArr = [];
 
 $("#8x8").click(function () {
     let tileCount = 8;
@@ -66,19 +67,27 @@ function tileClick() {
     row = divId[0];
     col = divId[1];
     if (checkForMine(row, col)) {
-        this.style.backgroundColor = "#e80202";
-        this.innerHTML = "💣";
+        gameOver();
+    }
+}
+
+function gameOver() {    
+    for (let j = 0; j < mineLocation.length; j++) {
+        let reveal = document.getElementById(mineLocation[j]);
+        reveal.style.backgroundColor = "#e80202";
+        reveal.innerHTML = "💣";
+    }
+    for (let i = 0; i < flatArr.length; i++) {
+        document.getElementById(flatArr[i]).removeEventListener('click', tileClick);
     }
 }
 
 function setMines(arr) {
-    const flatArr = arr.flat();
+    flatArr = arr.flat();
     for (let i = 0; i < mines; i++) {
         const randomIndex = Math.floor(Math.random() * flatArr.length);
         let randomPosition = flatArr[randomIndex];
         mineLocation.push(randomPosition);
-        // let emptySquare = document.getElementById(randomPosition);
-        // emptySquare.innerHTML = "💣";
     }
 }
 
