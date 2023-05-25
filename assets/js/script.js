@@ -75,7 +75,8 @@ function tileClick() {
     else {
         //if square is blank
         this.style.backgroundColor = "#19ad45";
-        chechSurroundingSquares(row, col);
+        console.log("clicked");
+        checkSurroundingSquares(row, col, "blank");        
     }
 }
 
@@ -99,8 +100,79 @@ function setMines(arr) {
     }
 }
 
-function chechSurroundingSquares(row, col) {
-    
+function checkSurroundingSquares(row, col, type) {
+    console.log("in surrounding squares function");
+    let rowLength = boardArr[0].length;
+    let colLength = boardArr.length;
+    //if current square is top left corner
+    if (row == 0 && col == 0) {
+        console.log("type = " + type);
+        console.log(boardArr[row][col + 1])
+        CheckRight(row, col, type);
+        CheckBottom(row, col, type);
+        CheckBottomRight(row, col, type);
+    }
+    // if current square is top right corner
+    if (row == 0 && col == (rowLength - 1)) {
+        CheckLeft(row, col, type);
+        CheckBottom(row, col, type);
+        CheckBottomLeft(row, col, type);
+    }
+    //if current square is bottom left corner
+    if (row == (colLength - 1) && col == 0) {
+        CheckRight(row, col, type);
+        CheckTop(row, col, type);
+        CheckTopRight(row, col, type);
+    }
+    //if current square is bottom right corner
+    if (row == (colLength - 1) && col == (rowLength - 1)) {
+        CheckLeft(row, col, type);
+        CheckTop(row, col, type);
+        CheckTopLeft(row, col, type);
+    }    
+    //if current square on top row but not a corner
+    if (row == 0 && col != 0 || row == 0 && col != (rowLength - 1)) {
+        CheckRight(row, col, type);
+        CheckLeft(row, col, type);
+        CheckBottomLeft(row, col, type);
+        CheckBottom(row, col, type);
+        CheckBottomRight(row, col, type);
+    }    
+    //if current square on bottom row but not a corner
+    if (row == (colLength - 1) && col != 0 || row == (colLength - 1) && col != (rowLength - 1)) {
+        CheckRight(row, col, type);
+        CheckLeft(row, col, type);
+        CheckTopLeft(row, col, type);
+        CheckTop(row, col, type);
+        CheckTopRight(row, col, type);
+    }    
+    //if current square on left column but not a corner
+    if (col == 0 && row != 0 || col == 0 && row != (colLength - 1)) {
+        CheckTop(row, col, type);
+        CheckBottom(row, col, type);
+        CheckTopRight(row, col, type);
+        CheckRight(row, col, type);
+        CheckBottomRight(row, col, type);
+    }    
+    //if current square on right column but not a corner
+    if (row != 0 && col == (colLength - 1) || row != (rowLength - 1) && col == (rowLength - 1)) {
+        CheckTop(row, col, type);
+        CheckBottom(row, col, type);
+        CheckTopLeft(row, col, type);
+        CheckLeft(row, col, type);
+        CheckBottomLeft(row, col, type);
+    }    
+    //all other squares
+    if (row != 0 && col != 0 && row != (rowLength - 1) && col != (colLength - 1)) {
+        CheckTop(row, col, type);
+        CheckBottom(row, col, type);
+        CheckLeft(row, col, type);
+        CheckRight(row, col, type);
+        CheckTopLeft(row, col, type);
+        CheckTopRight(row, col, type);
+        CheckBottomLeft(row, col, type);
+        CheckBottomRight(row, col, type);
+    }    
 }
 
 function placeMineHints() {
@@ -350,59 +422,70 @@ function placeMineHints() {
         }
     }
     }
-    }
+}
 
-    function checkForMine(row, col) {
-        let id = row.toString() + "-" + col.toString();
-        if (mineLocation.includes(id)) {
-        return true;
-        }
-        }
-        
-        function CheckTopLeft(row, col, type) {
-        if (type == "mine"){
-        return checkForMine((row - 1), (col - 1))
-        }
-        }
-        
-        function CheckTop(row, col, type) {
-        if (type == "mine"){
-        return checkForMine((row - 1), col)
-        }
-        }
-        
-        function CheckTopRight(row, col, type) {
-        if (type == "mine"){
-        return checkForMine((row - 1), (col + 1))
-        }
-        }
-        
-        function CheckLeft(row, col, type) {
-        if (type == "mine"){
-        return checkForMine(row, (col - 1))
-        }
-        }
-        
-        function CheckRight(row, col, type) {
-        if (type == "mine"){
-        return checkForMine(row, (col + 1))
-        } 
-        }
-        
-        function CheckBottomLeft(row, col, type) {
-        if (type == "mine"){
-        return checkForMine((row + 1), (col - 1))
-        }
-        }
-        
-        function CheckBottom(row, col, type) {
-        if (type == "mine"){
-        return checkForMine((row + 1), col)
-        }
-        }
-        
-        function CheckBottomRight(row, col, type) {
-        if (type == "mine"){
-        return checkForMine((row + 1), (col + 1))
-        }
-        }
+function checkForMine(row, col) {
+    let id = row.toString() + "-" + col.toString();
+    if (mineLocation.includes(id)) {
+    return true;
+    }
+}
+
+// function checkForBlank(row, col) {
+//     if (boardArr[row][col] === "") {
+
+//     }
+// }
+    
+function CheckTopLeft(row, col, type) {
+    if (type === "mine"){
+        return checkForMine((row - 1), (col - 1));
+    }
+}
+    
+function CheckTop(row, col, type) {
+    if (type === "mine"){
+        return checkForMine((row - 1), col);
+    }
+}
+    
+function CheckTopRight(row, col, type) {
+    if (type === "mine"){
+        return checkForMine((row - 1), (col + 1));
+    }
+}
+    
+function CheckLeft(row, col, type) {
+    if (type === "mine"){
+        return checkForMine(row, (col - 1));
+    }
+}
+    
+function CheckRight(row, col, type) {    
+    if (type === "mine"){
+        return checkForMine(row, (col + 1));
+    }
+    else if (type === "blank" && boardArr[row][col + 1] === "") {
+        console.log("in check right clicked, type = " + type);
+        let id = row.toString() + "-" + col[+1].toString();
+        document.getElementById(id).style.backgroundColor = "#19ad45";
+    }
+}
+    
+function CheckBottomLeft(row, col, type) {
+    if (type === "mine"){
+        return checkForMine((row + 1), (col - 1));
+    }
+}
+    
+function CheckBottom(row, col, type) {
+    if (type === "mine"){
+        return checkForMine((row + 1), col);
+    }
+}
+    
+function CheckBottomRight(row, col, type) {
+    if (type === "mine"){
+        return checkForMine((row + 1), (col + 1));
+    }
+}
