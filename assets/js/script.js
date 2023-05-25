@@ -99,6 +99,10 @@ function setMines(arr) {
     }
 }
 
+function chechSurroundingSquares(row, col) {
+    
+}
+
 function placeMineHints() {
     let count = 0;
     let type = "mine";
@@ -347,7 +351,6 @@ function placeMineHints() {
     }
     }
     }
-
 
     function checkForMine(row, col) {
         let id = row.toString() + "-" + col.toString();
