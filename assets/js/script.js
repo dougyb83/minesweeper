@@ -101,310 +101,305 @@ function setMines(arr) {
 
 function placeMineHints() {
     let count = 0;
+    let type = "mine";
     let rowLength = boardArr[0].length;
     let colLength = boardArr.length;
     for (let row = 0; row < boardArr.length; row++) {
-        for (let col = 0; col < rowLength; col++) {
-            //clear boardArr contents
-            boardArr[row][col] = ""
-            //if current square is top left corner
-            if (row == 0 && col == 0) {
-                if (checkForMine(row, col)) {
-                    continue;
+    for (let col = 0; col < rowLength; col++) {
+        //clear boardArr contents
+        boardArr[row][col] = ""
+        //if current square is top left corner
+        if (row == 0 && col == 0) {
+            if (checkForMine(row, col)) {
+                continue;
+            }
+            else {
+                if (CheckRight(row, col, type)) { //check right of square for mine
+                    count++;
                 }
-                else {
-                    if (CheckRight(row, col)) { //check right of square for mine
-                        count++;
-                    }
-                    if (CheckBottom(row, col)) { //check bottom of square for mine
-                        count++;
-                    }
-                    if (CheckBottomRight(row, col)) { //check bottom right of square for mine
-                        count++;
-                    }
+                if (CheckBottom(row, col, type)) { //check bottom of square for mine
+                    count++;
                 }
-                //  insert count into current square div
-                if (count > 0) {
-                    boardArr[row][col] = count;
-                    count = 0;
+                if (CheckBottomRight(row, col, type)) { //check bottom right of square for mine
+                    count++;
                 }
             }
-            // if current square is top right corner
-            if (row == 0 && col == (rowLength - 1)) {
-                if (checkForMine(row, col)) {
-                    continue;
-                } else {
-                    if (CheckLeft(row, col)) { //check left of square for mine
-                        count++;
-                    }
-                    if (CheckBottom(row, col)) { //check bottom of square for mine
-                        count++;
-                    }
-                    if (CheckBottomLeft(row, col)) { //check bottom left of square for mine
-                        count++;
-                    }
+            //  insert count into current square div
+            if (count > 0) {
+                boardArr[row][col] = count;
+                count = 0;
+            }
+        }
+        // if current square is top right corner
+        if (row == 0 && col == (rowLength - 1)) {
+            if (checkForMine(row, col)) {
+                continue;
+            } else {
+                if (CheckLeft(row, col, type)) { //check left of square for mine
+                    count++;
                 }
-                //  insert count into current square div
-                if (count > 0) {
-                    boardArr[row][col] = count;
-                    count = 0;
+                if (CheckBottom(row, col, type)) { //check bottom of square for mine
+                    count++;
+                }
+                if (CheckBottomLeft(row, col, type)) { //check bottom left of square for mine
+                    count++;
                 }
             }
-
-            //if current square is bottom left corner
-            if (row == (colLength - 1) && col == 0) {
-                if (checkForMine(row, col)) {
-                    continue;
+            //  insert count into current square div
+            if (count > 0) {
+                boardArr[row][col] = count;
+                count = 0;
+            }
+        }
+    
+        //if current square is bottom left corner
+        if (row == (colLength - 1) && col == 0) {
+            if (checkForMine(row, col)) {
+                continue;
+            }
+            else {
+                if (CheckRight(row, col, type)) { //check right of square for mine
+                    count++;
                 }
-                else {
-                    if (CheckRight(row, col)) { //check right of square for mine
-                        count++;
-                    }
-                    if (CheckTop(row, col)) { //check top of square for mine
-                        count++;
-                    }
-                    if (CheckTopRight(row, col)) { //check top right of square for mine
-                        count++;
-                    }
+                if (CheckTop(row, col, type)) { //check top of square for mine
+                    count++;
                 }
-                //  insert count into current square div
-                if (count > 0) {
-                    boardArr[row][col] = count;
-                    count = 0;
+                if (CheckTopRight(row, col, type)) { //check top right of square for mine
+                    count++;
                 }
             }
-            //if current square is bottom right corner
-            if (row == (colLength - 1) && col == (rowLength - 1)) {
-                if (checkForMine(row, col)) {
-                    continue;
-                } else {
-                    if (CheckLeft(row, col)) { //check left of square for mine
-                        count++;
-                    }
-                    if (CheckTop(row, col)) { //check top of square for mine
-                        count++;
-                    }
-                    if (CheckTopLeft(row, col)) { //check top left of square for mine
-                        count++;
-                    }
+            //  insert count into current square div
+            if (count > 0) {
+                boardArr[row][col] = count;
+                count = 0;
+            }
+        }
+        //if current square is bottom right corner
+        if (row == (colLength - 1) && col == (rowLength - 1)) {
+            if (checkForMine(row, col)) {
+                continue;
+            } else {
+                if (CheckLeft(row, col, type)) { //check left of square for mine
+                    count++;
                 }
-                //  insert count into current square div
-                if (count > 0) {
-                    boardArr[row][col] = count;
-                    count = 0;
+                if (CheckTop(row, col, type)) { //check top of square for mine
+                    count++;
+                }
+                if (CheckTopLeft(row, col, type)) { //check top left of square for mine
+                    count++;
                 }
             }
-            //if current square on top row but not a corner
-            if (row == 0 && col != 0 || row == 0 && col != (rowLength - 1)) {
-                if (checkForMine(row, col)) {
-                    continue;
+            //  insert count into current square div
+            if (count > 0) {
+                boardArr[row][col] = count;
+                count = 0;
+            }
+        }
+        //if current square on top row but not a corner
+        if (row == 0 && col != 0 || row == 0 && col != (rowLength - 1)) {
+            if (checkForMine(row, col)) {
+                continue;
+            }
+            else {
+                if (CheckRight(row, col, type)) { //check right of square for mine
+                    count++;
                 }
-                else {
-                    if (CheckRight(row, col)) { //check right of square for mine
-                        count++;
-                    }
-                    if (CheckLeft(row, col)) { //check left of square for mine
-                        count++;
-                    }
-                    if (CheckBottomLeft(row, col)) { //check bottom left of square for mine
-                        count++;
-                    }
-                    if (CheckBottom(row, col)) { //check bottom of square for mine
-                        count++;
-                    }
-                    if (CheckBottomRight(row, col)) { //check bottom right of square for mine
-                        count++;
-                    }
+                if (CheckLeft(row, col, type)) { //check left of square for mine
+                    count++;
                 }
-                //  insert count into current square div
-                if (count > 0) {
-                    boardArr[row][col] = count;
-                    count = 0;
+                if (CheckBottomLeft(row, col, type)) { //check bottom left of square for mine
+                    count++;
+                }
+                if (CheckBottom(row, col, type)) { //check bottom of square for mine
+                    count++;
+                }
+                if (CheckBottomRight(row, col, type)) { //check bottom right of square for mine
+                    count++;
                 }
             }
-            //if current square on bottom row but not a corner
-            if (row == (colLength - 1) && col != 0 || row == (colLength - 1) && col != (rowLength - 1)) {
-                if (checkForMine(row, col)) {
-                    continue;
+            //  insert count into current square div
+            if (count > 0) {
+                boardArr[row][col] = count;
+                count = 0;
+            }
+        }
+        //if current square on bottom row but not a corner
+        if (row == (colLength - 1) && col != 0 || row == (colLength - 1) && col != (rowLength - 1)) {
+            if (checkForMine(row, col)) {
+                continue;
+            }
+            else {
+                if (CheckRight(row, col, type)) { //check right of square for mine
+                    count++;
                 }
-                else {
-                    if (CheckRight(row, col)) { //check right of square for mine
-                        count++;
-                    }
-                    if (CheckLeft(row, col)) { //check left of square for mine
-                        count++;
-                    }
-                    if (CheckTopLeft(row, col)) { //check top left of square for mine
-                        count++;
-                    }
-                    if (CheckTop(row, col)) { //check top of square for mine
-                        count++;
-                    }
-                    if (CheckTopRight(row, col)) { //check top right of square for mine
-                        count++;
-                    }
+                if (CheckLeft(row, col, type)) { //check left of square for mine
+                    count++;
                 }
-                //  insert count into current square div
-                if (count > 0) {
-                    boardArr[row][col] = count;
-                    count = 0;
+                if (CheckTopLeft(row, col, type)) { //check top left of square for mine
+                    count++;
+                }
+                if (CheckTop(row, col, type)) { //check top of square for mine
+                    count++;
+                }
+                if (CheckTopRight(row, col, type)) { //check top right of square for mine
+                    count++;
                 }
             }
-            //if current square on left column but not a corner
-            if (col == 0 && row != 0 || col == 0 && row != (colLength - 1)) {
-                if (checkForMine(row, col)) {
-                    continue;
+            //  insert count into current square div
+            if (count > 0) {
+                boardArr[row][col] = count;
+                count = 0;
+            }
+        }
+        //if current square on left column but not a corner
+        if (col == 0 && row != 0 || col == 0 && row != (colLength - 1)) {
+            if (checkForMine(row, col)) {
+                continue;
+            }
+            else {
+                if (CheckTop(row, col, type)) { //check top of square for mine
+                    count++;
                 }
-                else {
-                    if (CheckTop(row, col)) { //check top of square for mine
-                        count++;
-                    }
-                    if (CheckBottom(row, col)) { //check bottom of square for mine
-                        count++;
-                    }
-                    if (CheckTopRight(row, col)) { //check top right of square for mine
-                        count++;
-                    }
-                    if (CheckRight(row, col)) { //check right of square for mine
-                        count++;
-                    }
-                    if (CheckBottomRight(row, col)) { //check bottom right of square for mine
-                        count++;
-                    }
+                if (CheckBottom(row, col, type)) { //check bottom of square for mine
+                    count++;
                 }
-                //  insert count into current square div
-                if (count > 0) {
-                    boardArr[row][col] = count;
-                    count = 0;
+                if (CheckTopRight(row, col, type)) { //check top right of square for mine
+                    count++;
+                }
+                if (CheckRight(row, col, type)) { //check right of square for mine
+                    count++;
+                }
+                if (CheckBottomRight(row, col, type)) { //check bottom right of square for mine
+                    count++;
                 }
             }
-            //if current square on right column but not a corner
-            if (row != 0 && col == (colLength - 1) || row != (rowLength - 1) && col == (rowLength - 1)) {
-                if (checkForMine(row, col)) {
-                    continue;
+            //  insert count into current square div
+            if (count > 0) {
+                boardArr[row][col] = count;
+                count = 0;
+            }
+        }
+        //if current square on right column but not a corner
+        if (row != 0 && col == (colLength - 1) || row != (rowLength - 1) && col == (rowLength - 1)) {
+            if (checkForMine(row, col)) {
+                continue;
+            }
+            else {
+                if (CheckTop(row, col, type)) { //check top of square for mine
+                    count++;
                 }
-                else {
-                    if (CheckTop(row, col)) { //check top of square for mine
-                        count++;
-                    }
-                    if (CheckBottom(row, col)) { //check bottom of square for mine
-                        count++;
-                    }
-                    if (CheckTopLeft(row, col)) { //check top left of square for mine
-                        count++;
-                    }
-                    if (CheckLeft(row, col)) { //check left of square for mine
-                        count++;
-                    }
-                    if (CheckBottomLeft(row, col)) { //check bottom left of square for mine
-                        count++;
-                    }
+                if (CheckBottom(row, col, type)) { //check bottom of square for mine
+                    count++;
                 }
-                //  insert count into current square div
-                if (count > 0) {
-                    boardArr[row][col] = count;
-                    count = 0;
+                if (CheckTopLeft(row, col, type)) { //check top left of square for mine
+                    count++;
+                }
+                if (CheckLeft(row, col, type)) { //check left of square for mine
+                    count++;
+                }
+                if (CheckBottomLeft(row, col, type)) { //check bottom left of square for mine
+                    count++;
                 }
             }
-            //all other squares
-            if (row != 0 && col != 0 && row != (rowLength - 1) && col != (colLength - 1)) {
-                if (checkForMine(row, col)) {
-                    continue;
+            //  insert count into current square div
+            if (count > 0) {
+                boardArr[row][col] = count;
+                count = 0;
+            }
+        }
+        //all other squares
+        if (row != 0 && col != 0 && row != (rowLength - 1) && col != (colLength - 1)) {
+            if (checkForMine(row, col)) {
+                continue;
+            }
+            else {
+                if (CheckTop(row, col, type)) { //check top of square for mine
+                    count++;
                 }
-                else {
-                    if (CheckTop(row, col)) { //check top of square for mine
-                        count++;
-                    }
-                    if (CheckBottom(row, col)) { //check bottom of square for mine
-                        count++;
-                    }
-                    if (CheckLeft(row, col)) { //check left of square for mine
-                        count++;
-                    }
-                    if (CheckRight(row, col)) { //check right of square for mine
-                        count++;
-                    }
-                    if (CheckTopLeft(row, col)) { //check top left of square for mine
-                        count++;
-                    }
-                    if (CheckTopRight(row, col)) { //check top right of square for mine
-                        count++;
-                    }
-                    if (CheckBottomLeft(row, col)) { //check bottom left of square for mine
-                        count++;
-                    }
-                    if (CheckBottomRight(row, col)) { //check bottom right of square for mine
-                        count++;
-                    }
+                if (CheckBottom(row, col, type)) { //check bottom of square for mine
+                    count++;
                 }
-                //  insert count into current square div
-                if (count > 0) {
-                    boardArr[row][col] = count;
-                    count = 0;
+                if (CheckLeft(row, col, type)) { //check left of square for mine
+                    count++;
                 }
+                if (CheckRight(row, col, type)) { //check right of square for mine
+                    count++;
+                }
+                if (CheckTopLeft(row, col, type)) { //check top left of square for mine
+                    count++;
+                }
+                if (CheckTopRight(row, col, type)) { //check top right of square for mine
+                    count++;
+                }
+                if (CheckBottomLeft(row, col, type)) { //check bottom left of square for mine
+                    count++;
+                }
+                if (CheckBottomRight(row, col, type)) { //check bottom right of square for mine
+                    count++;
+                }
+            }
+            //  insert count into current square div
+            if (count > 0) {
+                boardArr[row][col] = count;
+                count = 0;
             }
         }
     }
-}
-
-
-function checkForMine(row, col) {
-    let id = row.toString() + "-" + col.toString();
-    if (mineLocation.includes(id)) {
-        return true;
     }
-}
-
-function CheckTopLeft(row, col) {
-    if (checkForMine((row - 1), (col - 1))) {
-        return true;
     }
-}
 
-function CheckTop(row, col) {
-    if (checkForMine((row - 1), col)) {
+
+    function checkForMine(row, col) {
+        let id = row.toString() + "-" + col.toString();
+        if (mineLocation.includes(id)) {
         return true;
-    }
-}
-
-function CheckTopRight(row, col) {
-    if (checkForMine((row - 1), (col + 1))) {
-        return true;
-    }
-}
-
-function CheckLeft(row, col) {
-    if (checkForMine(row, (col - 1))) {
-        return true;
-    }
-}
-
-function CheckRight(row, col) {
-    if (checkForMine(row, (col + 1))) {
-        return true;
-    }
-}
-
-function CheckBottomLeft(row, col) {
-    if (checkForMine((row + 1), (col - 1))) {
-        return true;
-    }
-}
-
-function CheckBottom(row, col) {
-    if (checkForMine((row + 1), col)) {
-        return true;
-    }
-}
-
-function CheckBottomRight(row, col) {
-    if (checkForMine((row + 1), (col + 1))) {
-        return true;
-    }
-}
-
-
-// function makeTile(arr) {
-//     let gameBoard = document.getElementsByClassName('game-board');
-//     gameBoard.innerhtml = <div></div>
-// }
+        }
+        }
+        
+        function CheckTopLeft(row, col, type) {
+        if (type == "mine"){
+        return checkForMine((row - 1), (col - 1))
+        }
+        }
+        
+        function CheckTop(row, col, type) {
+        if (type == "mine"){
+        return checkForMine((row - 1), col)
+        }
+        }
+        
+        function CheckTopRight(row, col, type) {
+        if (type == "mine"){
+        return checkForMine((row - 1), (col + 1))
+        }
+        }
+        
+        function CheckLeft(row, col, type) {
+        if (type == "mine"){
+        return checkForMine(row, (col - 1))
+        }
+        }
+        
+        function CheckRight(row, col, type) {
+        if (type == "mine"){
+        return checkForMine(row, (col + 1))
+        } 
+        }
+        
+        function CheckBottomLeft(row, col, type) {
+        if (type == "mine"){
+        return checkForMine((row + 1), (col - 1))
+        }
+        }
+        
+        function CheckBottom(row, col, type) {
+        if (type == "mine"){
+        return checkForMine((row + 1), col)
+        }
+        }
+        
+        function CheckBottomRight(row, col, type) {
+        if (type == "mine"){
+        return checkForMine((row + 1), (col + 1))
+        }
+        }
