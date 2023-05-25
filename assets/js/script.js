@@ -62,12 +62,20 @@ function createGrid() {
 }
 
 function tileClick() {    
-    this.style.backgroundColor = "#19ad45";
     let divId = this.id.split("-");
     row = divId[0];
     col = divId[1];
     if (checkForMine(row, col)) {
         gameOver();
+    }
+    else if (Number.isInteger(boardArr[row][col])) {
+        this.innerHTML = boardArr[row][col];
+        this.style.backgroundColor = "#19ad45";
+    }
+    else {
+        //if square is blank
+        this.style.backgroundColor = "#19ad45";
+        chechSurroundingSquares(row, col);
     }
 }
 
@@ -97,6 +105,8 @@ function placeMineHints() {
     let colLength = boardArr.length;
     for (let row = 0; row < boardArr.length; row++) {
         for (let col = 0; col < rowLength; col++) {
+            //clear boardArr contents
+            boardArr[row][col] = ""
             //if current square is top left corner
             if (row == 0 && col == 0) {
                 if (checkForMine(row, col)) {
@@ -115,7 +125,7 @@ function placeMineHints() {
                 }
                 //  insert count into current square div
                 if (count > 0) {
-                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    boardArr[row][col] = count;
                     count = 0;
                 }
             }
@@ -136,7 +146,7 @@ function placeMineHints() {
                 }
                 //  insert count into current square div
                 if (count > 0) {
-                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    boardArr[row][col] = count;
                     count = 0;
                 }
             }
@@ -159,7 +169,7 @@ function placeMineHints() {
                 }
                 //  insert count into current square div
                 if (count > 0) {
-                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    boardArr[row][col] = count;
                     count = 0;
                 }
             }
@@ -180,7 +190,7 @@ function placeMineHints() {
                 }
                 //  insert count into current square div
                 if (count > 0) {
-                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    boardArr[row][col] = count;
                     count = 0;
                 }
             }
@@ -208,7 +218,7 @@ function placeMineHints() {
                 }
                 //  insert count into current square div
                 if (count > 0) {
-                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    boardArr[row][col] = count;
                     count = 0;
                 }
             }
@@ -236,7 +246,7 @@ function placeMineHints() {
                 }
                 //  insert count into current square div
                 if (count > 0) {
-                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    boardArr[row][col] = count;
                     count = 0;
                 }
             }
@@ -264,7 +274,7 @@ function placeMineHints() {
                 }
                 //  insert count into current square div
                 if (count > 0) {
-                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    boardArr[row][col] = count;
                     count = 0;
                 }
             }
@@ -292,7 +302,7 @@ function placeMineHints() {
                 }
                 //  insert count into current square div
                 if (count > 0) {
-                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    boardArr[row][col] = count;
                     count = 0;
                 }
             }
@@ -329,7 +339,7 @@ function placeMineHints() {
                 }
                 //  insert count into current square div
                 if (count > 0) {
-                    document.getElementById(row.toString() + "-" + col.toString()).innerHTML = count;
+                    boardArr[row][col] = count;
                     count = 0;
                 }
             }
