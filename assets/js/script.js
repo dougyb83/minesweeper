@@ -457,10 +457,10 @@ function CheckTopLeft(row, col, type) {
         return checkForMine(row, col);
     }
     else if (type === "blank" && boardArr[row][col] === "") {
-        // checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
         let id = row.toString() + "-" + col.toString();
         document.getElementById(id).style.backgroundColor = "#19ad45";
+        checkSurroundingSquares(row, col, "blank");
+        // checkSurroundingSquares(row, col, "hint");
     }
     else if (type === "hint" && Number.isInteger(boardArr[row][col])) {
         // checkSurroundingSquares(row, col, "hint");
@@ -475,10 +475,10 @@ function CheckTop(row, col, type) {
         return checkForMine(row, col);
     }
     else if (type === "blank" && boardArr[row][col] === "") {
-        // checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
         let id = row.toString() + "-" + col.toString();
         document.getElementById(id).style.backgroundColor = "#19ad45";
+        checkSurroundingSquares(row, col, "blank");
+        // checkSurroundingSquares(row, col, "hint");
     }
     else if (type === "hint" && Number.isInteger(boardArr[row][col])) {
         // checkSurroundingSquares(row, col, "hint");
@@ -494,10 +494,10 @@ function CheckTopRight(row, col, type) {
         return checkForMine(row, col);
     }
     else if (type === "blank" && boardArr[row][col] === "") {
-        // checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
         let id = row.toString() + "-" + col.toString();
         document.getElementById(id).style.backgroundColor = "#19ad45";
+        checkSurroundingSquares(row, col, "blank");
+        // checkSurroundingSquares(row, col, "hint");
     }
     else if (type === "hint" && Number.isInteger(boardArr[row][col])) {
         // checkSurroundingSquares(row, col, "hint");
@@ -512,10 +512,10 @@ function CheckLeft(row, col, type) {
         return checkForMine(row, col);
     }
     else if (type === "blank" && boardArr[row][col] === "") {
-        // checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
         let id = row.toString() + "-" + col.toString();
         document.getElementById(id).style.backgroundColor = "#19ad45";
+        checkSurroundingSquares(row, col, "blank");
+        // checkSurroundingSquares(row, col, "hint");
     }
     else if (type === "hint" && Number.isInteger(boardArr[row][col])) {
         // checkSurroundingSquares(row, col, "hint");
@@ -530,10 +530,10 @@ function CheckRight(row, col, type) {
         return checkForMine(row, col);
     }
     else if (type === "blank" && boardArr[row][col] === "") {
-        // checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
         let id = row.toString() + "-" + col.toString();
         document.getElementById(id).style.backgroundColor = "#19ad45";
+        checkSurroundingSquares(row, col, "blank");
+        // checkSurroundingSquares(row, col, "hint");
     }
     else if (type === "hint" && Number.isInteger(boardArr[row][col])) {
         // checkSurroundingSquares(row, col, "hint");
@@ -549,10 +549,10 @@ function CheckBottomLeft(row, col, type) {
         return checkForMine(row, col);
     }
     else if (type === "blank" && boardArr[row][col] === "") {
-        // checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
         let id = row.toString() + "-" + col.toString();
         document.getElementById(id).style.backgroundColor = "#19ad45";
+        checkSurroundingSquares(row, col, "blank");
+        // checkSurroundingSquares(row, col, "hint");
     }
     else if (type === "hint" && Number.isInteger(boardArr[row][col])) {
         // checkSurroundingSquares(row, col, "hint");
@@ -567,10 +567,10 @@ function CheckBottom(row, col, type) {
         return checkForMine(row, col);
     }
     else if (type === "blank" && boardArr[row][col] === "") {
-        // checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
         let id = row.toString() + "-" + col.toString();
         document.getElementById(id).style.backgroundColor = "#19ad45";
+        checkSurroundingSquares(row, col, "blank");
+        // checkSurroundingSquares(row, col, "hint");
     }
     else if (type === "hint" && Number.isInteger(boardArr[row][col])) {
         // checkSurroundingSquares(row, col, "hint");
@@ -586,10 +586,10 @@ function CheckBottomRight(row, col, type) {
         return checkForMine(row, col);
     }
     else if (type === "blank" && boardArr[row][col] === "") {
-        // checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
         let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
+        document.getElementById(id).style.backgroundColor = "#19ad45";        
+        checkSurroundingSquares(row, col, "blank");
+        // checkSurroundingSquares(row, col, "hint");
     }
     else if (type === "hint" && Number.isInteger(boardArr[row][col])) {
         // checkSurroundingSquares(row, col, "hint");
