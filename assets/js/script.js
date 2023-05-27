@@ -110,25 +110,25 @@ function checkSurroundingSquares(row, col, type) {
         CheckBottomRight(row, col, type);
     }
     // if current square is top right corner
-    if (row === 0 && col === (rowLength - 1)) {
+    else if (row === 0 && col === (rowLength - 1)) {
         CheckLeft(row, col, type);
         CheckBottom(row, col, type);
         CheckBottomLeft(row, col, type);
     }
     //if current square is bottom left corner
-    if (row === (colLength - 1) && col === 0) {
+    else if (row === (colLength - 1) && col === 0) {
         CheckRight(row, col, type);
         CheckTop(row, col, type);
         CheckTopRight(row, col, type);
     }
     //if current square is bottom right corner
-    if (row === (colLength - 1) && col === (rowLength - 1)) {
+    else if (row === (colLength - 1) && col === (rowLength - 1)) {
         CheckLeft(row, col, type);
         CheckTop(row, col, type);
         CheckTopLeft(row, col, type);
     }    
     //if current square on top row but not a corner
-    if ((row === 0 && col !== 0) && (row === 0 && col !== (rowLength - 1))) {
+    else if ((row === 0 && col !== 0) && (row === 0 && col !== (rowLength - 1))) {
         CheckRight(row, col, type);
         CheckLeft(row, col, type);
         CheckBottomLeft(row, col, type);
@@ -136,7 +136,7 @@ function checkSurroundingSquares(row, col, type) {
         CheckBottomRight(row, col, type);
     }    
     //if current square on bottom row but not a corner
-    if ((row === (colLength - 1) && col !== 0) && (row === (colLength - 1) && col !== (rowLength - 1))) {
+    else if ((row === (colLength - 1) && col !== 0) && (row === (colLength - 1) && col !== (rowLength - 1))) {
         CheckRight(row, col, type);
         CheckLeft(row, col, type);
         CheckTopLeft(row, col, type);
@@ -144,7 +144,7 @@ function checkSurroundingSquares(row, col, type) {
         CheckTopRight(row, col, type);
     }    
     //if current square on left column but not a corner
-    if ((col === 0 && row !== 0) && (col === 0 && row !== (colLength - 1))) {
+    else if ((col === 0 && row !== 0) && (col === 0 && row !== (colLength - 1))) {
         CheckTop(row, col, type);
         CheckBottom(row, col, type);
         CheckTopRight(row, col, type);
@@ -152,7 +152,7 @@ function checkSurroundingSquares(row, col, type) {
         CheckBottomRight(row, col, type);
     }    
     //if current square on right column but not a corner
-    if ((row !== 0 && col === (colLength - 1)) && (row !== (rowLength - 1) && col === (rowLength - 1))) {
+    else if ((row !== 0 && col === (colLength - 1)) && (row !== (rowLength - 1) && col === (rowLength - 1))) {
         CheckTop(row, col, type);
         CheckBottom(row, col, type);
         CheckTopLeft(row, col, type);
@@ -160,7 +160,7 @@ function checkSurroundingSquares(row, col, type) {
         CheckBottomLeft(row, col, type);
     }    
     //all other squares
-    if ((row !== 0 && col !== 0) && (row !== (rowLength - 1) && col !== (colLength - 1))) {
+    else {
         CheckTop(row, col, type);
         CheckBottom(row, col, type);
         CheckLeft(row, col, type);
@@ -206,7 +206,7 @@ function placeMineHints() {
             }
         }
         // if current square is top right corner
-        if (row == 0 && col == (rowLength - 1)) {
+        else if (row == 0 && col == (rowLength - 1)) {
             if (checkForMine(row, col)) {
                 continue;
             } else {
@@ -228,7 +228,7 @@ function placeMineHints() {
         }
     
         //if current square is bottom left corner
-        if (row == (colLength - 1) && col == 0) {
+        else if (row == (colLength - 1) && col == 0) {
             if (checkForMine(row, col)) {
                 continue;
             }
@@ -252,7 +252,7 @@ function placeMineHints() {
             }
         }
         //if current square is bottom right corner
-        if (row == (colLength - 1) && col == (rowLength - 1)) {
+        else if (row == (colLength - 1) && col == (rowLength - 1)) {
             if (checkForMine(row, col)) {
                 continue;
             } else {
@@ -275,7 +275,7 @@ function placeMineHints() {
             }
         }
         //if current square on top row but not a corner
-        if (row == 0 && col != 0 || row == 0 && col != (rowLength - 1)) {
+        else if (row == 0 && col != 0 || row == 0 && col != (rowLength - 1)) {
             if (checkForMine(row, col)) {
                 continue;
             }
@@ -305,7 +305,7 @@ function placeMineHints() {
             }
         }
         //if current square on bottom row but not a corner
-        if (row == (colLength - 1) && col != 0 || row == (colLength - 1) && col != (rowLength - 1)) {
+        else if (row == (colLength - 1) && col != 0 || row == (colLength - 1) && col != (rowLength - 1)) {
             if (checkForMine(row, col)) {
                 continue;
             }
@@ -335,7 +335,7 @@ function placeMineHints() {
             }
         }
         //if current square on left column but not a corner
-        if (col == 0 && row != 0 || col == 0 && row != (colLength - 1)) {
+        else if (col == 0 && row != 0 || col == 0 && row != (colLength - 1)) {
             if (checkForMine(row, col)) {
                 continue;
             }
@@ -365,7 +365,7 @@ function placeMineHints() {
             }
         }
         //if current square on right column but not a corner
-        if (row != 0 && col == (colLength - 1) || row != (rowLength - 1) && col == (rowLength - 1)) {
+        else if (row != 0 && col == (colLength - 1) || row != (rowLength - 1) && col == (rowLength - 1)) {
             if (checkForMine(row, col)) {
                 continue;
             }
@@ -395,7 +395,7 @@ function placeMineHints() {
             }
         }
         //all other squares
-        if (row != 0 && col != 0 && row != (rowLength - 1) && col != (colLength - 1)) {
+        else {
             if (checkForMine(row, col)) {
                 continue;
             }
