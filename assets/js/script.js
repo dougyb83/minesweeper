@@ -1,6 +1,3 @@
-// $(document).ready(function () {
-// }); 
-
 let boardArr = [];
 let mines = 0;
 let mineLocation = [];
@@ -28,13 +25,13 @@ $(document).ready(function () {
     // add error handling if url doesnt contain tileCount ===========================================================================================================
     tileCount = query.split("=")[1];
     if (tileCount == 8) {
-        mines = 9;
+        mines = 3; // should be 8, set to 3 for debugging =========================================================================================================
     }
     else if (tileCount == 9) {
-        mines = 10;
+        mines = 3; // should be 9, set to 3 for debugging =========================================================================================================
     }
     else {
-        mines = 40;
+        mines = 3; // should be 40, set to 3 for debugging =========================================================================================================
     }
     createGrid();
     setMines(boardArr);
@@ -75,8 +72,7 @@ function tileClick() {
     else {
         //if square is blank
         this.style.backgroundColor = "#19ad45";
-        checkSurroundingSquares(row, col, "blank");
-                
+        checkSurroundingSquares(row, col, "blank");                
     }
 }
 
@@ -444,164 +440,109 @@ function checkForMine(row, col) {
     }
 }
 
-// function checkForBlank(row, col) {
-//     if (boardArr[row][col] === "") {
+function checkTile(row, col, type) {
+    let id = row.toString() + "-" + col.toString();
+    let tile = document.getElementById(id);
 
-//     }
-// }
-    
+    if (type === "blank" && boardArr[row][col] === "" && tile.style.backgroundColor != "#19ad45") {
+        tile.style.backgroundColor = "#19ad45";
+        tile.removeEventListener('click', tileClick);        
+        checkSurroundingSquares(row, col, "blank");
+    }
+    else if (Number.isInteger(boardArr[row][col])) {
+        tile.style.backgroundColor = "#19ad45";
+        tile.removeEventListener('click', tileClick);
+    }
+}
+
 function checkTopLeft(row, col, type) {
+    console.log("checkTopLeft");
     row = row - 1;
     col = col - 1;
     if (type === "mine"){
         return checkForMine(row, col);
     }
-    else if (type === "blank" && boardArr[row][col] === "") {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
-        checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
-    }
     else {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
+        checkTile(row, col, type);
     }
 }
     
 function checkTop(row, col, type) {
+    console.log("checkTop");
     row = row - 1;
     if (type === "mine"){
         return checkForMine(row, col);
     }
-    else if (type === "blank" && boardArr[row][col] === "") {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
-        // checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
-    }
     else {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
+        checkTile(row, col, type);
     }
 }
     
 function checkTopRight(row, col, type) {
+    console.log("checkTopRight");
     row = row - 1;
     col = col + 1;
     if (type === "mine"){
         return checkForMine(row, col);
     }
-    else if (type === "blank" && boardArr[row][col] === "") {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
-        checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
-    }
     else {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
+        checkTile(row, col, type);
     }
 }
     
 function checkLeft(row, col, type) {
+    console.log("checkLeft");
     col = col - 1;
     if (type === "mine"){
         return checkForMine(row, col);
     }
-    else if (type === "blank" && boardArr[row][col] === "") {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
-        checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
-    }
     else {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
+        checkTile(row, col, type);
     }
 }
     
 function checkRight(row, col, type) {   
+    console.log("checkRight");
     col = col + 1; 
     if (type === "mine"){
         return checkForMine(row, col);
     }
-    else if (type === "blank" && boardArr[row][col] === "") {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
-        checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
-    }
     else {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
+        checkTile(row, col, type);
     }
 }
     
 function checkBottomLeft(row, col, type) {
+    console.log("checkBottomLeft");
     row = row + 1;
     col = col - 1;
     if (type === "mine"){
         return checkForMine(row, col);
     }
-    else if (type === "blank" && boardArr[row][col] === "") {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
-        checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
-    }
     else {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
+        checkTile(row, col, type);
     }
 }
     
 function checkBottom(row, col, type) {
+    console.log("checkBottom");
     row = row + 1;
     if (type === "mine"){
         return checkForMine(row, col);
     }
-    else if (type === "blank" && boardArr[row][col] === "") {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
-        checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
-    }
     else {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
+        checkTile(row, col, type);
     }
 }
     
 function checkBottomRight(row, col, type) {
+    console.log("checkBottomRight");
     row = row + 1;
     col = col + 1;
     if (type === "mine"){
         return checkForMine(row, col);
     }
-    else if (type === "blank" && boardArr[row][col] === "") {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";       
-        document.getElementById(id).removeEventListener('click', tileClick); 
-        checkSurroundingSquares(row, col, "blank");
-        // checkSurroundingSquares(row, col, "hint");
-    }
     else {
-        let id = row.toString() + "-" + col.toString();
-        document.getElementById(id).style.backgroundColor = "#19ad45";
-        document.getElementById(id).removeEventListener('click', tileClick);
+        checkTile(row, col, type);
     }
 }
