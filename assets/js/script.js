@@ -3,6 +3,8 @@ let mines = 0;
 let mineLocation = [];
 let tileCount = 0;
 let flatArr = [];
+let rowLength = 0;
+let colLength = 0;
 
 $("#8x8").click(function () {
     tileCount = 8;
@@ -25,13 +27,13 @@ $(document).ready(function () {
     // add error handling if url doesnt contain tileCount ===========================================================================================================
     tileCount = query.split("=")[1];
     if (tileCount == 8) {
-        mines = 3; // should be 8, set to 3 for debugging =========================================================================================================
+        mines = 8;
     }
     else if (tileCount == 9) {
-        mines = 3; // should be 9, set to 3 for debugging =========================================================================================================
+        mines = 9; 
     }
     else {
-        mines = 3; // should be 40, set to 3 for debugging =========================================================================================================
+        mines = 40;
     }
     createGrid();
     setMines(boardArr);
@@ -60,6 +62,7 @@ function createGrid() {
 // ============================================convert to class=======================================
 function tileClick() {    
     let divId = this.id.split("-");
+    this.classList.add("clicked");
     row = Number(divId[0]);
     col = Number(divId[1]);
     if (checkForMine(row, col)) {
@@ -97,8 +100,10 @@ function setMines(arr) {
 }
 
 function checkSurroundingSquares(row, col, type) {
-    let rowLength = boardArr[0].length;
-    let colLength = boardArr.length;
+    if (row < 0 || row >= rowLength || col < 0 || col >= colLength) {
+        console.log("out of bounds")
+        return;
+    }
     //if current square is top left corner
     if (row === 0 && col === 0) {
         checkRight(row, col, type);
@@ -171,8 +176,8 @@ function checkSurroundingSquares(row, col, type) {
 function placeMineHints() {
     let count = 0;
     let type = "mine";
-    let rowLength = boardArr[0].length;
-    let colLength = boardArr.length;
+    rowLength = boardArr[0].length;
+    colLength = boardArr.length;
     for (let row = 0; row < rowLength; row++) {
     for (let col = 0; col < colLength; col++) {
         //clear boardArr contents
@@ -443,8 +448,12 @@ function checkForMine(row, col) {
 function checkTile(row, col, type) {
     let id = row.toString() + "-" + col.toString();
     let tile = document.getElementById(id);
-
-    if (type === "blank" && boardArr[row][col] === "" && tile.style.backgroundColor != "#19ad45") {
+    if (tile.classList.contains("clicked")) {
+        console.log("checkTIle")
+        return;
+    }
+    else if (type === "blank" && boardArr[row][col] === "" && tile.style.backgroundColor != "#19ad45") {
+        tile.classList.add("clicked");
         tile.style.backgroundColor = "#19ad45";
         tile.removeEventListener('click', tileClick);        
         checkSurroundingSquares(row, col, "blank");
@@ -453,10 +462,13 @@ function checkTile(row, col, type) {
         tile.style.backgroundColor = "#19ad45";
         tile.removeEventListener('click', tileClick);
     }
+    else {
+        return;
+    }
 }
 
 function checkTopLeft(row, col, type) {
-    console.log("checkTopLeft");
+    // console.log("checkTopLeft");
     row = row - 1;
     col = col - 1;
     if (type === "mine"){
@@ -468,7 +480,7 @@ function checkTopLeft(row, col, type) {
 }
     
 function checkTop(row, col, type) {
-    console.log("checkTop");
+    // console.log("checkTop");
     row = row - 1;
     if (type === "mine"){
         return checkForMine(row, col);
@@ -479,7 +491,7 @@ function checkTop(row, col, type) {
 }
     
 function checkTopRight(row, col, type) {
-    console.log("checkTopRight");
+    // console.log("checkTopRight");
     row = row - 1;
     col = col + 1;
     if (type === "mine"){
@@ -491,7 +503,7 @@ function checkTopRight(row, col, type) {
 }
     
 function checkLeft(row, col, type) {
-    console.log("checkLeft");
+    // console.log("checkLeft");
     col = col - 1;
     if (type === "mine"){
         return checkForMine(row, col);
@@ -502,7 +514,7 @@ function checkLeft(row, col, type) {
 }
     
 function checkRight(row, col, type) {   
-    console.log("checkRight");
+    // console.log("checkRight");
     col = col + 1; 
     if (type === "mine"){
         return checkForMine(row, col);
@@ -513,7 +525,7 @@ function checkRight(row, col, type) {
 }
     
 function checkBottomLeft(row, col, type) {
-    console.log("checkBottomLeft");
+    // console.log("checkBottomLeft");
     row = row + 1;
     col = col - 1;
     if (type === "mine"){
@@ -525,7 +537,7 @@ function checkBottomLeft(row, col, type) {
 }
     
 function checkBottom(row, col, type) {
-    console.log("checkBottom");
+    // console.log("checkBottom");
     row = row + 1;
     if (type === "mine"){
         return checkForMine(row, col);
@@ -536,7 +548,7 @@ function checkBottom(row, col, type) {
 }
     
 function checkBottomRight(row, col, type) {
-    console.log("checkBottomRight");
+    // console.log("checkBottomRight");
     row = row + 1;
     col = col + 1;
     if (type === "mine"){
