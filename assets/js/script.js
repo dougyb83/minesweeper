@@ -100,10 +100,7 @@ function setMines(arr) {
 }
 
 function checkSurroundingSquares(row, col, type) {
-    if (row < 0 || row >= rowLength || col < 0 || col >= colLength) {
-        console.log("out of bounds")
-        return;
-    }
+
     //if current square is top left corner
     if (row === 0 && col === 0) {
         checkRight(row, col, type);
@@ -449,10 +446,9 @@ function checkTile(row, col, type) {
     let id = row.toString() + "-" + col.toString();
     let tile = document.getElementById(id);
     if (tile.classList.contains("clicked")) {
-        console.log("checkTIle")
         return;
     }
-    else if (type === "blank" && boardArr[row][col] === "" && tile.style.backgroundColor != "#19ad45") {
+    else if (type === "blank" && boardArr[row][col] === "") {
         tile.classList.add("clicked");
         tile.style.backgroundColor = "#19ad45";
         tile.removeEventListener('click', tileClick);        
@@ -468,7 +464,6 @@ function checkTile(row, col, type) {
 }
 
 function checkTopLeft(row, col, type) {
-    // console.log("checkTopLeft");
     row = row - 1;
     col = col - 1;
     if (type === "mine"){
@@ -480,7 +475,6 @@ function checkTopLeft(row, col, type) {
 }
     
 function checkTop(row, col, type) {
-    // console.log("checkTop");
     row = row - 1;
     if (type === "mine"){
         return checkForMine(row, col);
@@ -491,7 +485,6 @@ function checkTop(row, col, type) {
 }
     
 function checkTopRight(row, col, type) {
-    // console.log("checkTopRight");
     row = row - 1;
     col = col + 1;
     if (type === "mine"){
@@ -503,7 +496,6 @@ function checkTopRight(row, col, type) {
 }
     
 function checkLeft(row, col, type) {
-    // console.log("checkLeft");
     col = col - 1;
     if (type === "mine"){
         return checkForMine(row, col);
@@ -514,7 +506,6 @@ function checkLeft(row, col, type) {
 }
     
 function checkRight(row, col, type) {   
-    // console.log("checkRight");
     col = col + 1; 
     if (type === "mine"){
         return checkForMine(row, col);
@@ -525,7 +516,6 @@ function checkRight(row, col, type) {
 }
     
 function checkBottomLeft(row, col, type) {
-    // console.log("checkBottomLeft");
     row = row + 1;
     col = col - 1;
     if (type === "mine"){
@@ -537,7 +527,6 @@ function checkBottomLeft(row, col, type) {
 }
     
 function checkBottom(row, col, type) {
-    // console.log("checkBottom");
     row = row + 1;
     if (type === "mine"){
         return checkForMine(row, col);
@@ -548,7 +537,6 @@ function checkBottom(row, col, type) {
 }
     
 function checkBottomRight(row, col, type) {
-    // console.log("checkBottomRight");
     row = row + 1;
     col = col + 1;
     if (type === "mine"){
