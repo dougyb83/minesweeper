@@ -57,6 +57,7 @@ function createGrid() {
             row.push(cell.id);
             let tile = document.getElementById(divId);
             tile.addEventListener('click', tileClick);
+            tile.addEventListener('contextmenu', placeFlag);
         }
         boardArr.push(row);
     }
@@ -78,6 +79,20 @@ function tileClick() {
         //if square is blank
         this.style.backgroundColor = "#19ad45";
         checkSurroundingSquares(row, col, "blank");                
+    }
+}
+
+function placeFlag() {  
+    if (this.classList.contains("clicked")) {
+        return;
+    }  
+    if (this.innerHTML === "🚩") {
+        this.innerHTML = ""
+        this.addEventListener('click', tileClick);
+    }
+    else {
+        this.innerHTML = "🚩";
+        this.removeEventListener('click', tileClick);
     }
 }
 
@@ -460,6 +475,7 @@ function checkTile(row, col, type) {
         checkSurroundingSquares(row, col, "blank");
     }
     else if (Number.isInteger(boardArr[row][col])) {
+        tile.classList.add("clicked");
         tile.style.backgroundColor = "#19ad45";        
         tile.innerHTML = boardArr[row][col];
         tile.removeEventListener('click', tileClick);
