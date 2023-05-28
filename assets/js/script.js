@@ -80,6 +80,10 @@ function tileClick() {
         this.style.backgroundColor = "#19ad45";
         checkSurroundingSquares(row, col, "blank");                
     }
+
+    if (document.querySelectorAll('#game-board .clicked').length === flatArr.length - mines) {
+        alert('Hello! You clicked the button!');
+    }
 }
 
 function placeFlag() {  
