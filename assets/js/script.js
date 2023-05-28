@@ -93,7 +93,10 @@ function gameOver() {
 function setMines(arr) {
     flatArr = arr.flat();
     for (let i = 0; i < mines; i++) {
-        const randomIndex = Math.floor(Math.random() * flatArr.length);
+        let randomIndex = Math.floor(Math.random() * flatArr.length);
+        while (mineLocation.includes(flatArr[randomIndex])) {
+            randomIndex = Math.floor(Math.random() * flatArr.length);
+        }
         let randomPosition = flatArr[randomIndex];
         mineLocation.push(randomPosition);
     }
