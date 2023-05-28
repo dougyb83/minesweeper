@@ -1,8 +1,8 @@
 let boardArr = [];
-let mines = 0;
-let mineLocation = [];
-let tileCount = 0;
 let flatArr = [];
+let mineLocation = [];
+let mines = 0;
+let tileCount = 0;
 let rowLength = 0;
 let colLength = 0;
 
@@ -21,6 +21,15 @@ $("#16x16").click(function () {
     window.location.href = "game.html?tileCount=" + tileCount;
 });
 
+$(".reset").click(function () {
+    boardArr = [];
+    flatArr = [];
+    mineLocation = [];
+    $("#game-board").empty();
+    createGrid();
+    setMines(boardArr);
+    placeMineHints();
+});
 
 $(document).ready(function () {
     if (window.location.href.includes("game.html")) {
