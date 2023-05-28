@@ -23,21 +23,23 @@ $("#16x16").click(function () {
 
 
 $(document).ready(function () {
-    let query = location.search;
-    // add error handling if url doesnt contain tileCount ===========================================================================================================
-    tileCount = query.split("=")[1];
-    if (tileCount == 8) {
-        mines = 8;
+    if (window.location.href.includes("game.html")) {
+        let query = location.search;
+        // add error handling if url doesnt contain tileCount ===========================================================================================================
+        tileCount = query.split("=")[1];
+        if (tileCount == 8) {
+            mines = 8;
+        }
+        else if (tileCount == 9) {
+            mines = 9; 
+        }
+        else {
+            mines = 40;
+        }
+        createGrid();
+        setMines(boardArr);
+        placeMineHints();
     }
-    else if (tileCount == 9) {
-        mines = 9; 
-    }
-    else {
-        mines = 40;
-    }
-    createGrid();
-    setMines(boardArr);
-    placeMineHints();
 });
 
 
@@ -201,8 +203,8 @@ function placeMineHints() {
             //  insert count into current square div
             if (count > 0) {
                 boardArr[row][col] = count;
-                let divId = row.toString() + "-" + col.toString();
-                document.getElementById(divId).innerHTML = count;
+                // let divId = row.toString() + "-" + col.toString();
+                // document.getElementById(divId).innerHTML = count;
                 count = 0;
             }
         }
@@ -247,8 +249,8 @@ function placeMineHints() {
             //  insert count into current square div
             if (count > 0) {
                 boardArr[row][col] = count;
-                let divId = row.toString() + "-" + col.toString();
-                document.getElementById(divId).innerHTML = count;
+                // let divId = row.toString() + "-" + col.toString();
+                // document.getElementById(divId).innerHTML = count;
                 count = 0;
             }
         }
@@ -270,8 +272,8 @@ function placeMineHints() {
             //  insert count into current square div
             if (count > 0) {
                 boardArr[row][col] = count;
-                let divId = row.toString() + "-" + col.toString();
-                document.getElementById(divId).innerHTML = count;
+                // let divId = row.toString() + "-" + col.toString();
+                // document.getElementById(divId).innerHTML = count;
                 count = 0;
             }
         }
@@ -300,8 +302,8 @@ function placeMineHints() {
             //  insert count into current square div
             if (count > 0) {
                 boardArr[row][col] = count;
-                let divId = row.toString() + "-" + col.toString();
-                document.getElementById(divId).innerHTML = count;
+                // let divId = row.toString() + "-" + col.toString();
+                // document.getElementById(divId).innerHTML = count;
                 count = 0;
             }
         }
@@ -330,8 +332,8 @@ function placeMineHints() {
             //  insert count into current square div
             if (count > 0) {
                 boardArr[row][col] = count;
-                let divId = row.toString() + "-" + col.toString();
-                document.getElementById(divId).innerHTML = count;
+                // let divId = row.toString() + "-" + col.toString();
+                // document.getElementById(divId).innerHTML = count;
                 count = 0;
             }
         }
@@ -360,8 +362,8 @@ function placeMineHints() {
             //  insert count into current square div
             if (count > 0) {
                 boardArr[row][col] = count;
-                let divId = row.toString() + "-" + col.toString();
-                document.getElementById(divId).innerHTML = count;
+                // let divId = row.toString() + "-" + col.toString();
+                // document.getElementById(divId).innerHTML = count;
                 count = 0;
             }
         }
@@ -390,8 +392,8 @@ function placeMineHints() {
             //  insert count into current square div
             if (count > 0) {
                 boardArr[row][col] = count;
-                let divId = row.toString() + "-" + col.toString();
-                document.getElementById(divId).innerHTML = count;
+                // let divId = row.toString() + "-" + col.toString();
+                // document.getElementById(divId).innerHTML = count;
                 count = 0;
             }
         }
@@ -429,8 +431,8 @@ function placeMineHints() {
             //  insert count into current square div
             if (count > 0) {
                 boardArr[row][col] = count;
-                let divId = row.toString() + "-" + col.toString();
-                document.getElementById(divId).innerHTML = count;
+                // let divId = row.toString() + "-" + col.toString();
+                // document.getElementById(divId).innerHTML = count;
                 count = 0;
             }
         }
@@ -458,7 +460,8 @@ function checkTile(row, col, type) {
         checkSurroundingSquares(row, col, "blank");
     }
     else if (Number.isInteger(boardArr[row][col])) {
-        tile.style.backgroundColor = "#19ad45";
+        tile.style.backgroundColor = "#19ad45";        
+        tile.innerHTML = boardArr[row][col];
         tile.removeEventListener('click', tileClick);
     }
     else {
