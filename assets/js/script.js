@@ -91,7 +91,7 @@ function tileClick() {
     }
 
     if (document.querySelectorAll('#game-board .clicked').length === flatArr.length - mines) {
-        alert('Hello! You clicked the button!');
+        alert('Congratulations, You found all the mines!');
     }
 }
 
