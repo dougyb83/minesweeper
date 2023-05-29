@@ -31,6 +31,17 @@ $(".reset").click(function () {
     placeMineHints();
 });
 
+$(".home").click(function () {
+    window.location.href = "index.html";
+});
+
+$(".volume-on").click(function () {
+    $(this).removeClass("volume-on fa-solid fa-volume-high").addClass("volume-off fa-solid fa-volume-xmark");
+});
+$(".volume-off").click(function () {
+    $(this).removeClass("volume-off fa-solid fa-volume-xmark").addClass("volume-on fa-solid fa-volume-high");
+});
+
 $(document).ready(function () {
     if (window.location.href.includes("game.html")) {
         let query = location.search;
