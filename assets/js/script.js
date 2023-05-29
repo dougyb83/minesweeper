@@ -5,6 +5,7 @@ let mines = 0;
 let tileCount = 0;
 let rowLength = 0;
 let colLength = 0;
+let seconds = 0;
 
 $("#8x8").click(function () {
     tileCount = 8;
@@ -21,26 +22,7 @@ $("#16x16").click(function () {
     window.location.href = "game.html?tileCount=" + tileCount;
 });
 
-$(".reset").click(function () {
-    boardArr = [];
-    flatArr = [];
-    mineLocation = [];
-    $("#game-board").empty();
-    createGrid();
-    setMines(boardArr);
-    placeMineHints();
-});
 
-$(".home").click(function () {
-    window.location.href = "index.html";
-});
-
-$(".volume-on").click(function () {
-    $(this).removeClass("volume-on fa-solid fa-volume-high").addClass("volume-off fa-solid fa-volume-xmark");
-});
-$(".volume-off").click(function () {
-    $(this).removeClass("volume-off fa-solid fa-volume-xmark").addClass("volume-on fa-solid fa-volume-high");
-});
 
 $(document).ready(function () {
     if (window.location.href.includes("game.html")) {
@@ -56,6 +38,30 @@ $(document).ready(function () {
         else {
             mines = 40;
         }
+
+        $(".reset").click(function () {
+            // clearInterval(timer);
+            document.getElementById("timer").innerHTML = seconds;
+            boardArr = [];
+            flatArr = [];
+            mineLocation = [];
+            $("#game-board").empty();
+            createGrid();
+            setMines(boardArr);
+            placeMineHints();
+        });
+        
+        $(".home").click(function () {
+            window.location.href = "index.html";
+        });
+        
+        $(".volume-on").click(function () {
+            $(this).removeClass("volume-on fa-solid fa-volume-high").addClass("volume-off fa-solid fa-volume-xmark");
+        });
+        $(".volume-off").click(function () {
+            $(this).removeClass("volume-off fa-solid fa-volume-xmark").addClass("volume-on fa-solid fa-volume-high");
+        });
+        document.getElementsByClassName("mine-count")[0].innerHTML = mines;
         createGrid();
         setMines(boardArr);
         placeMineHints();
@@ -101,9 +107,18 @@ function tileClick() {
         checkSurroundingSquares(row, col, "blank");                
     }
 
+    if (seconds === 0) {
+        var timer = setInterval(upTimer, 1000);
+    }
+
     if (document.querySelectorAll('#game-board .clicked').length === flatArr.length - mines) {
         alert('Congratulations, You found all the mines!');
     }
+}
+
+function upTimer() {
+    ++seconds;
+    document.getElementById("timer").innerHTML = seconds;
 }
 
 function placeFlag() {  
