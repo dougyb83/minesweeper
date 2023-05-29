@@ -69,7 +69,6 @@ footer {
     justify-content: center;
     width: 100%;
     height: 620px;
-    border: 2px solid;
     font-size: 50px;
 }
 
@@ -79,8 +78,7 @@ footer {
 
 .game-board-container {
     width: 100%;
-    height: 620px;
-    border: 2px solid;
+    height: 620px;;
     padding: 0;
 }
 
@@ -112,7 +110,6 @@ footer {
     justify-content: center;
     width: 100%;
     height: 620px;
-    border: 2px solid;
 }
 
 .mine-count {
