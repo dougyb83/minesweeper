@@ -40,7 +40,6 @@ $(document).ready(function () {
         }
 
         $(".reset").click(function () {
-            // clearInterval(timer);
             document.getElementById("timer").innerHTML = seconds;
             boardArr = [];
             flatArr = [];
@@ -108,7 +107,7 @@ function tileClick() {
     }
 
     if (seconds === 0) {
-        var timer = setInterval(upTimer, 1000);
+        timer = setInterval(upTimer, 1000);
     }
 
     if (document.querySelectorAll('#game-board .clicked').length === flatArr.length - mines) {
@@ -118,7 +117,14 @@ function tileClick() {
 
 function upTimer() {
     ++seconds;
-    document.getElementById("timer").innerHTML = seconds;
+    let counter = document.getElementById("timer")
+    counter.innerHTML = seconds;
+    $(".reset").click(function() { 
+        clearInterval(timer);
+        counter.innerHTML = 0;
+    }); 
+    
+    
 }
 
 function placeFlag() {  
