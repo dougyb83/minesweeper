@@ -409,10 +409,12 @@ function placeFlag() {
     if (this.innerHTML === "🚩") {
         this.innerHTML = ""
         this.addEventListener('click', tileClick);
+        document.getElementsByClassName("mine-count")[0].innerHTML ++;
     }
     else {
         this.innerHTML = "🚩";
         this.removeEventListener('click', tileClick);
+        document.getElementsByClassName("mine-count")[0].innerHTML --;
     }
 }
 
