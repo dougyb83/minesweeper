@@ -67,7 +67,6 @@ $(document).ready(function () {
     }
 });
 
-
 function createGrid() {
     for (let i = 0; i < tileCount; i++) {
         let row = [];
@@ -87,70 +86,6 @@ function createGrid() {
         boardArr.push(row);
     }
 }
-// ============================================convert to class=======================================
-function tileClick() {    
-    let divId = this.id.split("-");
-    this.classList.add("clicked");
-    row = Number(divId[0]);
-    col = Number(divId[1]);
-    if (checkForMine(row, col)) {
-        gameOver();
-    }
-    else if (Number.isInteger(boardArr[row][col])) {
-        this.innerHTML = boardArr[row][col];
-        this.style.backgroundColor = "#19ad45";
-    }
-    else {
-        //if square is blank
-        this.style.backgroundColor = "#19ad45";
-        checkSurroundingSquares(row, col, "blank");                
-    }
-
-    if (seconds === 0) {
-        timer = setInterval(upTimer, 1000);
-    }
-
-    if (document.querySelectorAll('#game-board .clicked').length === flatArr.length - mines) {
-        alert('Congratulations, You found all the mines!');
-    }
-}
-
-function upTimer() {
-    ++seconds;
-    let counter = document.getElementById("timer")
-    counter.innerHTML = seconds;
-    $(".reset").click(function() { 
-        clearInterval(timer);
-        counter.innerHTML = 0;
-    }); 
-    
-    
-}
-
-function placeFlag() {  
-    if (this.classList.contains("clicked")) {
-        return;
-    }  
-    if (this.innerHTML === "🚩") {
-        this.innerHTML = ""
-        this.addEventListener('click', tileClick);
-    }
-    else {
-        this.innerHTML = "🚩";
-        this.removeEventListener('click', tileClick);
-    }
-}
-
-function gameOver() {    
-    for (let j = 0; j < mineLocation.length; j++) {
-        let reveal = document.getElementById(mineLocation[j]);
-        reveal.style.backgroundColor = "#e80202";
-        reveal.innerHTML = "💣";
-    }
-    for (let i = 0; i < flatArr.length; i++) {
-        document.getElementById(flatArr[i]).removeEventListener('click', tileClick);
-    }
-}
 
 function setMines(arr) {
     flatArr = arr.flat();
@@ -162,77 +97,6 @@ function setMines(arr) {
         let randomPosition = flatArr[randomIndex];
         mineLocation.push(randomPosition);
     }
-}
-
-function checkSurroundingSquares(row, col, type) {
-
-    //if current square is top left corner
-    if (row === 0 && col === 0) {
-        checkRight(row, col, type);
-        checkBottom(row, col, type);
-        checkBottomRight(row, col, type);
-    }
-    // if current square is top right corner
-    else if (row === 0 && col === (rowLength - 1)) {
-        checkLeft(row, col, type);
-        checkBottom(row, col, type);
-        checkBottomLeft(row, col, type);
-    }
-    //if current square is bottom left corner
-    else if (row === (colLength - 1) && col === 0) {
-        checkRight(row, col, type);
-        checkTop(row, col, type);
-        checkTopRight(row, col, type);
-    }
-    //if current square is bottom right corner
-    else if (row === (colLength - 1) && col === (rowLength - 1)) {
-        checkLeft(row, col, type);
-        checkTop(row, col, type);
-        checkTopLeft(row, col, type);
-    }    
-    //if current square on top row but not a corner
-    else if ((row === 0 && col !== 0) && (row === 0 && col !== (rowLength - 1))) {
-        checkRight(row, col, type);
-        checkLeft(row, col, type);
-        checkBottomLeft(row, col, type);
-        checkBottom(row, col, type);
-        checkBottomRight(row, col, type);
-    }    
-    //if current square on bottom row but not a corner
-    else if ((row === (colLength - 1) && col !== 0) && (row === (colLength - 1) && col !== (rowLength - 1))) {
-        checkRight(row, col, type);
-        checkLeft(row, col, type);
-        checkTopLeft(row, col, type);
-        checkTop(row, col, type);
-        checkTopRight(row, col, type);
-    }    
-    //if current square on left column but not a corner
-    else if ((col === 0 && row !== 0) && (col === 0 && row !== (colLength - 1))) {
-        checkTop(row, col, type);
-        checkBottom(row, col, type);
-        checkTopRight(row, col, type);
-        checkRight(row, col, type);
-        checkBottomRight(row, col, type);
-    }    
-    //if current square on right column but not a corner
-    else if ((row !== 0 && col === (colLength - 1)) && (row !== (rowLength - 1) && col === (rowLength - 1))) {
-        checkTop(row, col, type);
-        checkBottom(row, col, type);
-        checkTopLeft(row, col, type);
-        checkLeft(row, col, type);
-        checkBottomLeft(row, col, type);
-    }    
-    //all other squares
-    else {
-        checkTop(row, col, type);
-        checkBottom(row, col, type);
-        checkLeft(row, col, type);
-        checkRight(row, col, type);
-        checkTopLeft(row, col, type);
-        checkTopRight(row, col, type);
-        checkBottomLeft(row, col, type);
-        checkBottomRight(row, col, type);
-    }    
 }
 
 function placeMineHints() {
@@ -498,6 +362,140 @@ function placeMineHints() {
         }
     }
     }
+}
+
+// ============================================convert to class=======================================
+function tileClick() {    
+    let divId = this.id.split("-");
+    this.classList.add("clicked");
+    row = Number(divId[0]);
+    col = Number(divId[1]);
+    if (checkForMine(row, col)) {
+        gameOver();
+    }
+    else if (Number.isInteger(boardArr[row][col])) {
+        this.innerHTML = boardArr[row][col];
+        this.style.backgroundColor = "#19ad45";
+    }
+    else {
+        //if square is blank
+        this.style.backgroundColor = "#19ad45";
+        checkSurroundingSquares(row, col, "blank");                
+    }
+
+    if (seconds === 0) {
+        timer = setInterval(upTimer, 1000);
+    }
+
+    if (document.querySelectorAll('#game-board .clicked').length === flatArr.length - mines) {
+        alert('Congratulations, You found all the mines!');
+    }
+}
+
+function upTimer() {
+    ++seconds;
+    let counter = document.getElementById("timer")
+    counter.innerHTML = seconds;
+    $(".reset").click(function() { 
+        clearInterval(timer);
+        counter.innerHTML = 0;
+    });  
+}
+
+function placeFlag() {  
+    if (this.classList.contains("clicked")) {
+        return;
+    }  
+    if (this.innerHTML === "🚩") {
+        this.innerHTML = ""
+        this.addEventListener('click', tileClick);
+    }
+    else {
+        this.innerHTML = "🚩";
+        this.removeEventListener('click', tileClick);
+    }
+}
+
+function gameOver() {    
+    for (let j = 0; j < mineLocation.length; j++) {
+        let reveal = document.getElementById(mineLocation[j]);
+        reveal.style.backgroundColor = "#e80202";
+        reveal.innerHTML = "💣";
+    }
+    for (let i = 0; i < flatArr.length; i++) {
+        document.getElementById(flatArr[i]).removeEventListener('click', tileClick);
+    }
+}
+
+function checkSurroundingSquares(row, col, type) {
+
+    //if current square is top left corner
+    if (row === 0 && col === 0) {
+        checkRight(row, col, type);
+        checkBottom(row, col, type);
+        checkBottomRight(row, col, type);
+    }
+    // if current square is top right corner
+    else if (row === 0 && col === (rowLength - 1)) {
+        checkLeft(row, col, type);
+        checkBottom(row, col, type);
+        checkBottomLeft(row, col, type);
+    }
+    //if current square is bottom left corner
+    else if (row === (colLength - 1) && col === 0) {
+        checkRight(row, col, type);
+        checkTop(row, col, type);
+        checkTopRight(row, col, type);
+    }
+    //if current square is bottom right corner
+    else if (row === (colLength - 1) && col === (rowLength - 1)) {
+        checkLeft(row, col, type);
+        checkTop(row, col, type);
+        checkTopLeft(row, col, type);
+    }    
+    //if current square on top row but not a corner
+    else if ((row === 0 && col !== 0) && (row === 0 && col !== (rowLength - 1))) {
+        checkRight(row, col, type);
+        checkLeft(row, col, type);
+        checkBottomLeft(row, col, type);
+        checkBottom(row, col, type);
+        checkBottomRight(row, col, type);
+    }    
+    //if current square on bottom row but not a corner
+    else if ((row === (colLength - 1) && col !== 0) && (row === (colLength - 1) && col !== (rowLength - 1))) {
+        checkRight(row, col, type);
+        checkLeft(row, col, type);
+        checkTopLeft(row, col, type);
+        checkTop(row, col, type);
+        checkTopRight(row, col, type);
+    }    
+    //if current square on left column but not a corner
+    else if ((col === 0 && row !== 0) && (col === 0 && row !== (colLength - 1))) {
+        checkTop(row, col, type);
+        checkBottom(row, col, type);
+        checkTopRight(row, col, type);
+        checkRight(row, col, type);
+        checkBottomRight(row, col, type);
+    }    
+    //if current square on right column but not a corner
+    else if ((row !== 0 && col === (colLength - 1)) && (row !== (rowLength - 1) && col === (rowLength - 1))) {
+        checkTop(row, col, type);
+        checkBottom(row, col, type);
+        checkTopLeft(row, col, type);
+        checkLeft(row, col, type);
+        checkBottomLeft(row, col, type);
+    }    
+    //all other squares
+    else {
+        checkTop(row, col, type);
+        checkBottom(row, col, type);
+        checkLeft(row, col, type);
+        checkRight(row, col, type);
+        checkTopLeft(row, col, type);
+        checkTopRight(row, col, type);
+        checkBottomLeft(row, col, type);
+        checkBottomRight(row, col, type);
+    }    
 }
 
 function checkForMine(row, col) {
