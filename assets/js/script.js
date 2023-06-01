@@ -7,6 +7,7 @@ let tileCount = 0;
 let rowLength = 0;
 let colLength = 0;
 let seconds = 0;
+let timer;
 
 $("#8x8").click(function () {
     tileCount = 8;
@@ -365,7 +366,6 @@ function placeMineHints() {
     }
 }
 
-// ============================================convert to class=======================================
 function tileClick() {    
     let divId = this.id.split("-");
     this.classList.add("clicked");
