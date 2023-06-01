@@ -56,8 +56,14 @@ $(document).ready(function () {
             window.location.href = "index.html";
         });
         
-        $(".volume-on").click(function () {
-            $(this).removeClass("volume-on fa-solid fa-volume-high").addClass("volume-off fa-solid fa-volume-xmark");
+        $(".volume").click(function () {
+            if (this.classList.contains("fa-volume-xmark")) {
+                $(this).removeClass("fa-volume-xmark").addClass("fa-volume-high");
+            }
+            else {
+                $(this).addClass("fa-volume-xmark");
+            }
+            
         });
         $(".volume-off").click(function () {
             $(this).removeClass("volume-off fa-solid fa-volume-xmark").addClass("volume-on fa-solid fa-volume-high");
