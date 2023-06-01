@@ -1,3 +1,4 @@
+/* jshint esversion: 11, jquery: true */
 let boardArr = [];
 let flatArr = [];
 let mineLocation = [];
