@@ -389,6 +389,7 @@ function tileClick() {
     }
 
     if (document.querySelectorAll('#game-board .clicked').length === flatArr.length - mines) {
+        clearInterval(timer);
         alert('Congratulations, You found all the mines!');
     }
 }
@@ -399,6 +400,7 @@ function upTimer() {
     counter.innerHTML = seconds;
     $(".reset").click(function() { 
         clearInterval(timer);
+        seconds = 0;
         counter.innerHTML = 0;
     });  
 }
@@ -419,7 +421,8 @@ function placeFlag() {
     }
 }
 
-function gameOver() {    
+function gameOver() {   
+    clearInterval(timer);
     for (let j = 0; j < mineLocation.length; j++) {
         let reveal = document.getElementById(mineLocation[j]);
         reveal.style.backgroundColor = "#e80202";
