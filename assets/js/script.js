@@ -369,8 +369,8 @@ function placeMineHints() {
 function tileClick() {    
     let divId = this.id.split("-");
     this.classList.add("clicked");
-    row = Number(divId[0]);
-    col = Number(divId[1]);
+    let row = Number(divId[0]);
+    let col = Number(divId[1]);
     if (checkForMine(row, col)) {
         gameOver();
     }
