@@ -43,6 +43,7 @@ $(document).ready(function () {
 
         $(".reset").click(function () {
             document.getElementById("timer").innerHTML = seconds;
+            document.getElementsByClassName("mine-count")[0].innerHTML = mines;
             boardArr = [];
             flatArr = [];
             mineLocation = [];
@@ -372,7 +373,7 @@ function placeMineHints() {
     }
 }
 
-function tileClick() {    
+function tileClick() {
     let divId = this.id.split("-");
     this.classList.add("clicked");
     let row = Number(divId[0]);
