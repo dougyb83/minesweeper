@@ -108,7 +108,7 @@ function placeMineHints() {
     for (let row = 0; row < rowLength; row++) {
     for (let col = 0; col < colLength; col++) {
         //clear boardArr contents
-        boardArr[row][col] = ""
+        boardArr[row][col] = "";
         //if current square is top left corner
         if (row == 0 && col == 0) {
             if (checkForMine(row, col)) {
@@ -395,7 +395,7 @@ function tileClick() {
 
 function upTimer() {
     ++seconds;
-    let counter = document.getElementById("timer")
+    let counter = document.getElementById("timer");
     counter.innerHTML = seconds;
     $(".reset").click(function() { 
         clearInterval(timer);
@@ -408,7 +408,7 @@ function placeFlag() {
         return;
     }  
     if (this.innerHTML === "🚩") {
-        this.innerHTML = ""
+        this.innerHTML = "";
         this.addEventListener('click', tileClick);
         document.getElementsByClassName("mine-count")[0].innerHTML ++;
     }
