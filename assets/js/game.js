@@ -24,6 +24,8 @@ $(document).ready(function () {
     }
 
     $(".reset").click(function () {
+        clearInterval(timer);
+        seconds = 0;
         document.getElementById("timer").innerHTML = seconds;
         document.getElementsByClassName("mine-count")[0].innerHTML = mines;
         boardArr = [];
@@ -386,11 +388,6 @@ function upTimer() {
     ++seconds;
     let counter = document.getElementById("timer");
     counter.innerHTML = seconds;
-    $(".reset").click(function() { 
-        clearInterval(timer);
-        seconds = 0;
-        counter.innerHTML = 0;
-    });  
 }
 
 function placeFlag() {  
