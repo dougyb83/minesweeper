@@ -93,8 +93,10 @@ footer {
 }
 
 .game-board {
-    height: 700px;
-    width: 700px;
+    height: 43vw;
+    width: 43vw;
+    max-width: 700px;
+    max-height: 700px;
     border: 10px solid #2e2e33;
     margin: 0 auto;
     display: flex;

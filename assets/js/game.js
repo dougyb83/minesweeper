@@ -12,8 +12,6 @@ let timer;
 $(document).ready(function () { 
     let tiles = JSON.parse(localStorage.getItem("tileCount"));  // again, "tiles" is just a temp variable to get the localStorage
     if (tiles) {
-        console.log(tiles)
-        console.log(tiles.count)
         if (tiles.count === 8 || tiles.count === 9) {
             mines = tiles.count;
             tileCount = tiles.count;  // set bombs to 8 or 9 respectively
