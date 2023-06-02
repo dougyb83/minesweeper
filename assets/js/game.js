@@ -373,6 +373,8 @@ function tileClick() {
     }
 
     if (seconds === 0) {
+        seconds = 1;
+        document.getElementById("timer").innerHTML = 1;
         timer = setInterval(upTimer, 1000);
     }
 
