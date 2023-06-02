@@ -9,36 +9,57 @@ let colLength = 0;
 let seconds = 0;
 let timer;
 
-$("#8x8").click(function () {
-    tileCount = 8;
-    window.location.href = "game.html?tileCount=" + tileCount;
-});
+// $("#8x8").click(function () {
+//     tileCount = 8;
+//     window.location.href = "game.html?tileCount=" + tileCount;
+// });
 
-$("#9x9").click(function () {
-    tileCount = 9;
-    window.location.href = "game.html?tileCount=" + tileCount;
-});
+// $("#9x9").click(function () {
+//     tileCount = 9;
+//     window.location.href = "game.html?tileCount=" + tileCount;
+// });
 
-$("#16x16").click(function () {
-    tileCount = 16;
-    window.location.href = "game.html?tileCount=" + tileCount;
-});
+// $("#16x16").click(function () {
+//     tileCount = 16;
+//     window.location.href = "game.html?tileCount=" + tileCount;
+// });
 
-
+$(".play-button").click(function () {
+    // set tileCount to be equal to data-size
+    tileCount = parseInt($(this).data("size"));
+    // setup the JSON stringify for localStorage to persist the game tile count between pages
+    let ls = {"count": tileCount};
+    // create localStorage called "tileCount" and set it to the `ls` dict above
+    localStorage.setItem("tileCount", JSON.stringify(ls));
+    window.location.href = "game.html";
+})
 
 $(document).ready(function () {
     if (window.location.href.includes("game.html")) {
-        let query = location.search;
-        // add error handling if url doesnt contain tileCount ===========================================================================================================
-        tileCount = query.split("=")[1];
-        if (tileCount == 8) {
-            mines = 8;
-        }
-        else if (tileCount == 9) {
-            mines = 9; 
-        }
-        else {
-            mines = 40;
+        // let query = location.search;
+        // // add error handling if url doesnt contain tileCount ===========================================================================================================
+        // tileCount = query.split("=")[1];
+        // if (tileCount == 8) {
+        //     mines = 8;
+        // }
+        // else if (tileCount == 9) {
+        //     mines = 9; 
+        // }
+        // else {
+        //     mines = 40;
+        // }
+
+        let tiles = JSON.parse(localStorage.getItem("tileCount"));  // again, "tiles" is just a temp variable to get the localStorage
+        if (tiles) {
+            console.log(tiles)
+            console.log(tiles.count)
+            if (tiles.count === 8 || tiles.count === 9) {
+                mines = tiles.count;
+                tileCount = tiles.count;  // set bombs to 8 or 9 respectively
+            } else {
+                mines = 40;  // otherwise to 40 like your line 41 in script.js currently
+                tileCount = 16;
+            }
         }
 
         $(".reset").click(function () {
