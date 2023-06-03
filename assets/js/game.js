@@ -44,13 +44,11 @@ $(document).ready(function () {
             $(this).removeClass("fa-volume-xmark").addClass("fa-volume-high");
         }
         else {
-            $(this).addClass("fa-volume-xmark");
+            $(this).removeClass("fa-volume-high").addClass("fa-volume-xmark");
         }
         
     });
-    $(".volume-off").click(function () {
-        $(this).removeClass("volume-off fa-solid fa-volume-xmark").addClass("volume-on fa-solid fa-volume-high");
-    });
+
     document.getElementsByClassName("mine-count")[0].innerHTML = mines;
     createGrid();
     setMines(boardArr);
