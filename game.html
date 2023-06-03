@@ -17,23 +17,23 @@
 </head>
 <body>
     <main>
-        <section class="container-fluid smiley">
+        <section class="container-fluid smiley" aria-label="reset">
             <div class="row">
                 <div class="col-12">
-                    <button class="reset btn smiley-button">😀</button>
+                    <span class="reset btn smiley-button">😀</span>
                 </div>
             </div>
         </section>
         <section class="container-fluid">
             <div class="row">
                 <div class="col controls">
-                    <i class="home fa-solid fa-house"></i>
+                    <i class="home fa-solid fa-house" aria-label="home"></i>
                     <br>
-                    <i class="reset fa-solid fa-rotate-right"></i>
+                    <i class="reset fa-solid fa-rotate-right" aria-label="reset"></i>
                     <br>
-                    <i class="fa-regular fa-circle-question"></i>
+                    <i class="fa-regular fa-circle-question" aria-label="how to play"></i>
                     <br>
-                    <i class="volume fa-solid fa-volume-xmark"></i>                    
+                    <i class="volume fa-solid fa-volume-xmark" aria-label="volume"></i>                    
                 </div>
                 <div class="col game-board-container">
                     <div class="game-board" id="game-board" oncontextmenu="return false;">
@@ -71,9 +71,6 @@
                             <span class="sr-only">Link to Twitter</span></a>
                     </li>
                 </ul>
-                <small class="copyright-info col-12">
-                    &copy; Copyright 2023. Douglas Benson.
-                </small>
             </div>
         </footer>
     </main>
