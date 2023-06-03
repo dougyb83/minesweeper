@@ -8,6 +8,7 @@ let rowLength = 0;
 let colLength = 0;
 let seconds = 0;
 let timer;
+gameOverCalled = false;
 
 $(document).ready(function () { 
     let tiles = JSON.parse(localStorage.getItem("tileCount"));  // again, "tiles" is just a temp variable to get the localStorage
@@ -370,7 +371,7 @@ function tileClick() {
         checkSurroundingSquares(row, col, "blank");                
     }
 
-    if (seconds === 0) {
+    if (seconds === 0 && !gameOverCalled) {
         seconds = 1;
         document.getElementById("timer").innerHTML = 1;
         timer = setInterval(upTimer, 1000);
@@ -405,6 +406,7 @@ function placeFlag() {
 }
 
 function gameOver() {   
+    gameOverCalled = true;
     clearInterval(timer);
     for (let j = 0; j < mineLocation.length; j++) {
         let reveal = document.getElementById(mineLocation[j]);
