@@ -169,4 +169,53 @@ footer {
         height: 73vw;
         width: 73vw;       
     }
+
+    .controls {
+        position: absolute;
+        bottom: 130px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        font-size: 30px;
+    }
+
+    .info-display {
+        position: absolute;
+        top: 40px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 150px;
+    }
+
+    .mine-count-container {
+        width: 150px;
+        height: 65px;     
+    }
+    
+    .mine-count {
+        width: 50%;
+        text-align: center;
+        font-size: 40px;
+    }
+    
+    
+    .timer-container {
+        width: 150px;
+        height: 65px;
+        font-size: 50px;
+
+    }
+    
+    .timer {
+        width: 50%;
+        text-align: center;
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .game-board {
+        height: 100vw;
+        width: 100vw;       
+    }
 }
