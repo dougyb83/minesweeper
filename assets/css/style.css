@@ -162,20 +162,26 @@ footer {
         height: 60vw;
         width: 60vw;       
     }
+
+    .controls {
+        margin-right: 0;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .game-board {
         height: 73vw;
-        width: 73vw;       
+        width: 73vw;    
+        margin-top: 10px;
+        margin-bottom: 10px;     
     }
 
     .controls {
         position: absolute;
-        bottom: 130px;
+        bottom: 95px;
         flex-direction: row;
         justify-content: center;
-        gap: 20px;
+        gap: 40px;
         font-size: 30px;
     }
 
@@ -216,6 +222,31 @@ footer {
 @media screen and (max-width: 425px) {
     .game-board {
         height: 100vw;
-        width: 100vw;       
+        width: 100vw; 
+        margin-top: 10px;
+        margin-bottom: 10px;      
+    }
+
+    .game-board-container {
+        top: 60px;
+    }
+
+    .info-display {
+        top: 85px;
+        margin: 0;
+        gap: 50px;
+    }
+
+    .controls {
+        bottom: 150px;
+        gap: 25px;
+    }
+
+    .mine-count-container {
+        margin: 0;
+    }
+
+    .timer-container {
+        margin: 0;
     }
 }
