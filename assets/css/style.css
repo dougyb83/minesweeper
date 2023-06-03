@@ -155,3 +155,18 @@ footer {
     text-align: center;
     font-size: 60px;
 }
+
+/* media queries*/
+@media screen and (max-width: 1024px) {
+    .game-board {
+        height: 60vw;
+        width: 60vw;       
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .game-board {
+        height: 73vw;
+        width: 73vw;       
+    }
+}
