@@ -8,7 +8,7 @@ let rowLength = 0;
 let colLength = 0;
 let seconds = 0;
 let timer;
-gameOverCalled = false;
+let gameOverCalled = false;
 
 $(document).ready(function () { 
     let tiles = JSON.parse(localStorage.getItem("tileCount"));  // again, "tiles" is just a temp variable to get the localStorage
@@ -23,6 +23,7 @@ $(document).ready(function () {
     }
 
     $(".reset").click(function () {
+        gameOverCalled = false;
         clearInterval(timer);
         seconds = 0;
         document.getElementById("timer").innerHTML = seconds;
