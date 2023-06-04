@@ -28,6 +28,7 @@ $(document).ready(function () {
         seconds = 0;
         document.getElementById("timer").innerHTML = seconds;
         document.getElementsByClassName("mine-count")[0].innerHTML = mines;
+        document.getElementsByClassName("smiley-button")[0].innerHTML = "😀";
         boardArr = [];
         flatArr = [];
         mineLocation = [];
@@ -409,6 +410,7 @@ function placeFlag() {
 function gameOver() {   
     gameOverCalled = true;
     clearInterval(timer);
+    document.getElementsByClassName("smiley-button")[0].innerHTML = "😖";
     for (let j = 0; j < mineLocation.length; j++) {
         let reveal = document.getElementById(mineLocation[j]);
         reveal.style.backgroundColor = "#e80202";
