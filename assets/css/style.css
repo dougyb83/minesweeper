@@ -1,3 +1,6 @@
+body {
+    font-family: 'Play', sans-serif;
+}
 /* home page */
 .heading {
     text-align: center;
@@ -21,8 +24,8 @@ h1 {
     font-size: 50px;
     border: 2px solid;
     border-radius: 10px;
-    margin: 30px;
-    padding: 60px 80px;
+    margin: 10px 30px 5px 30px;
+    padding: 60px 40px;
     background-color: #444c54;
     color: #ffffff;
     box-shadow: 10px 10px 5px #aaaaaa;    
@@ -165,6 +168,7 @@ footer {
 
 /* media queries*/
 @media screen and (max-width: 1024px) {
+    /* game page */
     .game-board {
         height: 60vw;
         width: 60vw;       
@@ -207,6 +211,7 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    /* game page */
     .smiley {
         z-index: 2;
     }
@@ -260,6 +265,11 @@ footer {
 }
 
 @media screen and (max-width: 425px) {
+    /* game page */
+    .smiley {
+        margin-top: 35px;
+    }
+
     .game-board-container {
         top: 60px;
     }
@@ -267,26 +277,40 @@ footer {
     .game-board {
         height: 100vw;
         width: 100vw; 
-        margin-top: 10px;
-        margin-bottom: 10px;      
+        margin-top: 30px;
+        margin-bottom: 10px;   
+        border: 2px solid;   
     }
 
     .controls {
-        bottom: 150px;
-        gap: 25px;
+        bottom: 90px;
+        gap: 12px;
     }
 
     .info-display {
-        top: 85px;
+        top: 125px;
         margin: 0;
         gap: 50px;
     }
 
-    .mine-count-container {
+    .mine-count-container, .timer-container {
         margin: 0;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .controls {
+        gap: 5px;
     }
 
-    .timer-container {
-        margin: 0;
+    .mine-count-container, .timer-container {
+        width: 150px;
+        font-size: 40px;
     }
+
+    .info-display img {
+        width: 40px;
+        height: 40px;
+    }
+
 }
