@@ -172,12 +172,43 @@ footer {
 
     .controls {
         margin-right: 0;
+        height: 60vw;
+    }
+
+    .info-display {
+        margin: 0;
+        gap: 20px;
+        height: 60vw;
+    }
+
+    .info-display img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .mine-count-container, .timer-container {
+        width: 150px;
+        height: 65px;
+        margin: 0;
+        font-size: 50px;
+    }
+
+    .mine-count {
+        width: 50%;
+        text-align: center;
+        font-size: 40px;
+    }    
+
+    .timer {
+        width: 50%;
+        text-align: center;
+        font-size: 40px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .smiley {
-        z-index: 1;
+        z-index: 2;
     }
 
     .game-board-container {
@@ -188,15 +219,13 @@ footer {
         height: 73vw;
         width: 73vw;    
         margin-top: 25px;
-        margin-bottom: 10px;
     }
 
     .controls {
         position: absolute;
         bottom: 85px;
         flex-direction: row;
-        justify-content: center;
-        gap: 40px;
+        gap: 55px;
         font-size: 30px;
         z-index: 1;
     }
@@ -207,12 +236,7 @@ footer {
         flex-direction: row;
         justify-content: center;
         gap: 170px;
-        margin: 0;
-    }
-
-    .info-display img {
-        width: 50px;
-        height: 50px;
+        margin-top: 25px;
     }
 
     .mine-count-container {
@@ -225,20 +249,7 @@ footer {
         text-align: center;
         font-size: 40px;
     }    
-    
-    .timer-container {
-        width: 150px;
-        height: 65px;
-        font-size: 50px;
-
-    }
-    
-    .timer {
-        width: 50%;
-        text-align: center;
-        font-size: 40px;
-    }
-
+      
     .socials {
         bottom: 5px;
     }
@@ -249,6 +260,10 @@ footer {
 }
 
 @media screen and (max-width: 425px) {
+    .game-board-container {
+        top: 60px;
+    }
+
     .game-board {
         height: 100vw;
         width: 100vw; 
@@ -256,19 +271,15 @@ footer {
         margin-bottom: 10px;      
     }
 
-    .game-board-container {
-        top: 60px;
+    .controls {
+        bottom: 150px;
+        gap: 25px;
     }
 
     .info-display {
         top: 85px;
         margin: 0;
         gap: 50px;
-    }
-
-    .controls {
-        bottom: 150px;
-        gap: 25px;
     }
 
     .mine-count-container {
