@@ -1,5 +1,6 @@
 /* jshint esversion: 11, jquery: true */
 
+// wait for play-button to be clicked, save variable to local storage and open game.html 
 $(".play-button").click(function () {
     // set tileCount to be equal to data-size
     let tileCount = parseInt($(this).data("size"));
@@ -7,5 +8,6 @@ $(".play-button").click(function () {
     let ls = {"count": tileCount};
     // create localStorage called "tileCount" and set it to the `ls` dict above
     localStorage.setItem("tileCount", JSON.stringify(ls));
+    // open game.html 
     window.location.href = "game.html";
 })
