@@ -64,6 +64,7 @@ footer {
 .smiley {
     margin-top: 10px;
     text-align: center;
+    position: relative;
 }
 
 .smiley-button {
@@ -175,20 +176,24 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    .game-board-container {
+    .smiley {
         z-index: 1;
+    }
+
+    .game-board-container {
+        z-index: 2;
     }
 
     .game-board {
         height: 73vw;
         width: 73vw;    
-        margin-top: 10px;
+        margin-top: 25px;
         margin-bottom: 10px;
     }
 
     .controls {
         position: absolute;
-        bottom: 95px;
+        bottom: 85px;
         flex-direction: row;
         justify-content: center;
         gap: 40px;
@@ -201,7 +206,13 @@ footer {
         top: 40px;
         flex-direction: row;
         justify-content: center;
-        gap: 150px;
+        gap: 170px;
+        margin: 0;
+    }
+
+    .info-display img {
+        width: 50px;
+        height: 50px;
     }
 
     .mine-count-container {
@@ -213,8 +224,7 @@ footer {
         width: 50%;
         text-align: center;
         font-size: 40px;
-    }
-    
+    }    
     
     .timer-container {
         width: 150px;
@@ -227,6 +237,14 @@ footer {
         width: 50%;
         text-align: center;
         font-size: 40px;
+    }
+
+    .socials {
+        bottom: 5px;
+    }
+
+    .socials i {
+        font-size: 30px;
     }
 }
 
