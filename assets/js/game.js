@@ -416,8 +416,7 @@ function gameOver() {
     }
     for (let i = 0; i < flatArr.length; i++) {
         let tile = document.getElementById(flatArr[i])
-        tile.removeEventListener('click', tileClick);
-        tile.removeEventListener('contextmenu', placeFlag);
+        tile.classList.add("disable");
     }
 }
 

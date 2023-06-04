@@ -100,6 +100,10 @@ footer {
     font-size: 2em;
 }
 
+.disable {
+    pointer-events: none;
+}
+
 /* game controls */
 .controls {
     display: flex;
