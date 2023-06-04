@@ -1,3 +1,4 @@
+/* home page */
 .heading {
     text-align: center;
     margin-top: 10px;
@@ -9,6 +10,7 @@ h1 {
     margin: 10px;
 }
 
+/* game menu*/
 .game-menu {
     text-align: center;
 }
@@ -32,6 +34,7 @@ h1 {
     width: 60%;
 }
 
+/* footer */
 footer {
     justify-content: center;
     position: fixed;
@@ -57,36 +60,17 @@ footer {
     color: #33322e;
 }
 
+/* game page */
 .smiley {
     margin-top: 10px;
     text-align: center;
 }
 
-.controls {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    justify-content: center;
-    width: 100%;
-    height: 700px;
-    font-size: 50px;
-    margin-right: 25px;
+.smiley-button {
+    font-size: 60px;
 }
 
-.info-display {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    width: 100%;
-    height: 700px;
-    margin-left: 25px;
-}
-
-.controls i {
-    margin: 10px;
-}
-
+/* game board */
 .game-board-container {
     width: 100%;
     padding: 0;
@@ -112,8 +96,31 @@ footer {
     font-size: 2em;
 }
 
-.smiley-button {
-    font-size: 60px;
+/* game controls */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+    height: 700px;
+    font-size: 50px;
+    margin-right: 25px;
+}
+
+.controls i {
+    margin: 10px;
+}
+
+/* game on screen display */
+.info-display {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    height: 700px;
+    margin-left: 25px;
 }
 
 .mine-count-container {
@@ -134,7 +141,6 @@ footer {
     text-align: center;
     font-size: 60px;
 }
-
 
 .timer-container {
     width: 220px;
