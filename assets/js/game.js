@@ -67,8 +67,8 @@ function createGrid() {
             let divId = i.toString() + "-" + j.toString();
             cell.id = divId;
             document.getElementById("game-board").append(cell);
-            $(".cell").css("width", 100 / tileCount + "%");
-            $(".cell").css("height", 100 / tileCount + "%");
+            $(".cell").css("width", 97 / tileCount + "%");
+            $(".cell").css("height", 97 / tileCount + "%");
             row.push(cell.id);
             let tile = document.getElementById(divId);
             tile.addEventListener('click', tileClick);
