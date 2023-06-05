@@ -411,10 +411,11 @@ function gameOver() {
     gameOverCalled = true;
     clearInterval(timer);
     document.getElementsByClassName("smiley-button")[0].innerHTML = "😖";
+    let mineImage = `<img src="assets/images/minesweeper-logo.png" alt="image of a mine">`;
     for (let j = 0; j < mineLocation.length; j++) {
         let reveal = document.getElementById(mineLocation[j]);
         reveal.style.backgroundColor = "#e80202";
-        reveal.innerHTML = "💣";
+        reveal.innerHTML = mineImage;
     }
     for (let i = 0; i < flatArr.length; i++) {
         let tile = document.getElementById(flatArr[i])

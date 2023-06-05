@@ -81,7 +81,7 @@ footer {
 }
 
 .game-board {
-    background-color: #aaaaaa;
+    background-color: #c2d3cd;
     height: 43vw;
     width: 43vw;
     max-width: 700px;
@@ -107,6 +107,11 @@ footer {
     font-size: 2em;
 }
 
+    .cell img {
+        width: 80%;
+        height: 80%;
+    }
+
 .disable {
     pointer-events: none;
 }
@@ -118,13 +123,16 @@ footer {
     align-items: end;
     justify-content: center;
     width: 100%;
-    height: 700px;
     font-size: 50px;
     margin-right: 25px;
 }
 
 .controls i {
     margin: 10px;
+}
+
+.controls, .info-display {
+    height: 43vw;
 }
 
 /* game on screen display */
@@ -134,7 +142,6 @@ footer {
     align-items: start;
     justify-content: center;
     width: 100%;
-    height: 700px;
     margin-left: 25px;
 }
 
@@ -314,6 +321,9 @@ footer {
 }
 
 @media screen and (max-width: 375px) {
+    .smiley {
+        margin-top: 0;
+    }
     .controls {
         gap: 20px;
         bottom: 125px;
