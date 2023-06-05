@@ -11,3 +11,7 @@ $(".play-button").click(function () {
     // open game.html 
     window.location.href = "game.html";
 })
+
+
+const modal = document.querySelector("[data-modal]")
+window.onload = modal.showModal();

@@ -2,16 +2,33 @@ body {
     font-family: 'Play', sans-serif;
     background-color: #008080;
 }
+
+h1, h2 {
+    font-family: 'Black Ops One', cursive;
+    font-size: 90px;
+    margin: 10px;
+}
+
+/* modal */
+dialog {
+    height: 70vh;
+    width: 70vw;
+    padding-top: 45px;
+}
+
+dialog h3 {
+    margin-top: 60px;
+}
+
+dialog img{
+    position: absolute;
+    top: 20px;
+    right: 5px;
+}
 /* home page */
 .heading {
     text-align: center;
     margin-top: 10px;
-}
-
-h1 {
-    font-family: 'Black Ops One', cursive;
-    font-size: 90px;
-    margin: 10px;
 }
 
 /* game menu*/

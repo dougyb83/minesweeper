@@ -17,7 +17,7 @@ $(document).ready(function () {
             mines = tiles.count;
             tileCount = tiles.count;  // set bombs to 8 or 9 respectively
         } else {
-            mines = 40;  // otherwise to 40 like your line 41 in script.js currently
+            mines = 40;  // otherwise set mines to 40 
             tileCount = 16;
         }
     }
