@@ -14,4 +14,10 @@ $(".play-button").click(function () {
 
 
 const modal = document.querySelector("[data-modal]")
+const closeButton = document.querySelector("[data-close-modal]")
+
 window.onload = modal.showModal();
+
+closeButton.addEventListener("click", () => {
+    modal.close()
+})
