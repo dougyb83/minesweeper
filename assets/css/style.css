@@ -1,5 +1,6 @@
 body {
     font-family: 'Play', sans-serif;
+    background-color: #008080;
 }
 /* home page */
 .heading {
@@ -48,7 +49,6 @@ footer {
 
 .socials {
     text-align: center;
-    position: absolute;
     bottom: 20px;
 }
 
@@ -234,6 +234,7 @@ footer {
         position: absolute;
         bottom: 85px;
         flex-direction: row;
+        width: 100vw;
         gap: 55px;
         font-size: 30px;
         z-index: 1;
@@ -244,6 +245,7 @@ footer {
         top: 40px;
         flex-direction: row;
         justify-content: center;
+        width: 100vw;
         gap: 170px;
         margin-top: 25px;
     }
@@ -288,13 +290,13 @@ footer {
 
     .controls {
         bottom: 90px;
-        gap: 12px;
+        gap: 30px;
     }
 
     .info-display {
         top: 125px;
         margin: 0;
-        gap: 50px;
+        gap: 45px;
     }
 
     .mine-count-container, .timer-container {
@@ -304,7 +306,7 @@ footer {
 
 @media screen and (max-width: 375px) {
     .controls {
-        gap: 5px;
+        gap: 20px;
     }
 
     .mine-count-container, .timer-container {
@@ -312,6 +314,9 @@ footer {
         font-size: 40px;
     }
 
+    .info-display {
+        gap: 22px;
+    }
     .info-display img {
         width: 40px;
         height: 40px;
