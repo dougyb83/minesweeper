@@ -286,7 +286,7 @@ footer {
     }
 
     .game-board-container {
-        top: 60px;
+        top: 70px;
     }
 
     .game-board {
@@ -298,7 +298,7 @@ footer {
     }
 
     .controls {
-        bottom: 90px;
+        bottom: 110px;
         gap: 30px;
     }
 
@@ -316,6 +316,7 @@ footer {
 @media screen and (max-width: 375px) {
     .controls {
         gap: 20px;
+        bottom: 125px;
     }
 
     .mine-count-container, .timer-container {
