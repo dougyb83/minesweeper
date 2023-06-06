@@ -5,7 +5,7 @@ body {
 
 h1, h2 {
     font-family: 'Black Ops One', cursive;
-    font-size: 90px;
+    font-size: 8vw;
     margin: 10px;
 }
 
@@ -32,8 +32,8 @@ dialog img{
 }
 
 .heading img {
-    width: 200px;
-    height: 200px;
+    width: 15vw;
+    height: 15vw;
 }
 
 /* game menu*/
@@ -44,11 +44,11 @@ dialog img{
 .play-button {
     width: 25%;
     font-family: 'Play', sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     border: 2px solid;
     border-radius: 10px;
     margin: 10px 30px 5px 30px;
-    padding: 60px 40px;
+    padding: 30px 40px;
     background-color: #444c54;
     color: #ffffff;
     box-shadow: 10px 10px 5px #aaaaaa;    
@@ -129,10 +129,10 @@ footer {
     font-size: 2em;
 }
 
-    .cell img {
-        width: 80%;
-        height: 80%;
-    }
+.cell img {
+    width: 80%;
+    height: 80%;
+}
 
 .disable {
     pointer-events: none;
@@ -212,6 +212,7 @@ footer {
 @media screen and (max-width: 1024px) {
     /* home page */
     .play-button {
+        font-size: 30px;
         padding: 20px 0;
     }
 
@@ -260,7 +261,7 @@ footer {
 @media screen and (max-width: 768px) {
     /* home page */
     .play-button {
-        font-size: 30px;
+        font-size: 25px;
         padding: 20px 0;
         margin: 10px 20px 5px 20px;
     }
@@ -322,15 +323,6 @@ footer {
 
 @media screen and (max-width: 425px) {
     /* home page */
-    .heading img {
-        width: 100px;
-        height: 100px;
-    }
-
-    h1 {
-        font-size: 45px;
-    }
-
     .play-button {
         display: flex;
         flex-direction: column;
@@ -371,10 +363,8 @@ footer {
 }
 
 @media screen and (max-width: 375px) {
-     /* home page */
-     h1 {
-        font-size: 35px;
-    }
+    /* home page */
+     
 
     /* game page */
     .smiley {
