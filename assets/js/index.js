@@ -5,19 +5,26 @@ $(".play-button").click(function () {
     // set tileCount to be equal to data-size
     let tileCount = parseInt($(this).data("size"));
     // setup the JSON stringify for localStorage to persist the game tile count between pages
-    let ls = {"count": tileCount};
+    let lsTile = {"count": tileCount};
     // create localStorage called "tileCount" and set it to the `ls` dict above
-    localStorage.setItem("tileCount", JSON.stringify(ls));
+    localStorage.setItem("tileCount", JSON.stringify(lsTile));
     // open game.html 
     window.location.href = "game.html";
 })
 
 
-const modal = document.querySelector("[data-modal]")
-const closeButton = document.querySelector("[data-close-modal]")
+// const welcomeModal = document.querySelector("[data-modal]")
+// const closeButton = document.querySelector("[data-close-modal]")
 
-window.onload = modal.showModal();
+// // Only display modal once
+// // if (!localStorage.getItem("displayModal")) {
+// //     window.onload = welcomeModal.showModal();
+// //     let lsModal = {"displayModal": true};
+// //     localStorage.setItem("displayModal", JSON.stringify(lsModal));
+// // }
 
-closeButton.addEventListener("click", () => {
-    modal.close()
-})
+// window.onload = welcomeModal.showModal();
+
+// closeButton.addEventListener("click", () => {
+//     welcomeModal.close();
+// })
