@@ -381,6 +381,7 @@ function tileClick() {
 
     if (document.querySelectorAll('#game-board .clicked').length === flatArr.length - mines) {
         clearInterval(timer);
+        disableClick()
         alert('Congratulations, You found all the mines!');
     }
 }
@@ -407,6 +408,13 @@ function placeFlag() {
     }
 }
 
+function disableClick() {
+    for (let i = 0; i < flatArr.length; i++) {
+        let tile = document.getElementById(flatArr[i])
+        tile.classList.add("disable");
+    }
+}
+
 function gameOver() {   
     gameOverCalled = true;
     clearInterval(timer);
@@ -417,10 +425,7 @@ function gameOver() {
         reveal.style.backgroundColor = "#e80202";
         reveal.innerHTML = mineImage;
     }
-    for (let i = 0; i < flatArr.length; i++) {
-        let tile = document.getElementById(flatArr[i])
-        tile.classList.add("disable");
-    }
+    disableClick();
 }
 
 function checkSurroundingSquares(row, col, type) {
