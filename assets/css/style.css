@@ -370,18 +370,24 @@ footer {
     .smiley {
         margin-top: 0;
     }
+
+    .game-board-container {
+        top: 20px;
+    }
+
     .controls {
         gap: 20px;
-        bottom: 125px;
+        bottom: 75px;
     }
 
     .mine-count-container, .timer-container {
-        width: 150px;
+        width: 120px;
         font-size: 40px;
     }
 
     .info-display {
-        gap: 22px;
+        top: 75px;
+        gap: 45px;
     }
 
     .info-display img {
