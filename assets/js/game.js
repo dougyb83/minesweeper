@@ -382,6 +382,7 @@ function tileClick() {
     if (document.querySelectorAll('#game-board .clicked').length === flatArr.length - mines) {
         clearInterval(timer);
         disableClick()
+        document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
         alert('Congratulations, You found all the mines!');
     }
 }

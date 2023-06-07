@@ -9,6 +9,12 @@ h1, h2 {
     margin: 10px;
 }
 
+h1 {
+    position: absolute;
+    left: 25vw;
+    top: 8vh;
+}
+
 /* modal */
 dialog {
     height: 70vh;
@@ -32,6 +38,9 @@ dialog img{
 }
 
 .heading img {
+    position: absolute;
+    left: 4vw;
+    top: 5vh;
     width: 15vw;
     height: 15vw;
 }
@@ -39,6 +48,12 @@ dialog img{
 /* game menu*/
 .game-menu {
     text-align: center;
+}
+
+.game-menu p {
+    font-size: 4vw;
+    font-weight: 600;
+    margin-top: 260px;
 }
 
 .play-button {
@@ -153,6 +168,10 @@ footer {
     margin: 10px;
 }
 
+.controls i:hover {
+    color: #000;
+}
+
 .controls, .info-display {
     height: 43vw;
 }
@@ -215,11 +234,28 @@ footer {
         font-size: 30px;
         padding: 20px 0;
     }
+    
+    .heading {
+        margin-top: 30px;
+    }
+
+    .heading img, h1{
+        position: static;
+    }
+
+    h1 {
+        font-size: 10vw;
+    }
 
     /* game page */
     .game-board {
         height: 60vw;
         width: 60vw;       
+    }
+
+    .game-menu p 
+    {
+        margin-top: 20px;
     }
 
     .controls {
@@ -263,7 +299,7 @@ footer {
     .play-button {
         font-size: 25px;
         padding: 20px 0;
-        margin: 10px 20px 5px 20px;
+        margin: 20px 20px 5px 20px;
     }
 
     /* game page */
@@ -327,6 +363,16 @@ footer {
         display: flex;
         flex-direction: column;
         width: 80vw;
+    }
+
+    .heading img {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .game-menu p {
+        margin-top: 10px;
+        font-size: 6vw;
     }
 
     /* game page */
