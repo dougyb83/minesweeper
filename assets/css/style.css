@@ -331,11 +331,12 @@ footer {
 
     /* game page */
     .smiley {
-        margin-top: 35px;
+        margin-top: 10px;
     }
 
     .game-board-container {
-        top: 70px;
+        margin-top: 40px;
+        /* top: 70px; */
     }
 
     .game-board {
@@ -352,7 +353,7 @@ footer {
     }
 
     .info-display {
-        top: 125px;
+        top: 100px;
         margin: 0;
         gap: 45px;
     }
@@ -371,23 +372,18 @@ footer {
         margin-top: 0;
     }
 
-    .game-board-container {
-        top: 20px;
-    }
-
     .controls {
         gap: 20px;
-        bottom: 75px;
+        bottom: 125px;
     }
 
     .mine-count-container, .timer-container {
-        width: 120px;
+        width: 150px;
         font-size: 40px;
     }
 
     .info-display {
-        top: 75px;
-        gap: 45px;
+        gap: 22px;
     }
 
     .info-display img {
