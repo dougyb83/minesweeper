@@ -1,5 +1,11 @@
 /* jshint esversion: 11, jquery: true */
 
+if ($(window).width() <= 425) {
+    $("#expert").html("Expert<br>12 x 12");
+    $("#expert").attr("data-size", "12");
+    $("#expert").attr("aria-label", "play 12x12 grid");
+ }
+
 // wait for play-button to be clicked, save variable to local storage and open game.html 
 $(".play-button").click(function () {
     // set tileCount to be equal to data-size

@@ -361,7 +361,11 @@ footer {
         text-align: center;
         font-size: 40px;
     }    
-      
+    
+    .cell {
+        font-size: 1.4em;
+    }
+
     .socials {
         bottom: 5px;
     }
@@ -393,8 +397,9 @@ footer {
     .smiley {
         margin-top: 10px;
     }
-
+    
     .game-board-container {
+
         margin-top: 40px;
     }
 

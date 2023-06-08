@@ -10,12 +10,18 @@ let seconds = 0;
 let timer;
 let gameOverCalled = false;
 
-$(document).ready(function () { 
+$(document).ready(function () {
     let tiles = JSON.parse(localStorage.getItem("tileCount"));  // get item from localStorage
     if (tiles) {
         if (tiles.count === 8 || tiles.count === 9) {
             mines = tiles.count;
-            tileCount = tiles.count;  // set bombs to 8 or 9 respectively
+            tileCount = tiles.count;  // set mines to 8
+        } else if (tiles.count === 9) {
+            mines = 10
+            tileCount = tiles.count;  // set mines to 10
+        } else if (tiles.count === 12) {
+            mines = 30
+            tileCount = tiles.count;  // set mines to 30
         } else {
             mines = 40;  // otherwise set mines to 40 
             tileCount = 16;
