@@ -78,10 +78,11 @@ dialog img{
 /* footer */
 footer {
     justify-content: center;
-    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 10vh;
+    padding-top: 2vh;
 }
 
 .socials {
@@ -102,9 +103,9 @@ footer {
 
 /* game page */
 .smiley {
-    margin-top: 10px;
     text-align: center;
     position: relative;
+    height: 13vh;
 }
 
 .smiley-button {
@@ -295,6 +296,11 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    /* footer */
+    footer {
+    position: fixed;
+    }
+
     /* home page */
     .play-button {
         font-size: 25px;
@@ -334,7 +340,7 @@ footer {
         justify-content: center;
         width: 100vw;
         gap: 170px;
-        margin-top: 25px;
+        margin-top: 10px;
     }
 
     .mine-count-container {
