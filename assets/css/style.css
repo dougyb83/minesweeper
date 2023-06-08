@@ -311,6 +311,7 @@ footer {
     /* game page */
     .smiley {
         z-index: 2;
+        height: 12vh;
     }
 
     .game-board-container {
@@ -318,8 +319,8 @@ footer {
     }
 
     .game-board {
-        height: 73vw;
-        width: 73vw;    
+        height: 65vw;
+        width: 65vw;    
         margin-top: 25px;
     }
 
@@ -335,7 +336,7 @@ footer {
 
     .info-display {
         position: absolute;
-        top: 40px;
+        top: 25px;
         flex-direction: row;
         justify-content: center;
         width: 100vw;
@@ -400,12 +401,12 @@ footer {
     }
 
     .controls {
-        bottom: 110px;
+        bottom: 75px;
         gap: 30px;
     }
 
     .info-display {
-        top: 100px;
+        top: 65px;
         margin: 0;
         gap: 45px;
     }
