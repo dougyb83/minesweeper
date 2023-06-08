@@ -420,6 +420,10 @@ footer {
     .mine-count-container, .timer-container {
         margin: 0;
     }
+
+    footer {
+        top: 12vh;
+    }
 }
 
 @media screen and (max-width: 375px) {
