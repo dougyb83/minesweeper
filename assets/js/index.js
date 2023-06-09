@@ -1,5 +1,6 @@
 /* jshint esversion: 11, jquery: true */
 
+// sets expert grid size to be smaller if played on screens 425px or below
 if ($(window).width() <= 425) {
     $("#expert").html("Expert<br>12 x 12");
     $("#expert").attr("data-size", "12");
