@@ -416,9 +416,9 @@ function tileClick() {
         disableClick() // calls function to disable all click events
         document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
         // sets the best time
-        if (seconds < bestTime) {
+        if (bestTime === 0 || seconds < bestTime) {
             bestTime = seconds;
-        }
+        } 
         // displays modal
         endGameModal.innerHTML = `<h3>You Won!</h3>Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
         endGameModal.showModal();
@@ -657,5 +657,44 @@ function checkBottomRight(row, col, type) {
     }
     else {
         checkTile(row, col, type); // check if tile is blank or a mine hint
+    }
+}
+
+function instantWin() {  
+    for (let i = 0; i < flatArr.length; i++) {
+        let id = flatArr[i];
+        let tile = document.getElementById(id);
+        let divId = id.split("-"); // store the id of the clicked tile with the hyphen removed
+        let row = Number(divId[0]); // take the first item of divId, convert to an int and store in the row variable
+        let col = Number(divId[1]); // take the second item of divId, convert to an int and store in the col variable
+        
+        if (mineLocation.includes(id)) {
+            continue
+        } else if (Number.isInteger(boardArr[row][col])) { // checks the boardArr if a mine hint is in that location
+            tile.innerHTML = boardArr[row][col]; // displays the mine hint on the tile
+            tile.style.backgroundColor = "#19ad45"; // 'reveals' the tile
+            tile.classList.add("clicked"); // add the .clicked class to the clicked tile
+        }
+        else {
+            // if tile is blank
+            tile.style.backgroundColor = "#19ad45"; // 'reveals' the tile   
+            tile.classList.add("clicked"); // add the .clicked class to the clicked tile 
+        }
+    }
+    // if the game is won
+    if (document.querySelectorAll('#game-board .clicked').length === flatArr.length - mines) { // checks that all tiles have been clicked excluding the mines
+        clearInterval(timer); // stops the timer
+        disableClick() // calls function to disable all click events
+        document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
+        // sets the best time
+        if (bestTime === 0 || seconds < bestTime) {
+            bestTime = seconds;
+        } 
+        // displays modal
+        endGameModal.innerHTML = `<h3>You Won!</h3>Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
+        endGameModal.showModal();
+        endGameModal.addEventListener("click", () => {
+            endGameModal.close();
+        })
     }
 }
