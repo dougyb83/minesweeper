@@ -9,8 +9,15 @@ let tileCount = 0;
 let rowLength = 0;
 let colLength = 0;
 let seconds = 0;
+let bestTime = 0;
 let timer;
 let gameOverCalled = false;
+
+// modal variables
+const howToPlayModal = document.getElementById("how-to-play-modal");
+const endGameModal = document.getElementById("end-game-modal");
+const closeButton = document.querySelector("[data-close-modal]");
+
 
 // when page is loaded
 $(document).ready(function () {
@@ -32,6 +39,10 @@ $(document).ready(function () {
             tileCount = 16;
         }
     }
+    // return to home page
+    $(".home").click(function () {
+        window.location.href = "index.html";
+    });
     // resets the game
     $(".reset").click(function () {
         gameOverCalled = false;
@@ -48,10 +59,14 @@ $(document).ready(function () {
         setMines(boardArr);
         placeMineHints();
     });
-    // return to home page
-    $(".home").click(function () {
-        window.location.href = "index.html";
-    });
+    // displays hot to play modal
+    $(".how-to-play").click(function () {
+        howToPlayModal.showModal();
+        // closes modal when button pressed
+        closeButton.addEventListener("click", () => {
+            howToPlayModal.close();
+        })
+    })
     // toggles volume icon
     $(".volume").click(function () {
         if (this.classList.contains("fa-volume-xmark")) {
@@ -400,7 +415,16 @@ function tileClick() {
         clearInterval(timer); // stops the timer
         disableClick() // calls function to disable all click events
         document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
-        alert('Congratulations, You found all the mines!');
+        // sets the best time
+        if (seconds < bestTime) {
+            bestTime = seconds;
+        }
+        // displays modal
+        endGameModal.innerHTML = `<h3>You Won!</h3>Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
+        endGameModal.showModal();
+        endGameModal.addEventListener("click", () => {
+            endGameModal.close();
+        })
     }
 }
 

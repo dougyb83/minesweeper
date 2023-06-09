@@ -16,6 +16,18 @@ h1 {
 }
 
 /* modal */
+#end-game-modal {
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+}
+
+/* .how-to-play {
+    margin-top: 10px;
+    text-align: center;
+    width: 60%;
+}
+
 dialog {
     height: 70vh;
     width: 70vw;
@@ -30,7 +42,8 @@ dialog img{
     position: absolute;
     top: 20px;
     right: 5px;
-}
+} */
+
 /* home page */
 .heading {
     text-align: center;
@@ -67,12 +80,6 @@ dialog img{
     background-color: #444c54;
     color: #ffffff;
     box-shadow: 10px 10px 5px #aaaaaa;    
-}
-
-.how-to-play {
-    margin-top: 10px;
-    text-align: center;
-    width: 60%;
 }
 
 /* footer */
@@ -195,6 +202,7 @@ footer {
 }
 
 .mine-count-container {
+    background-color: silver;
     width: 220px;
     height: 100px;
     border: 3px solid #33322e;
@@ -215,6 +223,7 @@ footer {
 }
 
 .timer-container {
+    background-color: silver;
     width: 220px;
     height: 100px;
     border: 3px solid #33322e;

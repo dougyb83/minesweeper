@@ -18,11 +18,12 @@
 <body>
     <main>
         <!-- Modal with how to play instructions -->
+        <dialog data-modal id="end-game-modal"></dialog>
         <dialog data-modal id="how-to-play-modal">
             <h2>How to play</h2>
             <p>First, choose your difficulty!<br>
                 Select 'Easy' for an 8 X 8 grid with 8 mines!<br>
-                Select 'Meduin' for a 9 X 9 grid with 9 mines!<br>
+                Select 'Meduim' for a 9 X 9 grid with 9 mines!<br>
                 Select 'Expert' for a 16 X 16 grid with 40 mines!<br>
                 The object of the game is to uncover all the tiles that do not have a mine underneath.<br>
                 Start by clicking any random tile - If you click on a mine, it's GAME OVER.<br>
@@ -33,6 +34,7 @@
                 When you see a number, that number represents how many Mines are surrounding that square.<br>
                 When you think you have identified a mine <strong>Right Click</strong> on the tile to place a
                 flag on it.</p>
+                <button data-close-modal>Close</button>
         </dialog>
         <!-- Game reset button -->
         <section class="container-fluid smiley" aria-label="reset">
@@ -51,7 +53,7 @@
                     <br>
                     <i class="reset fa-solid fa-rotate-right" aria-label="reset"></i>
                     <br>
-                    <i class="fa-regular fa-circle-question" aria-label="how to play"></i>
+                    <i class="how-to-play fa-regular fa-circle-question" aria-label="how to play"></i>
                     <br>
                     <i class="volume fa-solid fa-volume-xmark" aria-label="volume"></i>                    
                 </div>
