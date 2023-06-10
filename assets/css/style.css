@@ -48,6 +48,7 @@ dialog img{
 .heading {
     text-align: center;
     margin-top: 10px;
+    text-shadow: -3px -3px 0px #aaaaaa;
 }
 
 .heading img {
@@ -79,7 +80,7 @@ dialog img{
     padding: 30px 40px;
     background-color: #444c54;
     color: #ffffff;
-    box-shadow: 10px 10px 5px #aaaaaa;    
+    box-shadow: 10px 10px 16px #aaaaaa;    
 }
 
 /* footer */
@@ -140,8 +141,9 @@ footer {
     max-height: 700px;
     align-content: center;
     justify-content: center;
-    border: 10px solid #2e2e33;
-    border-radius: 5px;
+    border: 5px outset #2e2e33;
+    box-shadow: rgba(0,0,0,0.4) 0px 0px 15px 14px;
+    border-radius: 15px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -181,6 +183,7 @@ footer {
 
 .controls i {
     margin: 10px;
+    text-shadow: 2px 2px 2px silver;
 }
 
 .controls i:hover {
@@ -201,15 +204,16 @@ footer {
     margin-left: 25px;
 }
 
-.mine-count-container {
+.mine-count-container, .timer-container {
     background-color: silver;
     width: 220px;
     height: 100px;
-    border: 3px solid #33322e;
+    border: 3px outset #33322e;
     border-radius: 15px;
+    box-shadow: rgba(0,0,0,0.4) 0px 0px 15px 9px inset;
     margin: 10px;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding-left: 10px;
@@ -223,19 +227,7 @@ footer {
 }
 
 .timer-container {
-    background-color: silver;
-    width: 220px;
-    height: 100px;
-    border: 3px solid #33322e;
-    border-radius: 15px;
     font-size: 80px;
-    margin: 10px;
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .timer {

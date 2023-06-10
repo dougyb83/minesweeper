@@ -144,7 +144,7 @@ function placeMineHints() {
     for (let row = 0; row < rowLength; row++) {
         // iterates over each column within the row
         for (let col = 0; col < colLength; col++) {
-            // clear boardArr contents
+            // set each item in boardArr to an empty string
             boardArr[row][col] = "";
             // if current tile is top left corner
             if (row == 0 && col == 0) {
@@ -442,11 +442,13 @@ function placeFlag() {
     }  
     if (this.innerHTML === "🚩") { // if flag already placed then remove the flag
         this.innerHTML = "";
+        $(this).css("text-shadow", "none");
         this.addEventListener('click', tileClick); // add right click event listenter back onto the tile
         document.getElementsByClassName("mine-count")[0].innerHTML ++; // increase mine count display by 1
     }
     else {
         this.innerHTML = "🚩"; // place a flag if tile hasnt been revealed and doesnt have a flag
+        $(this).css("text-shadow", "-4px -4px 5px black");
         this.removeEventListener('click', tileClick); // disable right click on this tile
         document.getElementsByClassName("mine-count")[0].innerHTML --; // decrease mine count display by 1
     }
