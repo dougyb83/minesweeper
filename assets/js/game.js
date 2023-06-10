@@ -22,23 +22,27 @@ const closeButton = document.querySelector("[data-close-modal]");
 // when page is loaded
 $(document).ready(function () {
     // get object from local storage
-    let tiles = JSON.parse(localStorage.getItem("tileCount"));  // get item from localStorage
+    ls = JSON.parse(localStorage.getItem("gameData"));  // get item from localStorage
     // if local storage exists extract data and set variables
-    if (tiles) {
-        if (tiles.count === 8) {
-            mines = tiles.count; // set mines to 8
-            tileCount = tiles.count; // set tileCount, used to set grid size
-        } else if (tiles.count === 9) {
+    if (ls.count) {
+        if (ls.count === 8) {
+            mines = ls.count; // set mines to 8
+            tileCount = ls.count; // set tileCount, used to set grid size
+        } else if (ls.count === 9) {
             mines = 10 // set mines to 10
-            tileCount = tiles.count;  
-        } else if (tiles.count === 12) {
+            tileCount = ls.count;  
+        } else if (ls.count === 12) {
             mines = 30 // set mines to 30
-            tileCount = tiles.count;  
+            tileCount = ls.count;  
         } else {
             mines = 40;  // otherwise set mines to 40 
             tileCount = 16;
         }
     }
+    // closes modal when button pressed
+    closeButton.addEventListener("click", () => {
+        howToPlayModal.close();
+    })
     // return to home page
     $(".home").click(function () {
         window.location.href = "index.html";
@@ -62,10 +66,6 @@ $(document).ready(function () {
     // displays hot to play modal
     $(".how-to-play").click(function () {
         howToPlayModal.showModal();
-        // closes modal when button pressed
-        closeButton.addEventListener("click", () => {
-            howToPlayModal.close();
-        })
     })
     // toggles volume icon
     $(".volume").click(function () {
@@ -393,7 +393,7 @@ function tileClick() {
     let row = Number(divId[0]); // take the first item of divId, convert to an int and store in the row variable
     let col = Number(divId[1]); // take the second item of divId, convert to an int and store in the col variable
     if (checkForMine(row, col)) { // if the tile has a mine, call gameOver
-        gameOver();
+        gameOver(this);
     }
     else if (Number.isInteger(boardArr[row][col])) { // checks the boardArr if a mine hint is in that location
         this.innerHTML = boardArr[row][col]; // displays the mine hint on the tile
@@ -463,20 +463,45 @@ function disableClick() {
 }
 
 // ends the game
-function gameOver() {   
+function gameOver(currentTile) {   
     gameOverCalled = true;
     clearInterval(timer); // stops the timer
     document.getElementsByClassName("smiley-button")[0].innerHTML = "😖";
-    let mineImage = `<img src="assets/images/minesweeper-logo.png" alt="image of a mine">`;
-    // reveals all the mines
-    for (let j = 0; j < mineLocation.length; j++) { 
-        let reveal = document.getElementById(mineLocation[j]);
-        reveal.style.backgroundColor = "#e80202";
-        reveal.innerHTML = mineImage;
-    }
+    // disables click event on the game board
     disableClick();
+    // reveal all mines
+    revealMines(currentTile);
 }
 
+// reveals all mines
+function revealMines(currentTile) {
+    let resetButtons = document.getElementsByClassName("reset");
+    for (let i of resetButtons) { // disable reset buttons while revealing mines
+        i.classList.add("disable");
+    }
+    let mineImage = `<img src="assets/images/minesweeper-logo.png" alt="image of a mine">`;
+    currentTile.style.backgroundColor = "#e80202"; // reveal the clicked tile
+    currentTile.innerHTML = mineImage;
+    let index = mineLocation.indexOf(currentTile.id); // in mineLocation array,get the index of the clicked tile
+    mineLocation.splice(index, 1) // remove clicked tile item from array
+
+    let loopCount = 0;
+    setTimeout(function() { // sets a delay before revealing the rest of the mines
+        for (let j = 0; j < mineLocation.length; j++) { 
+            setTimeout(function() { // sets a delay between revealing each mine.
+                let reveal = document.getElementById(mineLocation[j]);
+                reveal.style.backgroundColor = "#e80202";
+                reveal.innerHTML = mineImage;
+                loopCount++;
+                if (loopCount === mineLocation.length) {
+                    for (let i of resetButtons) { // enable reset buttons after revealing mines
+                        i.classList.remove("disable");
+                    }
+                }
+            }, j * 400);
+        }
+    }, 1 * 500); 
+}
 
 function checkSurroundingTiles(row, col, type) {
     // if current tile is top left corner
