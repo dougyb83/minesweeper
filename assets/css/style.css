@@ -15,7 +15,40 @@ h1 {
     top: 8vh;
 }
 
-/* modal */
+/* footer */
+.home-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: auto;
+}
+
+footer {
+    justify-content: center;
+    position: relative;
+    top: 5vh;
+    width: 100%;
+    height: 10vh;
+    padding-top: 2vh;
+}
+
+.socials {
+    text-align: center;
+    bottom: 20px;
+}
+
+.socials i {
+    color: #0c0c0c;
+    font-size: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.socials i:hover {
+    color: #33322e;
+}
+
+/* modals */
 #end-game-modal {
     text-align: center;
     border: none;
@@ -81,39 +114,6 @@ dialog img{
     background-color: #444c54;
     color: #ffffff;
     box-shadow: 10px 10px 16px #aaaaaa;    
-}
-
-/* footer */
-.home-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    top: auto;
-}
-
-footer {
-    justify-content: center;
-    position: relative;
-    top: 5vh;
-    width: 100%;
-    height: 10vh;
-    padding-top: 2vh;
-}
-
-.socials {
-    text-align: center;
-    bottom: 20px;
-}
-
-.socials i {
-    color: #0c0c0c;
-    font-size: 40px;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-.socials i:hover {
-    color: #33322e;
 }
 
 /* game page */
@@ -267,11 +267,13 @@ footer {
         margin-top: 20px;
     }
 
+    /* controls */
     .controls {
         margin-right: 0;
         height: 60vw;
     }
 
+    /* game on screen display */
     .info-display {
         margin: 0;
         gap: 20px;
@@ -308,6 +310,14 @@ footer {
     footer {
         top: 8vh;
     }
+    
+    .socials {
+        bottom: 5px;
+    }
+
+    .socials i {
+        font-size: 30px;
+    }
 
     /* home page */
     .play-button {
@@ -322,6 +332,7 @@ footer {
         height: 12vh;
     }
 
+    /* game board */
     .game-board-container {
         z-index: 2;
     }
@@ -330,8 +341,13 @@ footer {
         height: 65vw;
         width: 65vw;    
         margin-top: 25px;
+    }    
+
+    .cell {
+        font-size: 1.4em;
     }
 
+    /* controls */
     .controls {
         position: absolute;
         bottom: 70px;
@@ -342,6 +358,7 @@ footer {
         z-index: 1;
     }
 
+    /* game on screen display */
     .info-display {
         position: absolute;
         top: 4vh;
@@ -362,21 +379,14 @@ footer {
         text-align: center;
         font-size: 40px;
     }    
-    
-    .cell {
-        font-size: 1.4em;
-    }
-
-    .socials {
-        bottom: 5px;
-    }
-
-    .socials i {
-        font-size: 30px;
-    }
 }
 
 @media screen and (max-width: 425px) {
+    /* footer */
+    footer {
+        top: 12vh;
+    }
+
     /* home page */
     .play-button {
         display: flex;
@@ -399,8 +409,8 @@ footer {
         margin-top: 10px;
     }
     
+    /* game board */
     .game-board-container {
-
         margin-top: 40px;
     }
 
@@ -412,11 +422,13 @@ footer {
         border: 2px solid;   
     }
 
+    /* controls */
     .controls {
         bottom: 75px;
         gap: 30px;
     }
 
+    /* game on screen display */
     .info-display {
         top: 11vh;
         margin: 0;
@@ -425,10 +437,6 @@ footer {
 
     .mine-count-container, .timer-container {
         margin: 0;
-    }
-
-    footer {
-        top: 12vh;
     }
 }
 
@@ -441,11 +449,13 @@ footer {
         margin-top: 0;
     }
 
+    /* controls */
     .controls {
         gap: 20px;
         bottom: 125px;
     }
 
+    /* game on screen display */
     .mine-count-container, .timer-container {
         width: 150px;
         font-size: 40px;
