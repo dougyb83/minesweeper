@@ -5,14 +5,14 @@ body {
 
 h1, h2 {
     font-family: 'Black Ops One', cursive;
-    font-size: 8vw;
-    margin: 10px;
 }
 
 h1 {
     position: absolute;
     left: 25vw;
     top: 8vh;
+    font-size: 8vw;
+    margin: 10px;
 }
 
 /* footer */
@@ -53,29 +53,20 @@ footer {
     text-align: center;
     border: none;
     border-radius: 5px;
+    padding: 35px;
 }
 
-/* .how-to-play {
-    margin-top: 10px;
+#how-to-play-modal {
     text-align: center;
-    width: 60%;
 }
 
-dialog {
-    height: 70vh;
-    width: 70vw;
-    padding-top: 45px;
+#how-to-play-modal ul {
+    text-align: left;
 }
 
-dialog h3 {
-    margin-top: 60px;
+#how-to-play-modal button {
+    font-size: 2em;
 }
-
-dialog img{
-    position: absolute;
-    top: 20px;
-    right: 5px;
-} */
 
 /* home page */
 .heading {
