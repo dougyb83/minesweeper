@@ -18,6 +18,11 @@ const howToPlayModal = document.getElementById("how-to-play-modal");
 const endGameModal = document.getElementById("end-game-modal");
 const closeButton = document.querySelector("[data-close-modal]");
 
+// sounds
+const revealTileSound = document.getElementById("reveal-tile-sound");
+const mineExplodeSound = document.getElementById("mine-explode-sound");
+const flagInSound = document.getElementById("flag-in-sound");
+const flagOutSound = document.getElementById("flag-out-sound");
 
 // when page is loaded
 $(document).ready(function () {
@@ -400,11 +405,13 @@ function tileClick() {
         gameOver(this);
     }
     else if (Number.isInteger(boardArr[row][col])) { // checks the boardArr if a mine hint is in that location
+        revealTileSound.cloneNode(true).play();
         this.innerHTML = boardArr[row][col]; // displays the mine hint on the tile
         this.style.backgroundColor = "#19ad45"; // 'reveals' the tile
     }
     else {
         // if tile is blank
+        revealTileSound.cloneNode(true).play();
         this.style.backgroundColor = "#19ad45"; // 'reveals' the tile
         checkSurroundingTiles(row, col, "blank"); // calls function to check for more blanks and reveals them         
     }
@@ -451,13 +458,15 @@ function placeFlag() {
     }  
     if (this.innerHTML === "🚩") { // if flag already placed then remove the flag
         this.classList.remove("flagged"); // remove .flagged class from element
+        flagoutSound.cloneNode(true).play();
         this.innerHTML = "";
         $(this).css("text-shadow", "none");
         this.addEventListener('click', tileClick); // add right click event listenter back onto the tile
         document.getElementsByClassName("mine-count")[0].innerHTML ++; // increase mine count display by 1
     }
-    else {
+    else {        
         this.classList.add("flagged"); // add .flagged class from element
+        flagInSound.cloneNode(true).play();
         this.innerHTML = "🚩"; // place a flag if tile hasnt been revealed and doesnt have a flag
         $(this).css("text-shadow", "-4px -4px 5px black");
         this.removeEventListener('click', tileClick); // disable right click on this tile
@@ -493,6 +502,7 @@ function revealMines(currentTile) {
     let mineImage = `<img src="assets/images/minesweeper-logo.png" alt="image of a mine">`;
     currentTile.style.backgroundColor = "#e80202"; // reveal the clicked tile
     currentTile.innerHTML = mineImage;
+    mineExplodeSound.cloneNode(true).play();
     let index = mineLocation.indexOf(currentTile.id); // in mineLocation array,get the index of the clicked tile
     mineLocation.splice(index, 1) // remove clicked tile item from array
 
@@ -503,6 +513,7 @@ function revealMines(currentTile) {
                 let reveal = document.getElementById(mineLocation[j]);
                 reveal.style.backgroundColor = "#e80202";
                 reveal.innerHTML = mineImage;
+                mineExplodeSound.cloneNode(true).play();
                 loopCount++;
                 if (loopCount === mineLocation.length) {
                     for (let i of resetButtons) { // enable reset buttons after revealing mines
