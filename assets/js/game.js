@@ -12,6 +12,7 @@ let seconds = 0;
 let bestTime = 0;
 let timer;
 let gameOverCalled = false;
+let mute = true;
 
 // modal variables
 const howToPlayModal = document.getElementById("how-to-play-modal");
@@ -80,9 +81,11 @@ $(document).ready(function () {
     $(".volume").click(function () {
         if (this.classList.contains("fa-volume-xmark")) {
             $(this).removeClass("fa-volume-xmark").addClass("fa-volume-high");
+            mute = false;
         }
         else {
             $(this).removeClass("fa-volume-high").addClass("fa-volume-xmark");
+            mute = true;
         }
         
     });
@@ -405,13 +408,17 @@ function tileClick() {
         gameOver(this);
     }
     else if (Number.isInteger(boardArr[row][col])) { // checks the boardArr if a mine hint is in that location
-        revealTileSound.cloneNode(true).play();
+        if (!mute) {
+            revealTileSound.cloneNode(true).play();
+        }
         this.innerHTML = boardArr[row][col]; // displays the mine hint on the tile
         this.style.backgroundColor = "#19ad45"; // 'reveals' the tile
     }
     else {
         // if tile is blank
-        revealTileSound.cloneNode(true).play();
+        if (!mute) {
+            revealTileSound.cloneNode(true).play();
+        }
         this.style.backgroundColor = "#19ad45"; // 'reveals' the tile
         checkSurroundingTiles(row, col, "blank"); // calls function to check for more blanks and reveals them         
     }
@@ -466,7 +473,9 @@ function placeFlag() {
     }
     else {        
         this.classList.add("flagged"); // add .flagged class from element
-        flagInSound.cloneNode(true).play();
+        if (!mute) {
+            flagInSound.cloneNode(true).play();
+        }
         this.innerHTML = "🚩"; // place a flag if tile hasnt been revealed and doesnt have a flag
         $(this).css("text-shadow", "-4px -4px 5px black");
         this.removeEventListener('click', tileClick); // disable right click on this tile
@@ -513,7 +522,9 @@ function revealMines(currentTile) {
                 let reveal = document.getElementById(mineLocation[j]);
                 reveal.style.backgroundColor = "#e80202";
                 reveal.innerHTML = mineImage;
-                mineExplodeSound.cloneNode(true).play();
+                if (!mute) {
+                    mineExplodeSound.cloneNode(true).play();
+                }
                 loopCount++;
                 if (loopCount === mineLocation.length) {
                     for (let i of resetButtons) { // enable reset buttons after revealing mines
