@@ -62,6 +62,10 @@ footer {
     right: -18px;
 }
 
+#end-game-modal button:focus {
+    outline: none;
+}
+
 #how-to-play-modal {
     text-align: center;
 }

@@ -438,7 +438,11 @@ function tileClick() {
             bestTime = seconds;
         } 
         // displays modal
-        endGameModal.innerHTML += `Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
+        endGameModal.innerHTML = `
+        <button type="button" class="close" data-close-modal aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h3>You Won!</h3>Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
         endGameModal.showModal();
         // closes modal when button pressed
         closeButton.addEventListener("click", () => {
@@ -753,7 +757,11 @@ function instantWin() {
             bestTime = seconds;
         } 
         // displays modal
-        endGameModal.innerHTML += `Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
+        endGameModal.innerHTML = `
+        <button type="button" class="close" data-close-modal aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h3>You Won!</h3>Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
         endGameModal.showModal();
         endGameModal.addEventListener("click", () => {
             endGameModal.close();
