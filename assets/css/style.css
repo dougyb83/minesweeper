@@ -49,10 +49,7 @@ footer {
 }
 
 /* modals */
-#end-game-modal {
-    text-align: center;
-    border: none;
-    border-radius: 5px;
+#end-game-modal {    
     padding: 35px;
 }
 
@@ -66,8 +63,22 @@ footer {
     outline: none;
 }
 
+#how-to-play-modal, #end-game-modal {
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    border: 3px outset #33322e;
+    box-shadow: rgba(0,0,0,0.4) 0px 0px 9px 5px inset;
+    background-color: silver;
+}
+
 #how-to-play-modal {
     text-align: center;
+    border: none;
+    border-radius: 10px;
+    border: 3px outset #33322e;
+    box-shadow: rgba(0,0,0,0.4) 0px 0px 15px 5px inset;
+    background-color: silver;
 }
 
 #how-to-play-modal ul {
