@@ -363,6 +363,10 @@ footer {
         left: 265px;
     }
 
+    #right-click {
+        display: none;
+    }
+
     /* game page */
     .smiley {
         z-index: 2;
@@ -416,6 +420,12 @@ footer {
         text-align: center;
         font-size: 40px;
     }    
+}
+
+@media screen and (min-width: 768px) {
+    #long-press {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 425px) {

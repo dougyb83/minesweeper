@@ -28,17 +28,17 @@ const flagOutSound = document.getElementById("flag-out-sound");
 // when page is loaded
 $(document).ready(function () {
     // get object from local storage
-    ls = JSON.parse(localStorage.getItem("gameData"));  // get item from localStorage
+    let ls = JSON.parse(localStorage.getItem("gameData"));  // get item from localStorage
     // if local storage exists extract data and set variables
     if (ls.count) {
         if (ls.count === 8) {
             mines = ls.count; // set mines to 8
             tileCount = ls.count; // set tileCount, used to set grid size
         } else if (ls.count === 9) {
-            mines = 10 // set mines to 10
+            mines = 10; // set mines to 10
             tileCount = ls.count;  
         } else if (ls.count === 12) {
-            mines = 30 // set mines to 30
+            mines = 30; // set mines to 30
             tileCount = ls.count;  
         } else {
             mines = 40;  // otherwise set mines to 40 
@@ -48,11 +48,11 @@ $(document).ready(function () {
     // closes modal when button pressed
     closeButton.addEventListener("click", () => {
         howToPlayModal.close();
-    })
+    });
     // closes modal by clicking anywhere on screen
     howToPlayModal.addEventListener("click", () => {
         howToPlayModal.close();
-    })
+    });
     // return to home page
     $(".home").click(function () {
         window.location.href = "index.html";
@@ -76,7 +76,7 @@ $(document).ready(function () {
     // displays hot to play modal
     $(".how-to-play").click(function () {
         howToPlayModal.showModal();
-    })
+    });
     // toggles volume icon
     $(".volume").click(function () {
         if (this.classList.contains("fa-volume-xmark")) {
@@ -431,7 +431,7 @@ function tileClick() {
     // if the game is won
     if (document.querySelectorAll('#game-board .clicked').length === flatArr.length - mines) { // checks that all tiles have been clicked excluding the mines
         clearInterval(timer); // stops the timer
-        disableClick() // calls function to disable all click events
+        disableClick(); // calls function to disable all click events
         document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
         // sets the best time
         if (bestTime === 0 || seconds < bestTime) {
@@ -442,16 +442,16 @@ function tileClick() {
         <button type="button" class="close" data-close-modal aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
-        <h3>You Won!</h3>Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
+        <h3>You Won!</h3>Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`;
         endGameModal.showModal();
         // closes modal when button pressed
         closeButton.addEventListener("click", () => {
             endGameModal.close();
-        })
+        });
         // closes modal by clcicking anywhere on screen
         endGameModal.addEventListener("click", () => {
             endGameModal.close();
-        })
+        });
     }
 }
 
@@ -469,7 +469,9 @@ function placeFlag() {
     }  
     if (this.innerHTML === "🚩") { // if flag already placed then remove the flag
         this.classList.remove("flagged"); // remove .flagged class from element
-        flagoutSound.cloneNode(true).play(); // play sound if not mute if false
+        if (!mute) {
+            flagOutSound.cloneNode(true).play(); // play sound if not mute if false
+        }
         this.innerHTML = "";
         $(this).css("text-shadow", "none");
         this.addEventListener('click', tileClick); // add right click event listenter back onto the tile
@@ -490,7 +492,7 @@ function placeFlag() {
 // disables click events on all tiles
 function disableClick() {
     for (let i = 0; i < flatArr.length; i++) {
-        let tile = document.getElementById(flatArr[i])
+        let tile = document.getElementById(flatArr[i]);
         tile.classList.add("disable");
     }
 }
@@ -519,7 +521,7 @@ function revealMines(currentTile) {
         mineExplodeSound.cloneNode(true).play(); // play sound if not mute if false
     }
     let index = mineLocation.indexOf(currentTile.id); // in mineLocation array,get the index of the clicked tile
-    mineLocation.splice(index, 1) // remove clicked tile item from array
+    mineLocation.splice(index, 1); // remove clicked tile item from array
 
     let loopCount = 0;
     setTimeout(function() { // sets a delay before revealing the rest of the mines
@@ -735,7 +737,7 @@ function instantWin() {
         let col = Number(divId[1]); // take the second item of divId, convert to an int and store in the col variable
         
         if (mineLocation.includes(id)) {
-            continue
+            continue;
         } else if (Number.isInteger(boardArr[row][col])) { // checks the boardArr if a mine hint is in that location
             tile.innerHTML = boardArr[row][col]; // displays the mine hint on the tile
             tile.style.backgroundColor = "#19ad45"; // 'reveals' the tile
@@ -750,7 +752,7 @@ function instantWin() {
     // if the game is won
     if (document.querySelectorAll('#game-board .clicked').length === flatArr.length - mines) { // checks that all tiles have been clicked excluding the mines
         clearInterval(timer); // stops the timer
-        disableClick() // calls function to disable all click events
+        disableClick(); // calls function to disable all click events
         document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
         // sets the best time
         if (bestTime === 0 || seconds < bestTime) {
@@ -761,10 +763,10 @@ function instantWin() {
         <button type="button" class="close" data-close-modal aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
-        <h3>You Won!</h3>Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
+        <h3>You Won!</h3>Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`;
         endGameModal.showModal();
         endGameModal.addEventListener("click", () => {
             endGameModal.close();
-        })
+        });
     }
 }

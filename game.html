@@ -29,9 +29,9 @@
                 <li>You must uncover all the tiles without hitting a mine - Otherwise, it's <strong>GAME OVER!</strong></li>
                 <li>Tiles will have either a <strong>Mine</strong>, a <strong>Hint</strong>, or a <strong>Blank</strong> space underneath!</li>
                 <li>If you reveal a blank space, all the surrounding blanks will also be revealed!</li>
-                <li>If you reveal a number, that number tells you exactly how many mines are in the 8 surrounding tiles!</li>
+                <li>If you reveal a hint, that number will indicate exactly how many mines are in the 8 surrounding tiles!</li>
                 <li>Place flags where you think there is a mine (these are just for your reference)!</li>
-                <li><strong>Right Click</strong> on the tile to add or remove a flag!</li>
+                <li><strong id="long-press">Long Press</strong><strong id="right-click">Right Click</strong> on the tile to add or remove a flag!</li>
             </ul>
         </dialog>
         <!-- Game reset button -->
@@ -97,16 +97,16 @@
             </div>
         </footer>
         <audio id="reveal-tile-sound">
-            <source src="assets/sounds/reveal-tile.wav" type="audio/wav" />
+            <source src="assets/sounds/reveal-tile.wav" type="audio/wav">
         </audio>
         <audio id="mine-explode-sound">
-            <source src="assets/sounds/mine-explode.wav" type="audio/wav" />
+            <source src="assets/sounds/mine-explode.wav" type="audio/wav">
         </audio>
         <audio id="flag-in-sound">
-            <source src="assets/sounds/flag-in.ogg" type="audio/ogg" />
+            <source src="assets/sounds/flag-in.ogg" type="audio/ogg">
         </audio>
         <audio id="flag-out-sound">
-            <source src="assets/sounds/flag-out.ogg" type="audio/ogg" />
+            <source src="assets/sounds/flag-out.ogg" type="audio/ogg">
         </audio>
     </main>
     <script src="https://code.jquery.com/jquery-3.2.1.js"
