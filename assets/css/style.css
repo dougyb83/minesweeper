@@ -56,6 +56,12 @@ footer {
     padding: 35px;
 }
 
+#end-game-modal span {
+    position: relative;
+    top: -26px;
+    right: -18px;
+}
+
 #how-to-play-modal {
     text-align: center;
 }

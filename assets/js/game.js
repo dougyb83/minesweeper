@@ -43,6 +43,10 @@ $(document).ready(function () {
     closeButton.addEventListener("click", () => {
         howToPlayModal.close();
     })
+    // closes modal by clicking anywhere on screen
+    howToPlayModal.addEventListener("click", () => {
+        howToPlayModal.close();
+    })
     // return to home page
     $(".home").click(function () {
         window.location.href = "index.html";
@@ -420,8 +424,13 @@ function tileClick() {
             bestTime = seconds;
         } 
         // displays modal
-        endGameModal.innerHTML = `<h3>You Won!</h3>Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
+        endGameModal.innerHTML += `Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
         endGameModal.showModal();
+        // closes modal when button pressed
+        closeButton.addEventListener("click", () => {
+            endGameModal.close();
+        })
+        // closes modal by clcicking anywhere on screen
         endGameModal.addEventListener("click", () => {
             endGameModal.close();
         })
@@ -441,12 +450,14 @@ function placeFlag() {
         return;
     }  
     if (this.innerHTML === "🚩") { // if flag already placed then remove the flag
+        this.classList.remove("flagged"); // remove .flagged class from element
         this.innerHTML = "";
         $(this).css("text-shadow", "none");
         this.addEventListener('click', tileClick); // add right click event listenter back onto the tile
         document.getElementsByClassName("mine-count")[0].innerHTML ++; // increase mine count display by 1
     }
     else {
+        this.classList.add("flagged"); // add .flagged class from element
         this.innerHTML = "🚩"; // place a flag if tile hasnt been revealed and doesnt have a flag
         $(this).css("text-shadow", "-4px -4px 5px black");
         this.removeEventListener('click', tileClick); // disable right click on this tile
@@ -585,7 +596,7 @@ function checkForMine(row, col) {
 function checkTile(row, col, type) {
     let id = row.toString() + "-" + col.toString(); //create id string using row and col data
     let tile = document.getElementById(id);
-    if (tile.classList.contains("clicked")) { // if tile already clicked, do nothing
+    if (tile.classList.contains("clicked") || tile.classList.contains("flagged")) { // if tile already clicked or has been flagged, do nothing
         return;
     }
     else if (type === "blank" && boardArr[row][col] === "") { // checks boardArr if position is blank
@@ -718,7 +729,7 @@ function instantWin() {
             bestTime = seconds;
         } 
         // displays modal
-        endGameModal.innerHTML = `<h3>You Won!</h3>Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
+        endGameModal.innerHTML += `Your time: ${seconds} seconds<br> Best time: ${bestTime} seconds`
         endGameModal.showModal();
         endGameModal.addEventListener("click", () => {
             endGameModal.close();
