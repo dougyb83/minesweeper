@@ -498,7 +498,7 @@ function revealMines(currentTile) {
                         i.classList.remove("disable");
                     }
                 }
-            }, j * 400);
+            }, j * 200);
         }
     }, 1 * 500); 
 }
