@@ -9,10 +9,11 @@ let tileCount = 0;
 let rowLength = 0;
 let colLength = 0;
 let seconds = 0;
-let bestTime = 0;
+let bestTime;
 let timer;
 let gameOverCalled = false;
 let mute = true;
+let ls;
 
 // modal variables
 const howToPlayModal = document.getElementById("how-to-play-modal");
@@ -28,7 +29,7 @@ const flagOutSound = document.getElementById("flag-out-sound");
 // when page is loaded
 $(document).ready(function () {
     // get object from local storage
-    let ls = JSON.parse(localStorage.getItem("gameData"));  // get item from localStorage
+    ls = JSON.parse(localStorage.getItem("gameData"));  // get item from localStorage
     // if local storage exists extract data and set variables
     if (ls.count) {
         if (ls.count === 8) {
@@ -433,9 +434,15 @@ function tileClick() {
         clearInterval(timer); // stops the timer
         disableClick(); // calls function to disable all click events
         document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
+        // get bestTime from local storage
+        bestTime = ls.bestTime;
         // sets the best time
         if (bestTime === 0 || seconds < bestTime) {
             bestTime = seconds;
+            // store bestTime in the ls dict
+            ls.bestTime = seconds;
+            // save the data to local storage so bestTime remains between page visits
+            localStorage.setItem("gameData", JSON.stringify(ls));
         } 
         // displays modal
         endGameModal.innerHTML = `
@@ -754,9 +761,13 @@ function instantWin() {
         clearInterval(timer); // stops the timer
         disableClick(); // calls function to disable all click events
         document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
+        // get bestTime from local storage
+        bestTime = ls.bestTime;
         // sets the best time
         if (bestTime === 0 || seconds < bestTime) {
             bestTime = seconds;
+            ls.bestTime = seconds;
+            localStorage.setItem("gameData", JSON.stringify(ls));
         } 
         // displays modal
         endGameModal.innerHTML = `
