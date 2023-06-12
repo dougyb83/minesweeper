@@ -9,7 +9,7 @@ let tileCount = 0;
 let rowLength = 0;
 let colLength = 0;
 let seconds = 0;
-let bestTime;
+let bestTime = 0;
 let timer;
 let gameOverCalled = false;
 let mute = true;
@@ -435,12 +435,14 @@ function tileClick() {
         disableClick(); // calls function to disable all click events
         document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
         // get bestTime from local storage
-        bestTime = ls.bestTime;
+        if (ls.bestTime) {
+            bestTime = ls.bestTime;
+        }
         // sets the best time
         if (bestTime === 0 || seconds < bestTime) {
             bestTime = seconds;
             // store bestTime in the ls dict
-            ls.bestTime = seconds;
+            ls.bestTime = bestTime;
             // save the data to local storage so bestTime remains between page visits
             localStorage.setItem("gameData", JSON.stringify(ls));
         } 
@@ -762,11 +764,15 @@ function instantWin() {
         disableClick(); // calls function to disable all click events
         document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
         // get bestTime from local storage
-        bestTime = ls.bestTime;
+        if (ls.bestTime) {
+            bestTime = ls.bestTime;
+        }
         // sets the best time
         if (bestTime === 0 || seconds < bestTime) {
             bestTime = seconds;
-            ls.bestTime = seconds;
+            // store bestTime in the ls dict
+            ls.bestTime = bestTime;
+            // save the data to local storage so bestTime remains between page visits
             localStorage.setItem("gameData", JSON.stringify(ls));
         } 
         // displays modal
