@@ -293,8 +293,7 @@ footer {
         width: 60vw;       
     }
 
-    .game-menu p 
-    {
+    .game-menu h2 {
         margin-top: 20px;
     }
 
@@ -445,7 +444,7 @@ footer {
         height: 20vw;
     }
 
-    .game-menu p {
+    .game-menu h2 {
         margin-top: 10px;
         font-size: 6vw;
     }
