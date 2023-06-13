@@ -35,21 +35,11 @@ I used [coolors.co](https://coolors.co/008080-2e2e33-33322e-504d4d-c0c0c0) to ge
 
 ### Typography
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+- [Black Ops One](https://fonts.google.com/specimen/Black+Ops+One) was used for the primary header.
 
-Explain any fonts and icon libraries used, like Google Fonts and/or Font Awesome.
+- [Play](https://fonts.google.com/specimen/Play) was used for the secondary header and all other secondary text.
 
-Consider adding a link to each font used, and the Font Awesome site if used (or similar icon library).
-
-Example:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
-
-- [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
-
-- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the game controls and the social media icons in the footer.
 
 ## User Stories
 
