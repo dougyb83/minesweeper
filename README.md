@@ -15,7 +15,7 @@ https://ui.dev/amiresponsive?url=https://dougyb83.github.io/minesweeper
 
 ## UX
 
-As this websites purpose is to provide a gaming experience for the user I have decided to make the home page in the style of a gaming main menu. It will be simple and easy to understand with options provided for different game difficulty levels followed by an explaination of how to play the game.
+As this websites purpose is to provide a gaming experience for the user I have decided to make the home page in the style of a gaming main menu. It will be simple and easy to understand with options provided for different game difficulty levels.
 
 Once the difficulty setting has been selected the appropriate game page will load. The game board will occupy most of the screen on mobile devices while still making navigation buttons and infomation displays available. This will give the user the best gameplay experience while still giving them full navigation.
 
@@ -23,51 +23,15 @@ On desktop and laptop there is more screen real-estate so the game board wwon't 
 
 ### Colour Scheme
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+- `#008080` used for background colour.
+- `#2E2E33` used for primary text.
+- `#33322E` used for primary highlights.
+- `#C0C0C0` used for secondary text.
+- `#504D4D` used for secondary highlights.
 
-Explain your colours and the colour scheme.
+I used [coolors.co](https://coolors.co/008080-2e2e33-33322e-504d4d-c0c0c0) to generate my colour palette.
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- `#000000` used for primary text.
-- `#E84610` used for primary highlights.
-- `#4A4A4F` used for secondary text.
-- `#009FE3` used for secondary highlights.
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Consider adding a link and screenshot for your colour scheme using "coolors".
-https://coolors.co/generate
-
-When you add a colour to the palette, the URL is dynamically updated, making it easier for you to return back to your colour palette later if needed.
-
-Example:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-I used [coolors.co](https://coolors.co/e84610-009fe3-4a4a4f-445261-d63649-e6ecf0-000000) to generate my colour palette.
-
-![screenshot](documentation/coolors.png)
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-If you've used CSS `:root` variables, consider also including a code snippet here!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-I've used CSS `:root` variables to easily update the global colour scheme by changing only one value, instead of everywhere in the CSS file.
-
-```css
-:root {
-    /* P = Primary | S = Secondary */
-    --p-text: #000000;
-    --p-highlight: #E84610;
-    --s-text: #4A4A4F;
-    --s-highlight: #009FE3;
-    --white: #FFFFFF;
-    --black: #000000;
-}
-```
+![screenshot](documentation/colour-pallette.png)
 
 ### Typography
 
