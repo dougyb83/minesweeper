@@ -39,7 +39,7 @@ footer {
 }
 
 .socials i {
-    color: #0c0c0c;
+    color: #33322E;
     font-size: 40px;
     padding-left: 30px;
     padding-right: 30px;
@@ -209,12 +209,13 @@ footer {
 }
 
 .controls i {
+    color: #33322E;
     margin: 10px;
     text-shadow: 2px 2px 2px #c0c0c0;
 }
 
 .controls i:hover {
-    color: #2e2e33;
+    color: #504d4d;
 }
 
 .controls, .info-display {
@@ -248,16 +249,19 @@ footer {
 }
 
 .mine-count {
+    color: #2E2E33;
     width: 50%;
     text-align: center;
     font-size: 60px;
 }
 
 .timer-container {
+    color: #33322E;
     font-size: 80px;
 }
 
 .timer {
+    color: #2E2E33;
     width: 50%;
     text-align: center;
     font-size: 60px;
