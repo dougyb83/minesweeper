@@ -13,7 +13,8 @@ let bestTime = 0;
 let timer;
 let gameOverCalled = false;
 let mute = true;
-let ls;
+let lsTileCount;
+let lsBestTime = {};
 
 // modal variables
 const howToPlayModal = document.getElementById("how-to-play-modal");
@@ -29,18 +30,18 @@ const flagOutSound = document.getElementById("flag-out-sound");
 // when page is loaded
 $(document).ready(function () {
     // get object from local storage
-    ls = JSON.parse(localStorage.getItem("gameData"));  // get item from localStorage
+    lsTileCount = JSON.parse(localStorage.getItem("tileCount"));  // get item from localStorage
     // if local storage exists extract data and set variables
-    if (ls.count) {
-        if (ls.count === 8) {
-            mines = ls.count; // set mines to 8
-            tileCount = ls.count; // set tileCount, used to set grid size
-        } else if (ls.count === 9) {
+    if (lsTileCount.count) {
+        if (lsTileCount.count === 8) {
+            mines = lsTileCount.count; // set mines to 8
+            tileCount = lsTileCount.count; // set tileCount, used to set grid size
+        } else if (lsTileCount.count === 9) {
             mines = 10; // set mines to 10
-            tileCount = ls.count;  
-        } else if (ls.count === 12) {
+            tileCount = lsTileCount.count;  
+        } else if (lsTileCount.count === 12) {
             mines = 30; // set mines to 30
-            tileCount = ls.count;  
+            tileCount = lsTileCount.count;  
         } else {
             mines = 40;  // otherwise set mines to 40 
             tileCount = 16;
@@ -434,18 +435,8 @@ function tileClick() {
         clearInterval(timer); // stops the timer
         disableClick(); // calls function to disable all click events
         document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
-        // get bestTime from local storage
-        if (ls.bestTime) {
-            bestTime = ls.bestTime;
-        }
-        // sets the best time
-        if (bestTime === 0 || seconds < bestTime) {
-            bestTime = seconds;
-            // store bestTime in the ls dict
-            ls.bestTime = bestTime;
-            // save the data to local storage so bestTime remains between page visits
-            localStorage.setItem("gameData", JSON.stringify(ls));
-        } 
+        // set the best time
+        getBestTime();
         // displays modal
         endGameModal.innerHTML = `
         <button type="button" class="close" data-close-modal aria-label="Close">
@@ -462,6 +453,64 @@ function tileClick() {
             endGameModal.close();
         });
     }
+}
+
+// sets bestTime depending on game grid size
+function getBestTime() {
+    // check if gameData exists in local storage
+    if (JSON.parse(localStorage.getItem("gameData"))) {
+        //store locale storage in lsBestTime variable
+        lsBestTime = JSON.parse(localStorage.getItem("gameData"));
+        // check which grid size is active
+        if (tileCount === 8) {
+            // if item exists in local storage get bestTime from local storage
+            if (lsBestTime.bestTime8) {
+                bestTime = lsBestTime.bestTime8;
+            }
+        } else if (tileCount === 9) {
+            // if item exists in local storage get bestTime from local storage
+            if (lsBestTime.bestTime9) {
+                bestTime = lsBestTime.bestTime9;
+            }
+        } else if (tileCount === 12) {
+            // if item exists in local storage get bestTime from local storage
+            if (lsBestTime.bestTime12) {
+                bestTime = lsBestTime.bestTime12;
+            }
+        } else {
+            // if item exists in local storage get bestTime from local storage
+            if (lsBestTime.bestTime16) {
+                bestTime = lsBestTime.bestTime16;
+            }
+        }
+    }
+    
+    // sets the new best time
+    if ((bestTime === 0 || seconds < bestTime) && tileCount === 8) {
+        bestTime = seconds;
+        // store bestTime in the ls dict
+        lsBestTime.bestTime8 = bestTime;
+        // save the data to local storage so bestTime remains between page visits
+        localStorage.setItem("gameData", JSON.stringify(lsBestTime));
+    } else if ((bestTime === 0 || seconds < bestTime) && tileCount === 9) {
+        bestTime = seconds;
+        // store bestTime in the ls dict
+        lsBestTime.bestTime9 = bestTime;
+        // save the data to local storage so bestTime remains between page visits
+        localStorage.setItem("gameData", JSON.stringify(lsBestTime));
+    } else if ((bestTime === 0 || seconds < bestTime) && tileCount === 12) {
+        bestTime = seconds;
+        // store bestTime in the ls dict
+        lsBestTime.bestTime12 = bestTime;
+        // save the data to local storage so bestTime remains between page visits
+        localStorage.setItem("gameData", JSON.stringify(lsBestTime));
+    } else if ((bestTime === 0 || seconds < bestTime) && tileCount === 16) {
+        bestTime = seconds;
+        // store bestTime in the ls dict
+        lsBestTime.bestTime16 = bestTime;
+        // save the data to local storage so bestTime remains between page visits
+        localStorage.setItem("gameData", JSON.stringify(lsBestTime));
+    } 
 }
 
 // increments timer by 1
@@ -763,18 +812,8 @@ function instantWin() {
         clearInterval(timer); // stops the timer
         disableClick(); // calls function to disable all click events
         document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
-        // get bestTime from local storage
-        if (ls.bestTime) {
-            bestTime = ls.bestTime;
-        }
-        // sets the best time
-        if (bestTime === 0 || seconds < bestTime) {
-            bestTime = seconds;
-            // store bestTime in the ls dict
-            ls.bestTime = bestTime;
-            // save the data to local storage so bestTime remains between page visits
-            localStorage.setItem("gameData", JSON.stringify(ls));
-        } 
+        // set the best time
+        getBestTime();
         // displays modal
         endGameModal.innerHTML = `
         <button type="button" class="close" data-close-modal aria-label="Close">

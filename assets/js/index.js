@@ -1,5 +1,6 @@
 /* jshint esversion: 11, jquery: true */
 
+let ls;
 // sets expert grid size to be smaller if played on screens 425px or below
 if ($(window).width() <= 425) {
     $("#expert").html("Expert<br>12 x 12");
@@ -11,10 +12,18 @@ if ($(window).width() <= 425) {
 $(".play-button").click(function () {
     // set tileCount to be equal to data-size
     let tileCount = parseInt($(this).data("size"));
-    // setup the JSON stringify for localStorage to persist the game tile count between pages
-    let ls = {"count": tileCount};
-    // create localStorage called "gameData" and set it to the `ls` dict above
-    localStorage.setItem("gameData", JSON.stringify(ls));
+    // // setup the JSON stringify for localStorage to persist the game tile count between pages
+    // let ls = {"count": tileCount};
+    // // create localStorage called "gameData" and set it to the `ls` dict above
+    // localStorage.setItem("gameData", JSON.stringify(ls));
+    if ((localStorage.getItem("tileCount"))) { 
+        ls = JSON.parse(localStorage.getItem("tileCount"));  // if local storage exists, get item from localStorage
+        ls.count = tileCount;
+        localStorage.setItem("tileCount", JSON.stringify(ls)); 
+    } else {
+        ls = {"count": tileCount};
+        localStorage.setItem("tileCount", JSON.stringify(ls)); 
+    }
     // open game.html 
     window.location.href = "game.html";
 })
