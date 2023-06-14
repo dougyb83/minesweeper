@@ -9,38 +9,16 @@ if ($(window).width() <= 425) {
  }
 
 // wait for play-button to be clicked, save variable to local storage and open game.html 
-$(".play-button").click(function () {
-    // set tileCount to be equal to data-size
-    let tileCount = parseInt($(this).data("size"));
-    // // setup the JSON stringify for localStorage to persist the game tile count between pages
-    // let ls = {"count": tileCount};
-    // // create localStorage called "gameData" and set it to the `ls` dict above
-    // localStorage.setItem("gameData", JSON.stringify(ls));
-    if ((localStorage.getItem("tileCount"))) { 
+$(".play-button").click(function () {    
+    let tileCount = parseInt($(this).data("size")); // set tileCount to be equal to data-size
+    if ((localStorage.getItem("tileCount"))) { // check if local storage exists
         ls = JSON.parse(localStorage.getItem("tileCount"));  // if local storage exists, get item from localStorage
-        ls.count = tileCount;
-        localStorage.setItem("tileCount", JSON.stringify(ls)); 
+        ls.count = tileCount; // set tileCount within the 'ls' dict
+        localStorage.setItem("tileCount", JSON.stringify(ls)); // set the 'ls' dict into local storage for use on game page
     } else {
-        ls = {"count": tileCount};
-        localStorage.setItem("tileCount", JSON.stringify(ls)); 
+        ls = {"count": tileCount}; // if local storage doesn't exist, create dict to store the tileCount
+        localStorage.setItem("tileCount", JSON.stringify(ls)); // set the new 'ls' dict into local storage for use on game page
     }
     // open game.html 
     window.location.href = "game.html";
-})
-
-
-// const welcomeModal = document.querySelector("[data-modal]")
-// const closeButton = document.querySelector("[data-close-modal]")
-
-// // Only display modal once
-// // if (!localStorage.getItem("displayModal")) {
-// //     window.onload = welcomeModal.showModal();
-// //     let lsModal = {"displayModal": true};
-// //     localStorage.setItem("displayModal", JSON.stringify(lsModal));
-// // }
-
-// window.onload = welcomeModal.showModal();
-
-// closeButton.addEventListener("click", () => {
-//     welcomeModal.close();
-// })
+});

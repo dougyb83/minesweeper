@@ -602,6 +602,7 @@ function revealMines(currentTile) {
     }, 1 * 500); 
 }
 
+// checks all surrounding tiles for blank or hint depending on 'type' passed
 function checkSurroundingTiles(row, col, type) {
     // if current tile is top left corner
     if (row === 0 && col === 0) {
@@ -786,6 +787,7 @@ function checkBottomRight(row, col, type) {
     }
 }
 
+// Only callable within the console for testing purposes
 function instantWin() {  
     for (let i = 0; i < flatArr.length; i++) {
         let id = flatArr[i];
