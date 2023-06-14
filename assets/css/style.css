@@ -268,6 +268,9 @@ footer {
 /* media queries*/
 @media screen and (max-width: 1024px) {
     /* home page */
+    .home-footer {
+        margin-bottom: 40px;
+    }
     .play-button {
         font-size: 30px;
         padding: 20px 0;
@@ -275,6 +278,7 @@ footer {
     
     .heading {
         margin-top: 30px;
+        text-align: center;
     }
 
     .heading img, h1{
