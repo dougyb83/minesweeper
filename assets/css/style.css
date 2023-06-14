@@ -201,7 +201,7 @@ footer {
 .controls {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: start;
     justify-content: center;
     width: 100%;
     font-size: 50px;
@@ -226,7 +226,7 @@ footer {
 .info-display {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: end;
     justify-content: center;
     width: 100%;
     margin-left: 25px;
