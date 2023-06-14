@@ -1,3 +1,8 @@
+html, body {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
 body {
     font-family: 'Play', sans-serif;
     background-color: #008080;
@@ -17,20 +22,12 @@ h1 {
 }
 
 /* footer */
-.home-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    top: auto;
-}
-
 footer {
     justify-content: center;
-    position: relative;
-    top: 5vh;
+    position: sticky;
     width: 100%;
-    height: 10vh;
-    padding-top: 2vh;
+    top: 100vh;
+    margin-bottom: 10px;
 }
 
 .socials {
@@ -104,8 +101,6 @@ footer {
 
 /* home page */
 .heading {
-    text-align: center;
-    margin-top: 10px;
     text-shadow: -3px -3px 0px #aaaaaa;
 }
 
@@ -158,6 +153,7 @@ footer {
 .game-board-container {
     width: 100%;
     padding: 0;
+    order: 2;
 }
 
 .game-board {
@@ -201,11 +197,12 @@ footer {
 .controls {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: end;
     justify-content: center;
     width: 100%;
     font-size: 50px;
     margin-right: 25px;
+    order: 1;
 }
 
 .controls i {
@@ -226,10 +223,11 @@ footer {
 .info-display {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: start;
     justify-content: center;
     width: 100%;
     margin-left: 25px;
+    order: 3;
 }
 
 .mine-count-container, .timer-container {
@@ -335,12 +333,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 768px) {
-    /* footer */
-    footer {
-        top: 8vh;
-    }
-    
+@media screen and (max-width: 768px) {  
     .socials {
         bottom: 5px;
     }
@@ -380,6 +373,7 @@ footer {
         height: 65vw;
         width: 65vw;    
         margin-top: 25px;
+        box-shadow: rgba(0,0,0,0.4) 0px 0px 15px 6px;
     }    
 
     .cell {
@@ -389,12 +383,13 @@ footer {
     /* controls */
     .controls {
         position: absolute;
-        bottom: 70px;
+        top: 250px;
         flex-direction: row;
         width: 100vw;
-        gap: 55px;
         font-size: 30px;
         z-index: 1;
+        justify-content: space-around;
+        padding: 0 80px;
     }
 
     /* game on screen display */
@@ -404,7 +399,7 @@ footer {
         flex-direction: row;
         justify-content: center;
         width: 100vw;
-        gap: 170px;
+        justify-content: space-around;
         margin-top: 10px;
     }
 
@@ -427,11 +422,6 @@ footer {
 }
 
 @media screen and (max-width: 425px) {
-    /* footer */
-    footer {
-        top: 12vh;
-    }
-
     /* home page */
     .play-button {
         display: flex;
@@ -458,6 +448,10 @@ footer {
     .smiley {
         margin-top: 10px;
     }
+
+    .smiley-button {
+        font-size: 50px;
+    }
     
     /* game board */
     .game-board-container {
@@ -474,8 +468,8 @@ footer {
 
     /* controls */
     .controls {
-        bottom: 75px;
-        gap: 30px;
+        padding: 0;
+        top: 430px;
     }
 
     /* game on screen display */
@@ -491,9 +485,6 @@ footer {
 }
 
 @media screen and (max-width: 375px) {
-    /* home page */
-     
-
     /* game page */
     .smiley {
         margin-top: 0;
@@ -501,8 +492,7 @@ footer {
 
     /* controls */
     .controls {
-        gap: 20px;
-        bottom: 125px;
+        top: 355px;
     }
 
     /* game on screen display */
