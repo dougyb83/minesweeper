@@ -10,6 +10,7 @@ let rowLength = 0;
 let colLength = 0;
 let seconds = 0;
 let bestTime = 0;
+let loopCount = 0;
 let timer;
 let gameOverCalled = false;
 let mute = true;
@@ -581,25 +582,29 @@ function revealMines(currentTile) {
     let index = mineLocation.indexOf(currentTile.id); // in mineLocation array,get the index of the clicked tile
     mineLocation.splice(index, 1); // remove clicked tile item from array
 
-    let loopCount = 0;
-    setTimeout(function() { // sets a delay before revealing the rest of the mines
+    setTimeout(function() { // sets a delay before looping over the rest of the mines
         for (let j = 0; j < mineLocation.length; j++) { 
-            setTimeout(function() { // sets a delay between revealing each mine.
-                let reveal = document.getElementById(mineLocation[j]);
-                reveal.style.backgroundColor = "#e80202";
-                reveal.innerHTML = mineImage;
-                if (!mute) {
-                    mineExplodeSound.cloneNode(true).play(); // play sound if not mute if false
-                }
-                loopCount++;
-                if (loopCount === mineLocation.length) {
-                    for (let i of resetButtons) { // enable reset buttons after revealing mines
-                        i.classList.remove("disable");
-                    }
-                }
-            }, j * 200);
+            mineRevealDelay(j, mineImage, mineLocation, resetButtons);
         }
-    }, 1 * 500); 
+    }, 1 * 400); 
+}
+
+function mineRevealDelay(j, mineImage, mineLocation, resetButtons) {
+    setTimeout(function() { // sets a delay between revealing each mine.
+        let reveal = document.getElementById(mineLocation[j]);
+        reveal.style.backgroundColor = "#e80202"; // reveals the current mine
+        reveal.innerHTML = mineImage;
+        if (!mute) {
+            mineExplodeSound.cloneNode(true).play(); // play sound if not mute if false
+        }
+        loopCount++;
+        if (loopCount === mineLocation.length) {
+            for (let i of resetButtons) { // enable reset buttons after revealing mines
+                i.classList.remove("disable");
+            }
+        }
+    }, j * 100);
+    loopCount = 0; // reset loopCount back to 0 ready for new game
 }
 
 // checks all surrounding tiles for blank or hint depending on 'type' passed
