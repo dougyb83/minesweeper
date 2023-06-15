@@ -23,10 +23,11 @@ const endGameModal = document.getElementById("end-game-modal");
 const closeButton = document.querySelector("[data-close-modal]");
 
 // sounds
-const revealTileSound = document.getElementById("reveal-tile-sound");
-const mineExplodeSound = document.getElementById("mine-explode-sound");
-const flagInSound = document.getElementById("flag-in-sound");
-const flagOutSound = document.getElementById("flag-out-sound");
+const revealTileSound = new Audio('assets/sounds/reveal-tile.wav');
+const mineExplodeSound = new Audio('assets/sounds/mine-explode.wav');
+const flagInSound = new Audio("assets/sounds/flag-in.ogg");
+const flagOutSound = new Audio("assets/sounds/flag-out.ogg");
+
 
 // when page is loaded
 $(document).ready(function () {
@@ -92,7 +93,7 @@ $(document).ready(function () {
         }
         
     });
-    // sets the visible mine count equal to mines
+    // sets the visible mine count equal to mines variable
     document.getElementsByClassName("mine-count")[0].innerHTML = mines;
     // populates the game board
     createGrid();
