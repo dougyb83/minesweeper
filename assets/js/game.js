@@ -408,6 +408,7 @@ function tileClick() {
     let col = Number(divId[1]); // take the second item of divId, convert to an int and store in the col variable
     if (checkForMine(row, col)) { // if the tile has a mine, call gameOver
         gameOver(this);
+        return;
     }
     else if (Number.isInteger(boardArr[row][col])) { // checks the boardArr if a mine hint is in that location
         if (!mute && !this.classList.contains("clicked")) {
