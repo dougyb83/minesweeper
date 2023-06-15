@@ -181,7 +181,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
+    font-size: 20px;
+    line-height: 1;
 }
 
 .cell img {
@@ -381,7 +382,7 @@ footer {
     }    
 
     .cell {
-        font-size: 1.4em;
+        font-size: 18px;    
     }
 
     /* controls */
