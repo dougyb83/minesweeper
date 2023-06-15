@@ -403,7 +403,6 @@ function placeMineHints() {
 
 // this function is called whenever a tile has been left clicked
 function tileClick() {
-    this.classList.add("clicked"); // add the .clicked class to the clicked tile
     let divId = this.id.split("-"); // store the id of the clicked tile with the hyphen removed
     let row = Number(divId[0]); // take the first item of divId, convert to an int and store in the row variable
     let col = Number(divId[1]); // take the second item of divId, convert to an int and store in the col variable
@@ -411,7 +410,7 @@ function tileClick() {
         gameOver(this);
     }
     else if (Number.isInteger(boardArr[row][col])) { // checks the boardArr if a mine hint is in that location
-        if (!mute) {
+        if (!mute && !this.classList.contains("clicked")) {
             revealTileSound.cloneNode(true).play(); // play sound if not mute if false
         }
         this.innerHTML = boardArr[row][col]; // displays the mine hint on the tile
@@ -419,12 +418,13 @@ function tileClick() {
     }
     else {
         // if tile is blank
-        if (!mute) {
+        if (!mute && !this.classList.contains("clicked")) {
             revealTileSound.cloneNode(true).play(); // play sound if not mute if false
         }
         this.style.backgroundColor = "#19ad45"; // 'reveals' the tile
         checkSurroundingTiles(row, col, "blank"); // calls function to check for more blanks and reveals them         
     }
+    this.classList.add("clicked"); // add the .clicked class to the clicked tile
     // starts the timer
     if (seconds === 0 && !gameOverCalled) { // checks timer hasn't started already and that the first click isn't game over
         seconds = 1; // immediately sets seconds to 1 (before it starts incrementing) to fix bug - see TESTING.md
