@@ -252,6 +252,7 @@ footer {
     width: 50%;
     text-align: center;
     font-size: 60px;
+    padding-right: 15px;
 }
 
 .timer-container {
@@ -264,6 +265,7 @@ footer {
     width: 50%;
     text-align: center;
     font-size: 60px;
+    padding-right: 15px;
 }
 
 /* media queries*/
@@ -309,7 +311,6 @@ footer {
     /* game on screen display */
     .info-display {
         margin: 0;
-        gap: 20px;
         height: 60vw;
     }
 
@@ -481,7 +482,6 @@ footer {
     .info-display {
         top: 11vh;
         margin: 0;
-        gap: 45px;
     }
 
     .mine-count-container, .timer-container {
@@ -502,12 +502,14 @@ footer {
 
     /* game on screen display */
     .mine-count-container, .timer-container {
-        width: 150px;
-        font-size: 40px;
+        width: 125px;
+        height: 60px;
+        font-size: 35px;
     }
 
-    .info-display {
-        gap: 22px;
+    .mine-count, .timer {
+        padding: 0;
+        font-size: 35px;
     }
 
     .info-display img {
