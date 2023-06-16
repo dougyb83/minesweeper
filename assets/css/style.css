@@ -21,6 +21,36 @@ h1, h2 {
     margin: 10px;
 }
 
+.home-link {
+    /* padding-top: 20px;
+    padding-left: 20px; */
+    text-align: center;
+}
+
+/* contact page */
+.contact-container {
+    text-align: center;
+    padding-top: 60px;
+    font-size: 2vw;
+}
+
+.contact-container h2 {
+    font-size: 5vw;
+}
+
+.contact form {
+    margin-bottom: 20px;
+}
+
+.btn-contact {
+    font-family: 'Black Ops One', cursive;
+    font-size: 1.5vw;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    border: 6px solid;
+    color: #33322E;
+}
+
 /* 404 & confirmation page */
 .confirmation-page, .error-page {
     text-align: center;
@@ -39,17 +69,18 @@ h1, h2 {
     font-size: 4vw;
 }
 
-.confirmation-page h3, .error-page h3 {
+h3 {
     font-size: 4vw;
 }
 
-.confirmation-page a, .error-page a {
+a {
     text-decoration: none;
     color: #33322E;
     font-weight: 600;
 }
 
-.confirmation-page a:hover, .error-page a:hover {
+a:hover {
+    text-decoration: none;
     color: #504d4d;
 }
 
@@ -329,7 +360,7 @@ footer {
         font-size: 10vw;
     }
 
-    .how-to-play-button {
+    .how-to-play-button, .btn-contact {
         border: 4px solid;
     }
 
@@ -550,6 +581,21 @@ footer {
     .confirmation-page h3, .error-page h3 {
         font-size: 6vw;
     }
+
+    /* contact page */
+    .btn-contact {
+        font-size: 3vw;
+        margin-top: 25px;
+    }
+
+    .contact-container {
+        font-size: 4vw;
+    }
+
+    .contact-container h2 {
+        font-size: 12vw;
+    }
+
 }
 
 @media screen and (max-width: 375px) {
