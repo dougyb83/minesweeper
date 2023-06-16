@@ -94,11 +94,6 @@ footer {
     left: 300px;
 }
 
-#noShowAgain {
-    height: 16px;
-    width: 16px;
-}
-
 /* home page */
 .heading {
     text-shadow: -3px -3px 0px #aaaaaa;
@@ -110,6 +105,14 @@ footer {
     top: 5vh;
     width: 15vw;
     height: 15vw;
+}
+
+.how-to-play-button {
+    font-family: 'Black Ops One', cursive;
+    font-size: 2vw;
+    margin-top: 50px;
+    border: 6px solid;
+    color: #33322E;
 }
 
 /* game menu*/
@@ -292,6 +295,10 @@ footer {
         font-size: 10vw;
     }
 
+    .how-to-play-button {
+        border: 4px solid;
+    }
+
     /* game page */
     .game-board {
         height: 60vw;
@@ -443,6 +450,11 @@ footer {
     .game-menu h2 {
         margin-top: 10px;
         font-size: 6vw;
+    }
+
+    .how-to-play-button {
+        font-size: 6vw;
+        margin-top: 25px;
     }
 
     /* modal */

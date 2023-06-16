@@ -60,7 +60,7 @@ $(".reset").click(function () {
     placeMineHints();
 });
 
-// displays hot to play modal
+// displays how to play modal
 $(".how-to-play").click(function () {
     howToPlayModal.showModal();
 });

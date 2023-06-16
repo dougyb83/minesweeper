@@ -1,6 +1,24 @@
 /* jshint esversion: 11, jquery: true */
 
 let ls;
+// modal variables
+const howToPlayModal = document.getElementById("how-to-play-modal");
+const closeButton = document.querySelector("[data-close-modal]");
+
+// closes modal when button pressed
+closeButton.addEventListener("click", () => {
+    howToPlayModal.close();
+});
+
+// closes modal by clicking anywhere on screen
+howToPlayModal.addEventListener("click", () => {
+    howToPlayModal.close();
+});
+
+// displays how to play modal
+$(".how-to-play-button").click(function () {
+    howToPlayModal.showModal();
+});
 
 // sets expert grid size to be 12x12 or 16x16 depending on screen size
 $(window).on('resize', function(){

@@ -17,6 +17,21 @@
 </head>
 <body>
     <main>
+        <!-- Modal with how to play instructions -->
+        <dialog data-modal id="how-to-play-modal">
+            <button type="button" class="close" data-close-modal aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h2>How to Play</h2>
+            <ul>
+                <li>You must uncover all the tiles without hitting a mine - Otherwise, it's <strong>GAME OVER!</strong></li>
+                <li>Tiles will have either a <strong>Mine</strong>, a <strong>Hint</strong>, or a <strong>Blank</strong> space underneath!</li>
+                <li>If you reveal a blank space, all the surrounding blanks will also be revealed!</li>
+                <li>If you reveal a hint, that number will indicate exactly how many mines are in the 8 surrounding tiles!</li>
+                <li>Place flags where you think there is a mine (these are just for your reference)!</li>
+                <li><strong id="long-press">Long Press</strong><strong id="right-click">Right Click</strong> on the tile to add or remove a flag!</li>
+            </ul>
+        </dialog>
         <!-- Start of heading -->
         <section class="container-fluid heading">
             <div class="row">
@@ -36,6 +51,11 @@
                     <span class="play-button btn btn-outline-dark" data-size="8" aria-label="play 8x8 grid">Easy<br>8 x 8</span>
                     <span class="play-button btn btn-outline-dark" data-size="9" aria-label="play 9x9 grid">Medium<br>9 x 9</span>
                     <span id="expert" class="play-button btn btn-outline-dark" data-size="16" aria-label="play 16x16 grid">Expert<br>16 x 16</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <span class="how-to-play-button btn btn-outline-dark">How to Play <i class="how-to-play fa-regular fa-circle-question" aria-label="how to play"></i></span>
                 </div>
             </div>
         </section>
