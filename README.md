@@ -23,13 +23,17 @@ On desktop and laptop there is more screen real-estate so the game board wwon't 
 
 ### Colour Scheme
 
+When selecting the colours for this project I wanted to give the user an authentic Minesweeper experience. The background colour was chosen to match the default wallpaper you would find on Windows 98. While I chose a selection of greys to resemble the original game as found on early Windows machines.
+
 - `#008080` used for background colour.
 - `#2E2E33` used for primary text.
 - `#33322E` used for primary highlights.
 - `#C0C0C0` used for secondary text.
 - `#504D4D` used for secondary highlights.
+- `#19ad45` used for game 'safe' areas.
+- `#E80202` used for game mines.
 
-I used [coolors.co](https://coolors.co/008080-2e2e33-33322e-504d4d-c0c0c0) to generate my colour palette.
+I used [coolors.co](https://coolors.co/008080-2e2e33-33322e-504d4d-c0c0c0-19ad45-e80202) to generate my colour palette.
 
 ![screenshot](documentation/colour-pallette.png)
 
