@@ -28,6 +28,58 @@ const mineExplodeSound = new Audio('assets/sounds/mine-explode.wav');
 const flagInSound = new Audio("assets/sounds/flag-in.ogg");
 const flagOutSound = new Audio("assets/sounds/flag-out.ogg");
 
+// closes modal when button pressed
+closeButton.addEventListener("click", () => {
+    howToPlayModal.close();
+});
+
+// closes modal by clicking anywhere on screen
+howToPlayModal.addEventListener("click", () => {
+    howToPlayModal.close();
+});
+
+// return to home page
+$(".home").click(function () {
+    window.location.href = "index.html";
+});
+
+// resets the game
+$(".reset").click(function () {
+    gameOverCalled = false;
+    clearInterval(timer); // stops the timer
+    seconds = 0;
+    document.getElementById("timer").innerHTML = seconds; // reset timer display to 0
+    document.getElementsByClassName("mine-count")[0].innerHTML = mines; //reset mine display
+    document.getElementsByClassName("smiley-button")[0].innerHTML = "😀";
+    boardArr = [];
+    flatArr = [];
+    mineLocation = [];
+    $("#game-board").empty();
+    createGrid();
+    setMines(boardArr);
+    placeMineHints();
+});
+
+// displays hot to play modal
+$(".how-to-play").click(function () {
+    howToPlayModal.showModal();
+});
+
+// toggles volume icon
+$(".volume").click(function () {
+    if (this.classList.contains("fa-volume-xmark")) {
+        $(this).removeClass("fa-volume-xmark").addClass("fa-volume-high");
+        mute = false;
+    }
+    else {
+        $(this).removeClass("fa-volume-high").addClass("fa-volume-xmark");
+        mute = true;
+    }
+    
+});
+
+// sets the visible mine count equal to mines variable
+document.getElementsByClassName("mine-count")[0].innerHTML = mines;
 
 // when page is loaded
 $(document).ready(function () {
@@ -49,52 +101,6 @@ $(document).ready(function () {
             tileCount = 16;
         }
     }
-    // closes modal when button pressed
-    closeButton.addEventListener("click", () => {
-        howToPlayModal.close();
-    });
-    // closes modal by clicking anywhere on screen
-    howToPlayModal.addEventListener("click", () => {
-        howToPlayModal.close();
-    });
-    // return to home page
-    $(".home").click(function () {
-        window.location.href = "index.html";
-    });
-    // resets the game
-    $(".reset").click(function () {
-        gameOverCalled = false;
-        clearInterval(timer); // stops the timer
-        seconds = 0;
-        document.getElementById("timer").innerHTML = seconds; // reset timer display to 0
-        document.getElementsByClassName("mine-count")[0].innerHTML = mines; //reset mine display
-        document.getElementsByClassName("smiley-button")[0].innerHTML = "😀";
-        boardArr = [];
-        flatArr = [];
-        mineLocation = [];
-        $("#game-board").empty();
-        createGrid();
-        setMines(boardArr);
-        placeMineHints();
-    });
-    // displays hot to play modal
-    $(".how-to-play").click(function () {
-        howToPlayModal.showModal();
-    });
-    // toggles volume icon
-    $(".volume").click(function () {
-        if (this.classList.contains("fa-volume-xmark")) {
-            $(this).removeClass("fa-volume-xmark").addClass("fa-volume-high");
-            mute = false;
-        }
-        else {
-            $(this).removeClass("fa-volume-high").addClass("fa-volume-xmark");
-            mute = true;
-        }
-        
-    });
-    // sets the visible mine count equal to mines variable
-    document.getElementsByClassName("mine-count")[0].innerHTML = mines;
     // populates the game board
     createGrid();
     setMines();
