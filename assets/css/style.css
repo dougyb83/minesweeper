@@ -21,8 +21,8 @@ h1, h2 {
     margin: 10px;
 }
 
-/* 404 page */
-.error-page {
+/* 404 & confirmation page */
+.confirmation-page, .error-page {
     text-align: center;
     position: absolute;
     top: 50%;
@@ -32,21 +32,24 @@ h1, h2 {
 }
 
 .error-page h1 {
-    text-align: center;
     font-size: 12vw;
 }
 
-.error-page h3 {
+.confirmation-page h2 {
     font-size: 4vw;
 }
 
-.error-page a {
+.confirmation-page h3, .error-page h3 {
+    font-size: 4vw;
+}
+
+.confirmation-page a, .error-page a {
     text-decoration: none;
     color: #33322E;
     font-weight: 600;
 }
 
-.error-page a:hover {
+.confirmation-page a:hover, .error-page a:hover {
     color: #504d4d;
 }
 
@@ -531,8 +534,8 @@ footer {
         margin: 0;
     }
 
-    /* 404 page */
-    .error-page {       
+    /* 404 & confirmation page */
+    .confirmation-page, .error-page {       
         font-size: 5vw;
     }
     
@@ -540,7 +543,11 @@ footer {
         font-size: 25vw;
     }
     
-    .error-page h3 {
+    .confirmation-page h2 {
+        font-size: 6vw;
+    }
+    
+    .confirmation-page h3, .error-page h3 {
         font-size: 6vw;
     }
 }
