@@ -24,9 +24,11 @@ const closeButton = document.querySelector("[data-close-modal]");
 
 // sounds
 const revealTileSound = new Audio('assets/sounds/reveal-tile.wav');
+revealTileSound.volume = 0.1;
 const mineExplodeSound = new Audio('assets/sounds/mine-explode.wav');
 const flagInSound = new Audio("assets/sounds/flag-in.ogg");
 const flagOutSound = new Audio("assets/sounds/flag-out.ogg");
+
 
 // closes modal when button pressed
 closeButton.addEventListener("click", () => {
@@ -419,7 +421,9 @@ function tileClick() {
     }
     else if (Number.isInteger(boardArr[row][col])) { // checks the boardArr if a mine hint is in that location
         if (!mute && !this.classList.contains("clicked")) {
-            revealTileSound.cloneNode(true).play(); // play sound if not mute if false
+            let clonedRevealTileSound = revealTileSound.cloneNode(true); // make a copy of the sound
+            clonedRevealTileSound.volume = 0.1; // reduce the volume
+            clonedRevealTileSound.play(); // play sound if not mute is false
         }
         this.innerHTML = boardArr[row][col]; // displays the mine hint on the tile
         this.style.backgroundColor = "#19ad45"; // 'reveals' the tile
@@ -427,7 +431,9 @@ function tileClick() {
     else {
         // if tile is blank
         if (!mute && !this.classList.contains("clicked")) {
-            revealTileSound.cloneNode(true).play(); // play sound if not mute if false
+            let clonedRevealTileSound = revealTileSound.cloneNode(true); // make a copy of the sound
+            clonedRevealTileSound.volume = 0.1; // reduce the volume
+            clonedRevealTileSound.play(); // play sound if not mute is false
         }
         this.style.backgroundColor = "#19ad45"; // 'reveals' the tile
         checkSurroundingTiles(row, col, "blank"); // calls function to check for more blanks and reveals them         
@@ -537,7 +543,9 @@ function placeFlag() {
     if (this.innerHTML === "🚩") { // if flag already placed then remove the flag
         this.classList.remove("flagged"); // remove .flagged class from element
         if (!mute) {
-            flagOutSound.cloneNode(true).play(); // play sound if not mute if false
+            let clonedFlagOutSound = flagOutSound.cloneNode(true); // make a copy of the sound
+            clonedFlagOutSound.volume = 0.2; // make a copy of the sound
+            clonedFlagOutSound.play(); // play sound if not mute is false
         }
         this.innerHTML = "";
         $(this).css("text-shadow", "none");
@@ -547,7 +555,9 @@ function placeFlag() {
     else {        
         this.classList.add("flagged"); // add .flagged class from element
         if (!mute) {
-            flagInSound.cloneNode(true).play(); // play sound if not mute if false
+            let clonedFlagInSound = flagInSound.cloneNode(true); // make a copy of the sound
+            clonedFlagInSound.volume = 0.2; // make a copy of the sound
+            clonedFlagInSound.play(); // play sound if not mute is false
         }
         this.innerHTML = "🚩"; // place a flag if tile hasnt been revealed and doesnt have a flag
         $(this).css("text-shadow", "-4px -4px 5px black");
@@ -585,7 +595,9 @@ function revealMines(currentTile) {
     currentTile.style.backgroundColor = "#e80202"; // reveal the clicked tile
     currentTile.innerHTML = mineImage;
     if (!mute) { // play sound if not mute if false
-        mineExplodeSound.cloneNode(true).play(); // play sound if not mute if false
+        let clonedMineExplodeSound = mineExplodeSound.cloneNode(true); // make a copy of the sound
+        clonedMineExplodeSound.volume = 0.1; // reduce the volume
+        clonedMineExplodeSound.play(); // play sound if not mute is false
     }
     let index = mineLocation.indexOf(currentTile.id); // in mineLocation array,get the index of the clicked tile
     mineLocation.splice(index, 1); // remove clicked tile item from array
@@ -603,7 +615,10 @@ function mineRevealDelay(j, mineImage, mineLocation, resetButtons) {
         reveal.style.backgroundColor = "#e80202"; // reveals the current mine
         reveal.innerHTML = mineImage;
         if (!mute) {
-            mineExplodeSound.cloneNode(true).play(); // play sound if not mute if false
+            let clonedMineExplodeSound = mineExplodeSound.cloneNode(true); // make a copy of the sound
+            clonedMineExplodeSound.volume = 0.1; // reduce the volume
+            clonedMineExplodeSound.play(); // play sound if not mute is false
+            
         }
         loopCount++;
         if (loopCount === mineLocation.length) {
