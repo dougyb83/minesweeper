@@ -113,6 +113,8 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ## Features
 
+The website has three main pages. The homepage and game page are easily accessible between each other by choosing a game difficulty from the homepage or selecting the 'home' icon on the game page, while the contact page is accessible from all pages via the links in the footer. There are an additional two pages; one is a 404 error page, which will be loaded if the user navigates to an invalid address as well as a confirmation page, which loads after the user submits the contact form.
+
 ⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
 
 In this section, you should go over the different parts of your project,
@@ -130,9 +132,13 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
 
 ### Existing Features
 
-- **Title for feature #1**
+- **Game difficulty selection**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - There are three possible difficulty options for the user to choose from; Easy, Medium and Expert!
+    This gives the user the abilty to increase the difficulty as they become better at the game. 
+        - Easy - is an 8 x 8 grid with 8 hidden mines.
+        - Medium - is a 9 x 9 grid with 10 hidden mines
+        - Hard - This level has two grid sizes depending on screen size. on larger screens it is a 16 x 16 grid         with 40 hidden mines while smaller screens will have a 12 x 12 grid with 30 hidden mines. This is               because it was difficult to select each tile of the larger grid when using a mobile device.
 
 ![screenshot](documentation/feature01.png)
 
