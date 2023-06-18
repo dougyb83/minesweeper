@@ -67,7 +67,7 @@ h1, h2 {
     font-size: 4vw;
 }
 
-h3 {
+.confirmation-page h3, .error-page h3 {
     font-size: 4vw;
 }
 

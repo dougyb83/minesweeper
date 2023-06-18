@@ -115,52 +115,89 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 The website has three main pages. The homepage and game page are easily accessible between each other by choosing a game difficulty from the homepage or selecting the 'home' icon on the game page, while the contact page is accessible from all pages via the links in the footer. There are an additional two pages; one is a 404 error page, which will be loaded if the user navigates to an invalid address as well as a confirmation page, which loads after the user submits the contact form.
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you should go over the different parts of your project,
-and describe each in a sentence or so.
-
-You will need to explain what value each of the features provides for the user,
-focusing on who this website is for, what it is that they want to achieve,
-and how your project is the best way to help them achieve these things.
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-IMPORTANT: Remember to always include a screenshot of each individual feature!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ### Existing Features
 
-- **Game difficulty selection**
+- **Difficulty selection**
 
     - There are three possible difficulty options for the user to choose from; Easy, Medium and Expert!
     This gives the user the abilty to increase the difficulty as they become better at the game. 
         - Easy - is an 8 x 8 grid with 8 hidden mines.
         - Medium - is a 9 x 9 grid with 10 hidden mines
-        - Hard - This level has two grid sizes depending on screen size. on larger screens it is a 16 x 16 grid         with 40 hidden mines while smaller screens will have a 12 x 12 grid with 30 hidden mines. This is               because it was difficult to select each tile of the larger grid when using a mobile device.
+        - Hard - This level has two grid sizes depending on screen size. on larger screens it is a 16 x 16 grid with 40 hidden mines while smaller screens will have a 12 x 12 grid with 30 hidden mines. This is because it was difficult to select each tile of the larger grid when using a mobile device.
 
-![screenshot](documentation/feature01.png)
+    ![screenshot](documentation/features/feature01.png)
 
-- **Title for feature #2**
+- **How to Play Modal**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - This feature is a pop up modal which gives the user detailed instuctions on how to play the Minesweeper game. 
+    - It can be accessed on the homepage by selecting the 'How to Play' button beneath the game difficulty buttons or by selecting the question mark icon on the controls bar.
+    - When selected The instructions will pop up as an overlay to the pages main content. 
+    - When the user is finished with the instructions they can easily close the modal. This can be achieved by clicking anywhere on screen, by clicking the 'X' to close button or by hitting 'esc' if playing on a PC/laptop.
 
-![screenshot](documentation/feature02.png)
+    ![screenshot](documentation/features/feature02.png)
 
-- **Title for feature #3**
+- **On Screen Display**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - The On Screen Display lets the user know how many mines are hidden on the game board as well as show them how much time has elapsed since starting the game.
+    - The mine display will decrease by one every time a flag is placed and can intentionally go into minus figures. This is a way of letting the user know that they may have incorrectly flagged one or more tiles.
+    - The timer displays in seconds and will continue to increase until either the game has been won, lost at which point the timer stops. if the game is reset the time returns to zero.
 
-![screenshot](documentation/feature03.png)
+    ![screenshot](documentation/features/feature03.png)
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+- **Game Won Modal**
 
-Repeat as necessary for as many features as your site contains.
+    - This is another pop up modal which is only shown when the user has won the game.
+    - The modal tells the user how long it took them to finish the game and also shows them their best time.
+    - The best time is then stored in local storage so that the user can try to beat it any time they ruturn to the page using the same device and browser.
+    
+    ![screenshot](documentation/features/feature04.png)
 
-Hint: the more, the merrier!
+- **Controls Bar**
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+    - The Controls bar allows the user to return the the homepage, reset the game, view the how to play instrunctions or toggle the game volume on or off.
+    
+    ![screenshot](documentation/features/feature05.png)
+
+- **The Game Board**
+
+    - The Game board will be a different size depending on whch difficulty the user selects.
+    - All tiles are pressable. When pressed, the tile dissappears and reveals what is underneath. This could be a mine, a number hint or a blank space.
+    - Any tile that has not been reveald can have a flag placed on it. When a flag is placed that tile cannot be revealed by the user until the flag is removed.
+    
+    ![screenshot](documentation/features/feature06.png)
+
+- **Contact page**
+
+    - Here the user can contact the site owner with feedback, bug reports, questions or suggestions.
+    - The user must fill out all fields with the appropriate information before a message can be sent.
+    - When the message is sent the user will be shown a confirmation page.
+    
+    ![screenshot](documentation/features/feature07.png)
+
+- **Confirmation page**
+
+    - Users are redirected to this page after succesfully sending a message to the site owner.
+    - This give the user peice of mind knowing that the message has definately been processed and lets them know that they can expect a reply soon.
+    - The page displays a countdown telling the user that they will be taken back to the homepage after 10 seconds.
+    - Alternatively the user can select the homepage link if they don't want to wait.
+    
+    ![screenshot](documentation/features/feature08.png)
+
+- **404 page**
+
+    - This page will be displayed if the user tries to navigate to a page that doesn't exist.
+    - The page displays a countdown telling the user that they will be taken back to the homepage after 10 seconds.
+    - Alternatively the user can select the homepage link if they don't want to wait.
+    
+    ![screenshot](documentation/features/feature09.png)
+
+- **Footer**
+
+    - Here users can find links to the pages social media accounts and contact page.
+    - This is available on every page.
+    
+    ![screenshot](documentation/features/feature10.png)
+
 
 ### Future Features
 

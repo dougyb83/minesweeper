@@ -80,9 +80,6 @@ $(".volume").click(function () {
     
 });
 
-// sets the visible mine count equal to mines variable
-document.getElementsByClassName("mine-count")[0].innerHTML = mines;
-
 // when page is loaded
 $(document).ready(function () {
     // get object from local storage
@@ -103,6 +100,10 @@ $(document).ready(function () {
             tileCount = 16;
         }
     }
+
+    // sets the visible mine count equal to mines variable
+    document.getElementsByClassName("mine-count")[0].innerHTML = mines;
+
     // populates the game board
     createGrid();
     setMines();
