@@ -1,6 +1,6 @@
 # MINESWEEPER
 
-Minesweeper is a classic puzzle game that challenges players to uncover hidden mines on a grid by strategically revealing tiles. 
+Minesweeper is a classic puzzle game that challenges players to uncover hidden mines on a grid by strategically revealing tiles.
 
 Our target audience includes both casual gamers looking for a quick mental challenge, puzzle enthusiasts and retro game lovers seeking a nostalgic experience. Whether you're a seasoned minesweeper veteran or a newcomer to the game, our project caters to all skill levels. With its responsive design, the game can be played on a variety of devices, including desktops, laptops, tablets, and mobile phones, making it accessible to players on the go.
 
@@ -40,9 +40,7 @@ I used [coolors.co](https://coolors.co/008080-2e2e33-33322e-504d4d-c0c0c0-19ad45
 ### Typography
 
 - [Black Ops One](https://fonts.google.com/specimen/Black+Ops+One) was used for the primary header.
-
 - [Play](https://fonts.google.com/specimen/Play) was used for the secondary header and all other secondary text.
-
 - [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the game controls and the social media icons in the footer.
 
 ## User Stories
@@ -54,6 +52,7 @@ I used [coolors.co](https://coolors.co/008080-2e2e33-33322e-504d4d-c0c0c0-19ad45
 - As a new site user, I would like to have clear and intuitive controls, so that I can navigate the game effortlessly.
 
 ### Returning Site Users
+
 - As a returning site user, I would like to easily access the game without any hassle or unnecessary steps, so that I can quickly jump back into the gameplay.
 - As a returning site user, I would like to I would like to choose the difficulty level, so that I can tailor the gameplay experience to my skill level.
 - As a returning site user, I would like to have the option to customize certain game aspects, such as the appearance or sound settings, so that I can tailor the game experience to my preferences.
@@ -119,128 +118,97 @@ The website has three main pages. The homepage and game page are easily accessib
 
 - **Difficulty selection**
 
-    - There are three possible difficulty options for the user to choose from; Easy, Medium and Expert!
-    This gives the user the abilty to increase the difficulty as they become better at the game. 
-        - Easy - is an 8 x 8 grid with 8 hidden mines.
-        - Medium - is a 9 x 9 grid with 10 hidden mines
-        - Hard - This level has two grid sizes depending on screen size. on larger screens it is a 16 x 16 grid with 40 hidden mines while smaller screens will have a 12 x 12 grid with 30 hidden mines. This is because it was difficult to select each tile of the larger grid when using a mobile device.
+  - There are three possible difficulty options for the user to choose from; Easy, Medium and Expert!
+    This gives the user the abilty to increase the difficulty as they become better at the game.
+    - Easy - is an 8 x 8 grid with 8 hidden mines.
+    - Medium - is a 9 x 9 grid with 10 hidden mines
+    - Hard - This level has two grid sizes depending on screen size. on larger screens it is a 16 x 16 grid with 40 hidden mines while smaller screens will have a 12 x 12 grid with 30 hidden mines. This is because it was difficult to select each tile of the larger grid when using a mobile device.
 
-    ![screenshot](documentation/features/feature01.png)
-
+  ![screenshot](documentation/features/feature01.png)
 - **How to Play Modal**
 
-    - This feature is a pop up modal which gives the user detailed instuctions on how to play the Minesweeper game. 
-    - It can be accessed on the homepage by selecting the 'How to Play' button beneath the game difficulty buttons or by selecting the question mark icon on the controls bar.
-    - When selected The instructions will pop up as an overlay to the pages main content. 
-    - When the user is finished with the instructions they can easily close the modal. This can be achieved by clicking anywhere on screen, by clicking the 'X' to close button or by hitting 'esc' if playing on a PC/laptop.
+  - This feature is a pop up modal which gives the user detailed instuctions on how to play the Minesweeper game.
+  - It can be accessed on the homepage by selecting the 'How to Play' button beneath the game difficulty buttons or by selecting the question mark icon on the controls bar.
+  - When selected The instructions will pop up as an overlay to the pages main content.
+  - When the user is finished with the instructions they can easily close the modal. This can be achieved by clicking anywhere on screen, by clicking the 'X' to close button or by hitting 'esc' if playing on a PC/laptop.
 
-    ![screenshot](documentation/features/feature02.png)
-
+  ![screenshot](documentation/features/feature02.png)
 - **On Screen Display**
 
-    - The On Screen Display lets the user know how many mines are hidden on the game board as well as show them how much time has elapsed since starting the game.
-    - The mine display will decrease by one every time a flag is placed and can intentionally go into minus figures. This is a way of letting the user know that they may have incorrectly flagged one or more tiles.
-    - The timer displays in seconds and will continue to increase until either the game has been won, lost at which point the timer stops. if the game is reset the time returns to zero.
+  - The On Screen Display lets the user know how many mines are hidden on the game board as well as show them how much time has elapsed since starting the game.
+  - The mine display will decrease by one every time a flag is placed and can intentionally go into minus figures. This is a way of letting the user know that they may have incorrectly flagged one or more tiles.
+  - The timer displays in seconds and will continue to increase until either the game has been won, lost at which point the timer stops. if the game is reset the time returns to zero.
 
-    ![screenshot](documentation/features/feature03.png)
-
+  ![screenshot](documentation/features/feature03.png)
 - **Game Won Modal**
 
-    - This is another pop up modal which is only shown when the user has won the game.
-    - The modal tells the user how long it took them to finish the game and also shows them their best time.
-    - The best time is then stored in local storage so that the user can try to beat it any time they ruturn to the page using the same device and browser.
-    
-    ![screenshot](documentation/features/feature04.png)
+  - This is another pop up modal which is only shown when the user has won the game.
+  - The modal tells the user how long it took them to finish the game and also shows them their best time.
+  - The best time is then stored in local storage so that the user can try to beat it any time they ruturn to the page using the same device and browser.
 
+  ![screenshot](documentation/features/feature04.png)
 - **Controls Bar**
 
-    - The Controls bar allows the user to return the the homepage, reset the game, view the how to play instrunctions or toggle the game volume on or off.
-    
-    ![screenshot](documentation/features/feature05.png)
+  - The Controls bar allows the user to return the the homepage, reset the game, view the how to play instrunctions or toggle the game volume on or off.
 
+  ![screenshot](documentation/features/feature05.png)
 - **The Game Board**
 
-    - The Game board will be a different size depending on whch difficulty the user selects.
-    - All tiles are pressable. When pressed, the tile dissappears and reveals what is underneath. This could be a mine, a number hint or a blank space.
-    - Any tile that has not been reveald can have a flag placed on it. When a flag is placed that tile cannot be revealed by the user until the flag is removed.
-    
-    ![screenshot](documentation/features/feature06.png)
+  - The Game board will be a different size depending on whch difficulty the user selects.
+  - All tiles are pressable. When pressed, the tile dissappears and reveals what is underneath. This could be a mine, a number hint or a blank space.
+  - Any tile that has not been reveald can have a flag placed on it. When a flag is placed that tile cannot be revealed by the user until the flag is removed.
 
+  ![screenshot](documentation/features/feature06.png)
 - **Contact page**
 
-    - Here the user can contact the site owner with feedback, bug reports, questions or suggestions.
-    - The user must fill out all fields with the appropriate information before a message can be sent.
-    - When the message is sent the user will be shown a confirmation page.
-    
-    ![screenshot](documentation/features/feature07.png)
+  - Here the user can contact the site owner with feedback, bug reports, questions or suggestions.
+  - The user must fill out all fields with the appropriate information before a message can be sent.
+  - When the message is sent the user will be shown a confirmation page.
 
+  ![screenshot](documentation/features/feature07.png)
 - **Confirmation page**
 
-    - Users are redirected to this page after succesfully sending a message to the site owner.
-    - This give the user peice of mind knowing that the message has definately been processed and lets them know that they can expect a reply soon.
-    - The page displays a countdown telling the user that they will be taken back to the homepage after 10 seconds.
-    - Alternatively the user can select the homepage link if they don't want to wait.
-    
-    ![screenshot](documentation/features/feature08.png)
+  - Users are redirected to this page after succesfully sending a message to the site owner.
+  - This give the user peice of mind knowing that the message has definately been processed and lets them know that they can expect a reply soon.
+  - The page displays a countdown telling the user that they will be taken back to the homepage after 10 seconds.
+  - Alternatively the user can select the homepage link if they don't want to wait.
 
+  ![screenshot](documentation/features/feature08.png)
 - **404 page**
 
-    - This page will be displayed if the user tries to navigate to a page that doesn't exist.
-    - The page displays a countdown telling the user that they will be taken back to the homepage after 10 seconds.
-    - Alternatively the user can select the homepage link if they don't want to wait.
-    
-    ![screenshot](documentation/features/feature09.png)
+  - This page will be displayed if the user tries to navigate to a page that doesn't exist.
+  - The page displays a countdown telling the user that they will be taken back to the homepage after 10 seconds.
+  - Alternatively the user can select the homepage link if they don't want to wait.
 
+  ![screenshot](documentation/features/feature09.png)
 - **Footer**
 
-    - Here users can find links to the pages social media accounts and contact page.
-    - This is available on every page.
-    
-    ![screenshot](documentation/features/feature10.png)
+  - Here users can find links to the pages social media accounts and contact page.
+  - This is available on every page.
 
+  ![screenshot](documentation/features/feature10.png)
 
 ### Future Features
 
 - Custom Game Difficulty
-    - I would like to add the abilty for the user to choose a custom grid size as well as a custom amount of mines.
+  - I would like to add the abilty for the user to choose a custom grid size as well as a custom amount of mines.
 - Leader Board
-    - I would like users to be able to compare their times against other users by adding a leaderboard.
-
+  - I would like users to be able to compare their times against other users by adding a leaderboard.
 
 ## Tools & Technologies Used
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you should explain the various tools and technologies used to develop the project.
-Make sure to put a link (where applicable) to the source, and explain what each was used for.
-Some examples have been provided, but this is just a sample only, your project might've used others.
-Feel free to delete any unused items below as necessary.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
-- [CSS :root variables](https://www.w3schools.com/css/css3_variables.asp) used for reusable styles throughout the site.
 - [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) used for an enhanced responsive layout.
-- [CSS Grid](https://www.w3schools.com/css/css_grid.asp) used for an enhanced responsive layout.
 - [JavaScript](https://www.javascript.com) used for user interaction on the site.
-- [Python](https://www.python.org) used as the back-end programming language.
+- [jQuery](https://jquery.com/) also used for user interaction on the site.
 - [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 - [GitHub](https://github.com) used for secure online code storage.
 - [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
 - [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
 - [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- [Materialize](https://materializecss.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- [Flask](https://flask.palletsprojects.com) used as the Python framework for the site.
-- [Django](https://www.djangoproject.com) used as the Python framework for the site.
-- [MongoDB](https://www.mongodb.com) used as the non-relational database management with Flask.
-- [SQLAlchemy](https://www.sqlalchemy.org) used as the relational database management with Flask.
-- [PostgreSQL](https://www.postgresql.org) used as the relational database management.
-- [ElephantSQL](https://www.elephantsql.com) used as the Postgres database.
-- [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
-- [Cloudinary](https://cloudinary.com) used for online static file storage.
-- [Stripe](https://stripe.com) used for online secure payments of ecommerce products/services.
-- [AWS S3](https://aws.amazon.com/s3) used for online static file storage.
+- [Balsamiq](https://balsamiq.com/) used to create the project wireframes.
+- [redketchup](https://redketchup.io/favicon-generator) to generate the favicon used on all pages
 
 ## Testing
 
@@ -249,7 +217,8 @@ For all testing, please refer to the [TESTING.md](TESTING.md) file.
 ## Deployment
 
 The site was deployed to GitHub Pages. The steps to deploy are as follows:
-- In the [GitHub repository](https://github.com/dougyb83/minesweeper), navigate to the Settings tab 
+
+- In the [GitHub repository](https://github.com/dougyb83/minesweeper), navigate to the Settings tab
 - Under the heading "Code and automation", select "Pages".
 - From the source section drop-down menu, select the Main Branch, then click "Save".
 - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
@@ -264,13 +233,13 @@ This project can be cloned or forked in order to make a local copy on your own s
 
 You can clone the repository by following these steps:
 
-1. Go to the [GitHub repository](https://github.com/dougyb83/minesweeper) 
-2. Locate the Code button above the list of files and click it 
+1. Go to the [GitHub repository](https://github.com/dougyb83/minesweeper)
+2. Locate the Code button above the list of files and click it
 3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
 4. Open Git Bash or Terminal
 5. Change the current working directory to the one where you want the cloned directory
 6. In your IDE Terminal, type the following command to clone my repository:
-	- `git clone https://github.com/dougyb83/minesweeper.git`
+   - `git clone https://github.com/dougyb83/minesweeper.git`
 7. Press Enter to create your local clone.
 
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
@@ -299,79 +268,36 @@ Use this space to discuss any differences between the local version you've devel
 
 ## Credits
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section you need to reference where you got your content, media, and extra help from.
-It is common practice to use code from other repositories and tutorials,
-however, it is important to be very specific about these sources to avoid plagiarism.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ### Content
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to provide attribution links to any borrowed code snippets, elements, or resources.
-A few examples have been provided below to give you some ideas.
-
-Ideally, you should provide an actual link to every resource used, not just a generic link to the main site!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-| Source | Location | Notes |
-| --- | --- | --- |
-| [Markdown Builder](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
-| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
-| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
-| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
-| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
-| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
-| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
-| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
-| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
-| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+| Source                                                                | Location           | Notes                                         |
+| --------------------------------------------------------------------- | ------------------ | --------------------------------------------- |
+| [Markdown Builder](https://traveltimn.github.io/markdown-builder)        | README and TESTING | tool to help generate the Markdown files      |
+| [Chris Beams](https://chris.beams.io/posts/git-commit)                   | version control    | "How to Write a Git Commit Message"           |
+| [W3Schools](https://www.w3schools.com/jsref/default.asp)                 | entire site        | to reference to all JavaScript methods        |
+| [Flexbox Froggy](https://flexboxfroggy.com/)                             | entire site        | modern responsive layouts                     |
+| [YouTube](https://youtu.be/LFU5ZlrR21E)                                  | game page          | Use of a 2D array to create the game grid     |
+| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc&ab_channel=WesBos) | home & game page   | use of local storage to store variable data   |
+| [linuxhint](https://linuxhint.com/javascript-count-up-timer/)            | game page          | how to create a timer with 1 second intervals |
+| [StackOverflow](https://stackoverflow.com/a/7715161)                     | home page          | how to query screensize                       |
+| [StackOverflow](https://stackoverflow.com/a/48088202)                    | home & game page   | X to close button on modal                    |
+| [StackOverflow](https://stackoverflow.com/a/36018502)                    | game page          | time delay on mine reveal                     |
+| [StackOverflow](https://stackoverflow.com/a/25654697)                    | game page          | to play multiple sounds at once               |
+| [StackOverflow](https://stackoverflow.com/a/4236294)                     | game page          | how to add event listener for right click     |
+| [StackOverflow](https://stackoverflow.com/a/16987577)                    | game page          | how to stop the default action of right click |
+| [StackOverflow](https://stackoverflow.com/a/66361691)                    | game page          | how to get a random index from a 2d array     |
+| [Font Awesome](https://fontawesome.com/)                                 | entire site        | for icons on socials and controls bar         |
 
 ### Media
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to provide attribution links to any images, videos, or audio files borrowed from online.
-A few examples have been provided below to give you some ideas.
-
-If you're the owner (or a close acquaintance) of all media files, then make sure to specify this.
-Let the assessors know that you have explicit rights to use the media files within your project.
-
-Ideally, you should provide an actual link to every media file used, not just a generic link to the main site!
-The list below is by no means exhaustive. Within the Code Institute Slack community, you can find more "free media" links
-by sending yourself the following command: `!freemedia`.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-| Source | Location | Type | Notes |
-| --- | --- | --- | --- |
-| [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
-| [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
-| [Unsplash](https://unsplash.com) | product page | image | sample of fake products |
-| [Pixabay](https://pixabay.com) | gallery page | image | group of photos for gallery |
-| [Wallhere](https://wallhere.com) | footer | image | background wallpaper image in the footer |
-| [This Person Does Not Exist](https://thispersondoesnotexist.com) | testimonials | image | headshots of fake testimonial images |
-| [Audio Micro](https://www.audiomicro.com/free-sound-effects) | game page | audio | free audio files to generate the game sounds |
-| [Videvo](https://www.videvo.net/) | home page | video | background video on the hero section |
-| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
+| Source                                                                     | Location    | Type  | Notes                     |
+| -------------------------------------------------------------------------- | ----------- | ----- | ------------------------- |
+| [pngegg](https://www.pngegg.com/en/png-cbukd)                                 | entire site | image | Mine logo                 |
+| [opengameart](https://opengameart.org/content/short-impact)                   | game page   | sound | Mine exploding            |
+| [opengameart](https://opengameart.org/content/sci-fi-openclose-interface-sfx) | game page   | sound | Adding and removing flags |
+| [99sounds](https://99sounds.org/free-sound-effects/)                          | game page   | sound | Tile reveal               |
 
 ### Acknowledgements
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
-A few examples have been provided below to give you some ideas.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for their support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
-- I would like to thank my partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
-- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
