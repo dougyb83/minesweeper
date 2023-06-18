@@ -9,7 +9,7 @@ The game not only provides entertainment but also serves as a mental exercise, p
 In summary, our web-based responsive minesweeper game is designed to appeal to a wide range of players, from casual and retro gamers to puzzle enthusiasts, offering an engaging and accessible experience.
 
 ![screenshot](documentation/mockup.png)
-https://ui.dev/amiresponsive?url=https://dougyb83.github.io/minesweeper
+
 
 [View the live site here.](https://dougyb83.github.io/minesweeper/)
 
