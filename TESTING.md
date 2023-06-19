@@ -74,16 +74,15 @@ Sample responsiveness testing documentation:
 
 I've tested my deployed project on multiple devices to check for responsiveness issues.
 
-| Device             | Screenshot                                        | Notes                               |
-| ------------------ | ------------------------------------------------- | ----------------------------------- |
-| Mobile (DevTools)  | ![screenshot](documentation/responsive-mobile.png)  | Works as expected                   |
-| Tablet (DevTools)  | ![screenshot](documentation/responsive-tablet.png)  | Works as expected                   |
-| Desktop            | ![screenshot](documentation/responsive-desktop.png) | Works as expected                   |
-| XL Monitor         | ![screenshot](documentation/responsive-xl.png)      | Scaling starts to have minor issues |
-| 4K Monitor         | ![screenshot](documentation/responsive-4k.png)      | Noticeable scaling issues           |
-| Google Pixel 7 Pro | ![screenshot](documentation/responsive-pixel.png)   | Works as expected                   |
-| iPhone 14          | ![screenshot](documentation/responsive-iphone.png)  | Works as expected                   |
-| x                  | x                                                 | repeat for any other tested sizes   |
+| Device                   | Screenshot                                                          | Screenshot                                                           | Screenshot                                                         | Notes             |
+| ------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------- |
+| Mobile (DevTools)        | ![screenshot](documentation/testing/responsive-mobile-dev-home.png)   | ![screenshot](documentation/testing/responsive-mobile-dev-game.png)   | ![screenshot](documentation/testing/responsive-mobile-dev-contact.png)   | Works as expected |
+| Tablet (DevTools)        | ![screenshot](documentation/testing/responsive-tablet-dev-home.png)   | ![screenshot](documentation/testing/responsive-tablet-dev-game.png)   | ![screenshot](documentation/testing/responsive-tablet-dev-contact.png)   | Works as expected |
+| Desktop                  | ![screenshot](documentation/testing/responsive-desktop-home.png)      | ![screenshot](documentation/testing/responsive-desktop-game.png)      | ![screenshot](documentation/testing/responsive-desktop-contact.png)      | Works as expected |
+| Google Pixel 4a          | ![screenshot](documentation/testing/responsive-mobile-pixel-home.png) | ![screenshot](documentation/testing/responsive-mobile-pixel-game.png) | ![screenshot](documentation/testing/responsive-mobile-pixel-contact.png) | Works as expected |
+| Samsung Galaxy S8        | ![screenshot](documentation/testing/responsive-mobile-s8-home.png)    | ![screenshot](documentation/testing/responsive-mobile-s8-game.png)    | ![screenshot](documentation/testing/responsive-mobile-s8-contact.png)    | Works as expected |
+| Samsung Galaxy S21 Ultra | ![screenshot](documentation/testing/responsive-mobile-s21-home.png)   | ![screenshot](documentation/testing/responsive-mobile-s21-game.png)   | ![screenshot](documentation/testing/responsive-mobile-s21-contact.png)   | Works as expected |
+| Samsung Galaxy tab 4     | ![screenshot](documentation/testing/responsive-tablet-tab4-home.png)  | ![screenshot](documentation/testing/responsive-tablet-tab4-game.png)  | ![screenshot](documentation/testing/responsive-tablet-tab4-contact.png)  | Works as expected |
 
 ## Lighthouse Audit
 
