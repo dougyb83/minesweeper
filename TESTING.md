@@ -20,34 +20,9 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-- If you are copying/pasting your HTML code, use this link: https://jigsaw.w3.org/css-validator/#validate_by_input
-- (*recommended*) If you are using the live deployed site, use this link: https://jigsaw.w3.org/css-validator/#validate_by_uri
-
-It's recommended to validate the live site if you only have a single CSS file using the deployed URL.
-This will give you a custom URL as well, which you can use on your testing documentation.
-It makes it easier to return back to the page to validate it again in the future.
-The URL will look something like this:
-
-- https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper
-
-If you have multiple CSS files, then individual [validation by input](https://jigsaw.w3.org/css-validator/#validate_by_input)
-is recommended for the additional CSS files.
-
-**IMPORTANT**: Third-Party tools
-
-If you're using extras like Bootstrap, Materialize, Font Awesome, then sometimes the validator
-will attempt to also validate this code, even if it's not part of your own actual code.
-You are not required to validate the external libraries or frameworks!
-
-Sample CSS code validation documentation (tables are extremely helpful!):
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 | File         | Jigsaw URL                                                                                              | Screenshot                                             | Notes                              |
 | ------------ | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------- |
-| style.css    | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https://dougyb83.github.io/minesweeper) | ![screenshot](documentation/css-validation-style.png)    | Pass: No Errors  |
+| style.css    | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https://dougyb83.github.io/minesweeper) | ![screenshot](documentation/validation/css-validation-style.png)    | Pass: No Errors  |
 
 ### JavaScript
 
@@ -56,48 +31,22 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | File               | Screenshot                                             | Notes                                |
 | ------------------ | ------------------------------------------------------ | ------------------------------------ |
 | index.js          | ![screenshot](documentation/validation/js-validation-index.png)    | Pass: No Errors |
-| game.js       | ![screenshot](documentation/validation/js-validation-game.png) | Pass: No Errors                      |
+| game.js       | ![screenshot](documentation/validation/js-validation-game.png) | Pass: No Errors (the unused variable is a function created for testing purposes)                     |
 
 
 ## Browser Compatibility
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to discuss testing the live/deployed site on various browsers.
-
-Consider testing at least 3 different browsers, if available on your system.
-
-Recommended browsers to consider:
-
-- [Chrome](https://www.google.com/chrome)
-- [Firefox (Developer Edition)](https://www.mozilla.org/firefox/developer)
-- [Edge](https://www.microsoft.com/edge)
-- [Safari](https://support.apple.com/downloads/safari)
-- [Brave](https://brave.com/download)
-- [Opera](https://www.opera.com/download)
-
-**IMPORTANT**: You must provide screenshots of the tested browsers, to "prove" that you've actually tested them.
-
-Please note, there are services out there that can test multiple browser compatibilities at the same time.
-Some of these are paid services, but some are free.
-If you use these, you must provide a link to the source used for attribution, and multiple screenshots of the results.
-
-Sample browser testing documentation:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
-| Browser           | Screenshot                                     | Notes                                |
-| ----------------- | ---------------------------------------------- | ------------------------------------ |
-| Chrome            | ![screenshot](documentation/browser-chrome.png)  | Works as expected                    |
-| Firefox           | ![screenshot](documentation/browser-firefox.png) | Works as expected                    |
-| Edge              | ![screenshot](documentation/browser-edge.png)    | Works as expected                    |
-| Safari            | ![screenshot](documentation/browser-safari.png)  | Minor CSS differences                |
-| Brave             | ![screenshot](documentation/browser-brave.png)   | Works as expected                    |
-| Opera             | ![screenshot](documentation/browser-opera.png)   | Minor differences                    |
-| Internet Explorer | ![screenshot](documentation/browser-iex.png)     | Does not work as expected            |
-| x                 | x                                              | repeat for any other tested browsers |
+| Browser           | Screenshot                                     | Screenshot                                     | Screenshot                                     | Notes                                |
+| ----------------- | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | ------------------------------------ |
+| Chrome            | ![screenshot](documentation/browser-compatibility/browser-chrome-home.png)  | ![screenshot](documentation/browser-compatibility/browser-chrome-game.png)  | ![screenshot](documentation/browser-compatibility/browser-chrome-contact.png)  | Works as expected                    |
+| Firefox           | ![screenshot](documentation/browser-compatibility/browser-firefox-home.png) | ![screenshot](documentation/browser-compatibility/browser-firefox-game.png)  | ![screenshot](documentation/browser-compatibility/browser-firefox-contact.png)  | Minor CSS differences                    |
+| Edge              | ![screenshot](documentation/browser-compatibility/browser-edge-home.png)    | ![screenshot](documentation/browser-compatibility/browser-edge-game.png)  | ![screenshot](documentation/browser-compatibility/browser-edge-contact.png)  | Works as expected                    |
+| Aloha            | ![screenshot](documentation/browser-compatibility/browser-aloha-home.png)  | ![screenshot](documentation/browser-compatibility/browser-aloha-game.png)  | ![screenshot](documentation/browser-compatibility/browser-aloha-contact.png)  | Works as expecteds                |
+| Brave             | ![screenshot](documentation/browser-compatibility/browser-brave-home.png)   | ![screenshot](documentation/browser-compatibility/browser-brave-game.png)  | ![screenshot](documentation/browser-compatibility/browser-brave-contact.png)  | Works as expected                    |
+| Opera             | ![screenshot](documentation/browser-compatibility/browser-opera-home.png)   | ![screenshot](documentation/browser-compatibility/browser-opera-game.png)  | ![screenshot](documentation/browser-compatibility/browser-opera-contact.png)  | Works as expected                   |
+
 
 ## Responsiveness
 
