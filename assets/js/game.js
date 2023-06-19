@@ -82,23 +82,28 @@ $(".volume").click(function () {
 
 // when page is loaded
 $(document).ready(function () {
-    // get object from local storage
-    lsTileCount = JSON.parse(localStorage.getItem("tileCount"));  // get item from localStorage
-    // if local storage exists extract data and set variables
-    if (lsTileCount.count) {
-        if (lsTileCount.count === 8) {
-            mines = lsTileCount.count; // set mines to 8
-            tileCount = lsTileCount.count; // set tileCount, used to set grid size
-        } else if (lsTileCount.count === 9) {
-            mines = 10; // set mines to 10
-            tileCount = lsTileCount.count;  
-        } else if (lsTileCount.count === 12) {
-            mines = 30; // set mines to 30
-            tileCount = lsTileCount.count;  
-        } else {
-            mines = 40;  // otherwise set mines to 40 
-            tileCount = 16;
+    // check if local storage exists
+    if (localStorage.getItem("tileCount")) {
+        lsTileCount = JSON.parse(localStorage.getItem("tileCount"));  // get object from local storage
+        // if local storage exists extract data and set variables
+        if (lsTileCount.count) {
+            if (lsTileCount.count === 8) {
+                mines = lsTileCount.count; // set mines to 8
+                tileCount = lsTileCount.count; // set tileCount, used to set grid size
+            } else if (lsTileCount.count === 9) {
+                mines = 10; // set mines to 10
+                tileCount = lsTileCount.count;  
+            } else if (lsTileCount.count === 12) {
+                mines = 30; // set mines to 30
+                tileCount = lsTileCount.count;  
+            } else {
+                mines = 40;  // otherwise set mines to 40 
+                tileCount = 16;
+            }
         }
+    } else { // if no local storage, set default game
+        mines = 8;
+        tileCount = 8;
     }
 
     // sets the visible mine count equal to mines variable
