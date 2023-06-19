@@ -2,55 +2,19 @@
 
 Return back to the [README.md](README.md) file.
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you need to convince the assessors that you have conducted enough testing to legitimately believe that the site works well.
-Essentially, in this part, you should go over all of your project's features, and ensure that they all work as intended,
-with the project providing an easy and straightforward way for the users to achieve their goals.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ## Code Validation
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use the space to discuss code validation for any of your own code files (where applicable).
-You are not required to validate external libraries/frameworks, such as imported Bootstrap, Materialize, Font Awesome, etc.
-
-**IMPORTANT**: You must provide a screenshot for each file you validate.
-
-**PRO TIP**: Always validate the live site pages, not your local code. There could be subtle/hidden differences.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ### HTML
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-- If you are copying/pasting your HTML code, use this link: https://validator.w3.org/#validate_by_input
-- (*recommended*) If you are using the live deployed site pages, use this link: https://validator.w3.org/#validate_by_uri
-
-It's recommended to validate the live pages (each of them) using the deployed URL.
-This will give you a custom URL as well, which you can use on your testing documentation.
-It makes it easier to return back to a page to validate it again in the future.
-The URL will look something like this:
-
-- https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Findex.html
-
-Sample HTML code validation documentation (tables are extremely helpful!):
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-| Page | W3C URL | Screenshot | Notes |
-| --- | --- | --- | --- |
-| Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Findex.html) | ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
-| Contact | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Fcontact.html) | ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
-| Quiz | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Fquiz.html) | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
-| Add Blog | n/a | ![screenshot](documentation/html-validation-add-blog.png) | Duplicate IDs found, and fixed |
-| Checkout | n/a | ![screenshot](documentation/html-validation-checkout.png) | Pass: No Errors |
-| x | x | x | repeat for all remaining HTML files |
+| Page         | W3C URL                                                                                                 | Screenshot                                                             | Notes                                                   |
+| ------------ | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------- |
+| Home         | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Findex.html)        | ![screenshot](documentation/validation/html-validation-home.png)         | misuse of aria-label warning                            |
+| Game         | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Fgame.html)         | ![screenshot](documentation/validation/html-validation-game.png)         | misuse of aria-label and section lacks heading warnings |
+| Contact      | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Fcontact.html)      | ![screenshot](documentation/validation/html-validation-contact.png)      | Pass: No Errors                                         |
+| Confirmation | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Fconfirmation.html) | ![screenshot](documentation/validation/html-validation-confirmation.png) | Pass: No Errors                                         |
+| 404          | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2F404.html)          | ![screenshot](documentation/validation/html-validation-404.png)          | Pass: No Errors                                         |
 
 ### CSS
 
@@ -81,54 +45,19 @@ Sample CSS code validation documentation (tables are extremely helpful!):
 
 🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
-| File | Jigsaw URL | Screenshot | Notes |
-| --- | --- | --- | --- |
-| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper) | ![screenshot](documentation/css-validation-style.png) | Pass: No Errors |
-| checkout.css | n/a | ![screenshot](documentation/css-validation-checkout.png) | Pass: No Errors |
-| x | x | x | repeat for all remaining CSS files |
+| File         | Jigsaw URL                                                                                              | Screenshot                                             | Notes                              |
+| ------------ | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------- |
+| style.css    | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https://dougyb83.github.io/minesweeper) | ![screenshot](documentation/css-validation-style.png)    | Pass: No Errors  |
 
 ### JavaScript
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+| File               | Screenshot                                             | Notes                                |
+| ------------------ | ------------------------------------------------------ | ------------------------------------ |
+| index.js          | ![screenshot](documentation/validation/js-validation-index.png)    | Pass: No Errors |
+| game.js       | ![screenshot](documentation/validation/js-validation-game.png) | Pass: No Errors                      |
 
-If using modern JavaScript (ES6) methods, then make sure to include the following
-line at the very top of every single JavaScript file (this should remain in your files for submission):
-
-    /* jshint esversion: 11 */
-
-If you are also including jQuery (`$`), then the updated format will be:
-
-    /* jshint esversion: 11, jquery: true */
-
-This allows the JShint validator to recognize modern ES6 methods, such as:
-`let`, `const`, `template literals`, `arrow functions (=>)`, etc.
-
-**IMPORTANT**: External resources
-
-Sometimes we'll write JavaScript that imports variables from other files, such as an array of questions
-from `questions.js`, which are used within the main `script.js` file elsewhere.
-If that's the case, the JShint validation tool doesn't know how to recognize unused variables
-that would normally be imported locally in your code.
-These warnings are acceptable to showcase on your screenshots.
-
-The same thing applies when using external libraries such as Stripe, Leaflet, Bootstrap, Materialize, etc..
-To instantiate these components, we need to use their respective declarator.
-Again, the JShint validation tool would flag these as undefined/unused variables.
-These warnings are acceptable to showcase on your screenshots.
-
-Sample JS code validation documentation (tables are extremely helpful!):
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-| File | Screenshot | Notes |
-| --- | --- | --- |
-| script.js | ![screenshot](documentation/js-validation-script.png) | Unused variables from external files |
-| questions.js | ![screenshot](documentation/js-validation-questions.png) | Pass: No Errors |
-| quiz.js | ![screenshot](documentation/js-validation-quiz.png) | Unused variables from external files |
-| stripe_elements.js | ![screenshot](documentation/js-validation-stripe.png) | Undefined Stripe variable |
-| x | x | x | repeat for all remaining JavaScript files |
 
 ## Browser Compatibility
 
@@ -139,6 +68,7 @@ Use this space to discuss testing the live/deployed site on various browsers.
 Consider testing at least 3 different browsers, if available on your system.
 
 Recommended browsers to consider:
+
 - [Chrome](https://www.google.com/chrome)
 - [Firefox (Developer Edition)](https://www.mozilla.org/firefox/developer)
 - [Edge](https://www.microsoft.com/edge)
@@ -158,16 +88,16 @@ Sample browser testing documentation:
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
-| Browser | Screenshot | Notes |
-| --- | --- | --- |
-| Chrome | ![screenshot](documentation/browser-chrome.png) | Works as expected |
-| Firefox | ![screenshot](documentation/browser-firefox.png) | Works as expected |
-| Edge | ![screenshot](documentation/browser-edge.png) | Works as expected |
-| Safari | ![screenshot](documentation/browser-safari.png) | Minor CSS differences |
-| Brave | ![screenshot](documentation/browser-brave.png) | Works as expected |
-| Opera | ![screenshot](documentation/browser-opera.png) | Minor differences |
-| Internet Explorer | ![screenshot](documentation/browser-iex.png) | Does not work as expected |
-| x | x | repeat for any other tested browsers |
+| Browser           | Screenshot                                     | Notes                                |
+| ----------------- | ---------------------------------------------- | ------------------------------------ |
+| Chrome            | ![screenshot](documentation/browser-chrome.png)  | Works as expected                    |
+| Firefox           | ![screenshot](documentation/browser-firefox.png) | Works as expected                    |
+| Edge              | ![screenshot](documentation/browser-edge.png)    | Works as expected                    |
+| Safari            | ![screenshot](documentation/browser-safari.png)  | Minor CSS differences                |
+| Brave             | ![screenshot](documentation/browser-brave.png)   | Works as expected                    |
+| Opera             | ![screenshot](documentation/browser-opera.png)   | Minor differences                    |
+| Internet Explorer | ![screenshot](documentation/browser-iex.png)     | Does not work as expected            |
+| x                 | x                                              | repeat for any other tested browsers |
 
 ## Responsiveness
 
@@ -176,6 +106,7 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 Use this space to discuss testing the live/deployed site on various device sizes.
 
 The minimum requirement is for the following 3 tests:
+
 - Mobile
 - Tablet
 - Desktop
@@ -194,16 +125,16 @@ Sample responsiveness testing documentation:
 
 I've tested my deployed project on multiple devices to check for responsiveness issues.
 
-| Device | Screenshot | Notes |
-| --- | --- | --- |
-| Mobile (DevTools) | ![screenshot](documentation/responsive-mobile.png) | Works as expected |
-| Tablet (DevTools) | ![screenshot](documentation/responsive-tablet.png) | Works as expected |
-| Desktop | ![screenshot](documentation/responsive-desktop.png) | Works as expected |
-| XL Monitor | ![screenshot](documentation/responsive-xl.png) | Scaling starts to have minor issues |
-| 4K Monitor | ![screenshot](documentation/responsive-4k.png) | Noticeable scaling issues |
-| Google Pixel 7 Pro | ![screenshot](documentation/responsive-pixel.png) | Works as expected |
-| iPhone 14 | ![screenshot](documentation/responsive-iphone.png) | Works as expected |
-| x | x | repeat for any other tested sizes |
+| Device             | Screenshot                                        | Notes                               |
+| ------------------ | ------------------------------------------------- | ----------------------------------- |
+| Mobile (DevTools)  | ![screenshot](documentation/responsive-mobile.png)  | Works as expected                   |
+| Tablet (DevTools)  | ![screenshot](documentation/responsive-tablet.png)  | Works as expected                   |
+| Desktop            | ![screenshot](documentation/responsive-desktop.png) | Works as expected                   |
+| XL Monitor         | ![screenshot](documentation/responsive-xl.png)      | Scaling starts to have minor issues |
+| 4K Monitor         | ![screenshot](documentation/responsive-4k.png)      | Noticeable scaling issues           |
+| Google Pixel 7 Pro | ![screenshot](documentation/responsive-pixel.png)   | Works as expected                   |
+| iPhone 14          | ![screenshot](documentation/responsive-iphone.png)  | Works as expected                   |
+| x                  | x                                                 | repeat for any other tested sizes   |
 
 ## Lighthouse Audit
 
@@ -226,15 +157,15 @@ Sample Lighthouse testing documentation:
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
-| Page | Size | Screenshot | Notes |
-| --- | --- | --- | --- |
-| Home | Mobile | ![screenshot](documentation/lighthouse-home-mobile.png) | Some minor warnings |
-| Home | Desktop | ![screenshot](documentation/lighthouse-home-desktop.png) | Few warnings |
-| About | Mobile | ![screenshot](documentation/lighthouse-about-mobile.png) | Some minor warnings |
-| About | Desktop | ![screenshot](documentation/lighthouse-about-desktop.png) | Few warnings |
-| Gallery | Mobile | ![screenshot](documentation/lighthouse-gallery-mobile.png) | Slow response time due to large images |
-| Gallery | Desktop | ![screenshot](documentation/lighthouse-gallery-desktop.png) | Slow response time due to large images |
-| x | x | x | repeat for any other tested pages/sizes |
+| Page    | Size    | Screenshot                                                | Notes                                   |
+| ------- | ------- | --------------------------------------------------------- | --------------------------------------- |
+| Home    | Mobile  | ![screenshot](documentation/lighthouse-home-mobile.png)     | Some minor warnings                     |
+| Home    | Desktop | ![screenshot](documentation/lighthouse-home-desktop.png)    | Few warnings                            |
+| About   | Mobile  | ![screenshot](documentation/lighthouse-about-mobile.png)    | Some minor warnings                     |
+| About   | Desktop | ![screenshot](documentation/lighthouse-about-desktop.png)   | Few warnings                            |
+| Gallery | Mobile  | ![screenshot](documentation/lighthouse-gallery-mobile.png)  | Slow response time due to large images  |
+| Gallery | Desktop | ![screenshot](documentation/lighthouse-gallery-desktop.png) | Slow response time due to large images  |
+| x       | x       | x                                                         | repeat for any other tested pages/sizes |
 
 ## Defensive Programming
 
@@ -246,14 +177,17 @@ When building projects that accept user inputs or forms, you should always test 
 Examples of this could include (not limited to):
 
 Forms:
+
 - Users cannot submit an empty form
 - Users must enter valid email addresses
 
 PP3 (Python-only):
+
 - Users must enter a valid letter/word/string when prompted
 - Users must choose from a specific list only
 
 Flask/Django:
+
 - Users cannot brute-force a URL to navigate to a restricted page
 - Users cannot perform CRUD functionality while logged-out
 - User-A should not be able to manipulate data belonging to User-B, or vice versa
@@ -271,39 +205,39 @@ You should include any manual tests performed, and the expected results/outcome.
 
 Defensive programming was manually tested with the below user acceptance testing:
 
-| Page | User Action | Expected Result | Pass/Fail | Comments |
-| --- | --- | --- | --- | --- |
-| Home Page | | | | |
-| | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Home link in navbar | Redirection to Home page | Pass | |
-| Gallery Page | | | | |
-| | Click on Gallery link in navbar | Redirection to Gallery page | Pass | |
-| | Load gallery images | All images load as expected | Pass | |
-| Contact Page | | | | |
-| | Click on Contact link in navbar | Redirection to Contact page | Pass | |
-| | Enter first/last name | Field will accept freeform text | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter message in textarea | Field will accept freeform text | Pass | |
-| | Click the Submit button | Redirects user to form-dump | Pass | User must click 'Back' button to return |
-| Sign Up | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password (twice) | Field will only accept password format | Pass | |
-| | Click on Sign Up button | Asks user to confirm email page | Pass | Email sent to user |
-| | Confirm email | Redirects user to blank Sign In page | Pass | |
-| Log In | | | | |
-| | Click on the Login link | Redirection to Login page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password | Field will only accept password format | Pass | |
-| | Click Login button | Redirects user to home page | Pass | |
-| Log Out | | | | |
-| | Click Logout button | Redirects user to logout page | Pass | Confirms logout first |
-| | Click Confirm Logout button | Redirects user to home page | Pass | |
-| Profile | | | | |
-| | Click on Profile button | User will be redirected to the Profile page | Pass | |
-| | Click on the Edit button | User will be redirected to the edit profile page | Pass | |
-| | Click on the My Orders link | User will be redirected to the My Orders page | Pass | |
-| | Brute forcing the URL to get to another user's profile | User should be given an error | Pass | Redirects user back to own profile |
+| Page         | User Action                                            | Expected Result                                  | Pass/Fail | Comments                                |
+| ------------ | ------------------------------------------------------ | ------------------------------------------------ | --------- | --------------------------------------- |
+| Home Page    |                                                        |                                                  |           |                                         |
+|              | Click on Logo                                          | Redirection to Home page                         | Pass      |                                         |
+|              | Click on Home link in navbar                           | Redirection to Home page                         | Pass      |                                         |
+| Gallery Page |                                                        |                                                  |           |                                         |
+|              | Click on Gallery link in navbar                        | Redirection to Gallery page                      | Pass      |                                         |
+|              | Load gallery images                                    | All images load as expected                      | Pass      |                                         |
+| Contact Page |                                                        |                                                  |           |                                         |
+|              | Click on Contact link in navbar                        | Redirection to Contact page                      | Pass      |                                         |
+|              | Enter first/last name                                  | Field will accept freeform text                  | Pass      |                                         |
+|              | Enter valid email address                              | Field will only accept email address format      | Pass      |                                         |
+|              | Enter message in textarea                              | Field will accept freeform text                  | Pass      |                                         |
+|              | Click the Submit button                                | Redirects user to form-dump                      | Pass      | User must click 'Back' button to return |
+| Sign Up      |                                                        |                                                  |           |                                         |
+|              | Click on Sign Up button                                | Redirection to Sign Up page                      | Pass      |                                         |
+|              | Enter valid email address                              | Field will only accept email address format      | Pass      |                                         |
+|              | Enter valid password (twice)                           | Field will only accept password format           | Pass      |                                         |
+|              | Click on Sign Up button                                | Asks user to confirm email page                  | Pass      | Email sent to user                      |
+|              | Confirm email                                          | Redirects user to blank Sign In page             | Pass      |                                         |
+| Log In       |                                                        |                                                  |           |                                         |
+|              | Click on the Login link                                | Redirection to Login page                        | Pass      |                                         |
+|              | Enter valid email address                              | Field will only accept email address format      | Pass      |                                         |
+|              | Enter valid password                                   | Field will only accept password format           | Pass      |                                         |
+|              | Click Login button                                     | Redirects user to home page                      | Pass      |                                         |
+| Log Out      |                                                        |                                                  |           |                                         |
+|              | Click Logout button                                    | Redirects user to logout page                    | Pass      | Confirms logout first                   |
+|              | Click Confirm Logout button                            | Redirects user to home page                      | Pass      |                                         |
+| Profile      |                                                        |                                                  |           |                                         |
+|              | Click on Profile button                                | User will be redirected to the Profile page      | Pass      |                                         |
+|              | Click on the Edit button                               | User will be redirected to the edit profile page | Pass      |                                         |
+|              | Click on the My Orders link                            | User will be redirected to the My Orders page    | Pass      |                                         |
+|              | Brute forcing the URL to get to another user's profile | User should be given an error                    | Pass      | Redirects user back to own profile      |
 
 ⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
 
@@ -324,18 +258,18 @@ from the respective feature.
 
 🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
-| User Story | Screenshot |
-| --- | --- |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature06.png) |
+| User Story                                                                             | Screenshot                               |
+| -------------------------------------------------------------------------------------- | ---------------------------------------- |
+| As a new site user, I would like to ____________, so that I can ____________.          | ![screenshot](documentation/feature01.png) |
+| As a new site user, I would like to ____________, so that I can ____________.          | ![screenshot](documentation/feature02.png) |
+| As a new site user, I would like to ____________, so that I can ____________.          | ![screenshot](documentation/feature03.png) |
+| As a returning site user, I would like to ____________, so that I can ____________.    | ![screenshot](documentation/feature04.png) |
+| As a returning site user, I would like to ____________, so that I can ____________.    | ![screenshot](documentation/feature05.png) |
+| As a returning site user, I would like to ____________, so that I can ____________.    | ![screenshot](documentation/feature06.png) |
 | As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature07.png) |
 | As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature08.png) |
 | As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature09.png) |
-| repeat for all remaining user stories | x |
+| repeat for all remaining user stories                                                  | x                                        |
 
 ## Automated Testing
 
@@ -410,10 +344,10 @@ Once ready, to run the tests, use this command:
 
 Below are the results from the tests that I've written for this application:
 
-| Test Suites | Tests | Coverage | Screenshot |
-| --- | --- | --- | --- |
-| 1 passed | 16 passed | 55% | ![screenshot](documentation/js-test-coverage.png) |
-| x | x | x | repeat for all remaining tests |
+| Test Suites | Tests     | Coverage | Screenshot                                      |
+| ----------- | --------- | -------- | ----------------------------------------------- |
+| 1 passed    | 16 passed | 55%      | ![screenshot](documentation/js-test-coverage.png) |
+| x           | x         | x        | repeat for all remaining tests                  |
 
 #### Jest Test Issues
 
@@ -441,33 +375,29 @@ For JavaScript and Python applications, it's best to screenshot the errors to in
 
 - JS Uncaught ReferenceError: `foobar` is undefined/not defined
 
-    ![screenshot](documentation/bug01.png)
+  ![screenshot](documentation/bug01.png)
 
-    - To fix this, I _____________________.
-
+  - To fix this, I _____________________.
 - JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).
 
-    ![screenshot](documentation/bug02.png)
+  ![screenshot](documentation/bug02.png)
 
-    - To fix this, I _____________________.
-
+  - To fix this, I _____________________.
 - Python `'ModuleNotFoundError'` when trying to import module from imported package
 
-    ![screenshot](documentation/bug03.png)
+  ![screenshot](documentation/bug03.png)
 
-    - To fix this, I _____________________.
-
+  - To fix this, I _____________________.
 - Django `TemplateDoesNotExist` at /appname/path appname/template_name.html
 
-    ![screenshot](documentation/bug04.png)
+  ![screenshot](documentation/bug04.png)
 
-    - To fix this, I _____________________.
-
+  - To fix this, I _____________________.
 - Python `E501 line too long` (93 > 79 characters)
 
-    ![screenshot](documentation/bug04.png)
+  ![screenshot](documentation/bug04.png)
 
-    - To fix this, I _____________________.
+  - To fix this, I _____________________.
 
 ### GitHub **Issues**
 
@@ -493,20 +423,20 @@ When showcasing your bug tracking for assessment, you can use the following form
 
 All previously closed/fixed bugs can be tracked [here](https://github.com/dougyb83/minesweeper/issues?q=is%3Aissue+is%3Aclosed).
 
-| Bug | Status |
-| --- | --- |
-| [JS Uncaught ReferenceError: `foobar` is undefined/not defined](https://github.com/dougyb83/minesweeper/issues/1) | Closed |
+| Bug                                                                                                                                  | Status |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------ |
+| [JS Uncaught ReferenceError: `foobar` is undefined/not defined](https://github.com/dougyb83/minesweeper/issues/1)                     | Closed |
 | [Python `'ModuleNotFoundError'` when trying to import module from imported package](https://github.com/dougyb83/minesweeper/issues/2) | Closed |
-| [Django `TemplateDoesNotExist` at /appname/path appname/template_name.html](https://github.com/dougyb83/minesweeper/issues/3) | Closed |
+| [Django `TemplateDoesNotExist` at /appname/path appname/template_name.html](https://github.com/dougyb83/minesweeper/issues/3)         | Closed |
 
 **Open Issues**
 
 Any remaining open issues can be tracked [here](https://github.com/dougyb83/minesweeper/issues).
 
-| Bug | Status |
-| --- | --- |
-| [JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).](https://github.com/dougyb83/minesweeper/issues/4) | Open |
-| [Python `E501 line too long` (93 > 79 characters)](https://github.com/dougyb83/minesweeper/issues/5) | Open |
+| Bug                                                                                                                                                                                                                                 | Status |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| [JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).](https://github.com/dougyb83/minesweeper/issues/4) | Open   |
+| [Python `E501 line too long` (93 &gt; 79 characters)](https://github.com/dougyb83/minesweeper/issues/5)                                                                                                                              | Open   |
 
 ## Unfixed Bugs
 
@@ -527,21 +457,19 @@ Some examples:
 
 - On devices smaller than 375px, the page starts to have `overflow-x` scrolling.
 
-    ![screenshot](documentation/unfixed-bug01.png)
+  ![screenshot](documentation/unfixed-bug01.png)
 
-    - Attempted fix: I tried to add additional media queries to handle this, but things started becoming too small to read.
-
+  - Attempted fix: I tried to add additional media queries to handle this, but things started becoming too small to read.
 - For PP3, when using a helper `clear()` function, any text above the height of the terminal does not clear, and remains when you scroll up.
 
-    ![screenshot](documentation/unfixed-bug02.png)
+  ![screenshot](documentation/unfixed-bug02.png)
 
-    - Attempted fix: I tried to adjust the terminal size, but it only resizes the actual terminal, not the allowable area for text.
-
+  - Attempted fix: I tried to adjust the terminal size, but it only resizes the actual terminal, not the allowable area for text.
 - When validating HTML with a semantic `section` element, the validator warns about lacking a header `h2-h6`. This is acceptable.
 
-    ![screenshot](documentation/unfixed-bug03.png)
+  ![screenshot](documentation/unfixed-bug03.png)
 
-    - Attempted fix: this is a known warning and acceptable, and my section doesn't require a header since it's dynamically added via JS.
+  - Attempted fix: this is a known warning and acceptable, and my section doesn't require a header since it's dynamically added via JS.
 
 ⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
 
