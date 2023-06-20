@@ -285,10 +285,6 @@ footer {
     color: #504d4d;
 }
 
-.controls, .info-display {
-    height: 43vw;
-}
-
 /* game on screen display */
 .info-display {
     display: flex;
