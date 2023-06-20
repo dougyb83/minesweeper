@@ -23,7 +23,7 @@ $(".how-to-play-button").click(function () {
 // force expert to be 12x12 grid when sceen below 425px
 if ($(window).width() <= 425) {
     $("#expert").html("Expert<br>12 x 12").attr("data-size", "12").attr("aria-label", "play 12x12 grid");
- }
+}
 
 // Allow expert grid size to change if page resized
 $(window).on('resize', function(){

@@ -229,8 +229,6 @@ footer {
     background-color: #C0C0C0;
     height: 43vw;
     width: 43vw;
-    max-width: 700px;
-    max-height: 700px;
     align-content: center;
     justify-content: center;
     border: 5px outset #2e2e33;
@@ -334,6 +332,65 @@ footer {
 }
 
 /* media queries*/
+@media screen and (min-width: 1441px) {
+    /* game page */
+    .smiley {
+        height: 15vh;
+    }
+
+    .smiley-button {
+        font-size: 80px
+    }
+    
+    .game-menu h2 {
+        margin-top: 320px;
+    } 
+
+    .game-board {
+        max-width: 700px;
+        max-height: 700px;
+    }
+
+    .controls {
+        font-size: 60px;
+        padding-right: 30px;
+    }
+
+    .mine-count-container, .timer-container {
+        width: 280px;
+        height: 150px;
+    }
+
+    .mine-count-container img {
+        height: 90px;
+        width: 90px;
+    }
+
+    .mine-count {
+        font-size: 70px;
+    }
+
+    .timer-container {
+        font-size: 90px;
+        padding-left: 20px;
+    }
+
+    .timer {
+        font-size: 70px;
+    }
+
+    /* footer */
+    .socials {
+        margin-top: 20px;
+    }
+
+    .socials i {
+        font-size: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     /* home page */
     .play-button {
