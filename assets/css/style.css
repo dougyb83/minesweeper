@@ -88,6 +88,7 @@ footer {
     position: sticky;
     width: 100%;
     top: 100vh;
+    padding-bottom: 5px;
 }
 
 .socials {
@@ -216,6 +217,9 @@ footer {
 
 /* game board */
 .game-board-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     padding: 0;
     order: 2;
@@ -336,9 +340,6 @@ footer {
 /* media queries*/
 @media screen and (max-width: 1024px) {
     /* home page */
-    .home-footer {
-        margin-bottom: 40px;
-    }
     .play-button {
         font-size: 30px;
         padding: 20px 0;
@@ -502,11 +503,6 @@ footer {
 }
 
 @media screen and (max-width: 425px) {
-    /* footer */
-    .home-footer {
-        padding-bottom: 5px;
-    }
-
     /* home page */
     .play-button {
         display: flex;
@@ -610,11 +606,6 @@ footer {
 }
 
 @media screen and (max-width: 375px) {
-    /* footer */ 
-    .socials {
-        padding: 0 0 5px 0;
-    }
-
     /* game page */
     .smiley {
         margin-top: 0;
