@@ -114,37 +114,19 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on Instagram logo | New windows opens Instagram website | Pass | |
 | | Click on Envelope logo | Redirection to Contact page | Pass | |
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Repeat for all other tests, as applicable to your own site.
-The aforementioned tests are just an example of a few different project scenarios.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ## User Story Testing
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Testing user stories is actually quite simple, once you've already got the stories defined on your README.
-
-Most of your project's **features** should already align with the **user stories**,
-so this should as simple as creating a table with the user story, matching with the re-used screenshot
-from the respective feature.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 | User Story                                                                             | Screenshot                               |
 | -------------------------------------------------------------------------------------- | ---------------------------------------- |
-| As a new site user, I would like to ____________, so that I can ____________.          | ![screenshot](documentation/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________.          | ![screenshot](documentation/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________.          | ![screenshot](documentation/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________.    | ![screenshot](documentation/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________.    | ![screenshot](documentation/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________.    | ![screenshot](documentation/feature06.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature07.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature08.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature09.png) |
-| repeat for all remaining user stories                                                  | x                                        |
+| As a new site user, I would like to easily understand the rules and objective of the game, so that I can start playing without confusion or hesitation. | ![screenshot](documentation/features/feature02.png) |
+| As a new site user, I would like to have a responsive design that allows me to play the game on different devices. | ![screenshot](documentation/features/feature11.png) |
+| As a new site user, I would like to have clear and intuitive controls, so that I can navigate the game effortlessly. | ![screenshot](documentation/features/feature05.png) |
+| As a returning site user, I would like to I would like to choose the difficulty level, so that I can tailor the gameplay experience to my skill level. | ![screenshot](documentation/features/feature01.png) |
+| As a returning site user, I would like to see my 'best time' so that i can track my progress. | ![screenshot](documentation/features/feature04.png) |
+| As a returning site user, I would like to have the option to customize certain game aspects, such as the sound settings, so that I can tailor the game experience to my preferences. | ![screenshot](documentation/features/feature01.png) |
+| As a returning site user, I would like to have access to social media groups dedicated to the game, so that I can interact with other players, share experiences, and discuss strategies. | ![screenshot](documentation/features/feature10.png) |
+| As a site administrator, I should be able to gather user feedback and suggestions, so that I can understand the user's perspective, identify areas for improvement, and enhance the overall user experience. | ![screenshot](documentation/features/feature07.png) |
+| As a site administrator, I should be able to communicate with the user community through announcements, newsletters, or notifications, so that I can keep the users informed about important updates, events, or changes in the game. | ![screenshot](documentation/features/feature07.png) |  
 
 ## Automated Testing
 

@@ -53,9 +53,9 @@ I used [coolors.co](https://coolors.co/008080-2e2e33-33322e-504d4d-c0c0c0-19ad45
 
 ### Returning Site Users
 
-- As a returning site user, I would like to easily access the game without any hassle or unnecessary steps, so that I can quickly jump back into the gameplay.
 - As a returning site user, I would like to I would like to choose the difficulty level, so that I can tailor the gameplay experience to my skill level.
-- As a returning site user, I would like to have the option to customize certain game aspects, such as the appearance or sound settings, so that I can tailor the game experience to my preferences.
+- As a returning site user, I would like to see my 'best time' so that i can track my progress.
+- As a returning site user, I would like to have the option to customize certain game aspects, such as the sound settings, so that I can tailor the game experience to my preferences.
 - As a returning site user, I would like to have access to social media groups dedicated to the game, so that I can interact with other players, share experiences, and discuss strategies.
 
 ### Site Admin
