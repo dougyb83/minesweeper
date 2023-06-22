@@ -78,75 +78,41 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Defensive Programming
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Defensive programming (defensive design) is extremely important!
-
-When building projects that accept user inputs or forms, you should always test the level of security for each.
-Examples of this could include (not limited to):
-
-Forms:
-
-- Users cannot submit an empty form
-- Users must enter valid email addresses
-
-PP3 (Python-only):
-
-- Users must enter a valid letter/word/string when prompted
-- Users must choose from a specific list only
-
-Flask/Django:
-
-- Users cannot brute-force a URL to navigate to a restricted page
-- Users cannot perform CRUD functionality while logged-out
-- User-A should not be able to manipulate data belonging to User-B, or vice versa
-- Non-Authenticated users should not be able to access pages that require authentication
-- Standard users should not be able to access pages intended for superusers
-
-You'll want to test all functionality on your application, whether it's a standard form,
-or uses CRUD functionality for data manipulation on a database.
-Make sure to include the `required` attribute on any form-fields that should be mandatory.
-Try to access various pages on your site as different user types (User-A, User-B, guest user, admin, superuser).
-
-You should include any manual tests performed, and the expected results/outcome.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 Defensive programming was manually tested with the below user acceptance testing:
 
-| Page         | User Action                                            | Expected Result                                  | Pass/Fail | Comments                                |
-| ------------ | ------------------------------------------------------ | ------------------------------------------------ | --------- | --------------------------------------- |
-| Home Page    |                                                        |                                                  |           |                                         |
-|              | Click on Logo                                          | Redirection to Home page                         | Pass      |                                         |
-|              | Click on Home link in navbar                           | Redirection to Home page                         | Pass      |                                         |
-| Gallery Page |                                                        |                                                  |           |                                         |
-|              | Click on Gallery link in navbar                        | Redirection to Gallery page                      | Pass      |                                         |
-|              | Load gallery images                                    | All images load as expected                      | Pass      |                                         |
-| Contact Page |                                                        |                                                  |           |                                         |
-|              | Click on Contact link in navbar                        | Redirection to Contact page                      | Pass      |                                         |
-|              | Enter first/last name                                  | Field will accept freeform text                  | Pass      |                                         |
-|              | Enter valid email address                              | Field will only accept email address format      | Pass      |                                         |
-|              | Enter message in textarea                              | Field will accept freeform text                  | Pass      |                                         |
-|              | Click the Submit button                                | Redirects user to form-dump                      | Pass      | User must click 'Back' button to return |
-| Sign Up      |                                                        |                                                  |           |                                         |
-|              | Click on Sign Up button                                | Redirection to Sign Up page                      | Pass      |                                         |
-|              | Enter valid email address                              | Field will only accept email address format      | Pass      |                                         |
-|              | Enter valid password (twice)                           | Field will only accept password format           | Pass      |                                         |
-|              | Click on Sign Up button                                | Asks user to confirm email page                  | Pass      | Email sent to user                      |
-|              | Confirm email                                          | Redirects user to blank Sign In page             | Pass      |                                         |
-| Log In       |                                                        |                                                  |           |                                         |
-|              | Click on the Login link                                | Redirection to Login page                        | Pass      |                                         |
-|              | Enter valid email address                              | Field will only accept email address format      | Pass      |                                         |
-|              | Enter valid password                                   | Field will only accept password format           | Pass      |                                         |
-|              | Click Login button                                     | Redirects user to home page                      | Pass      |                                         |
-| Log Out      |                                                        |                                                  |           |                                         |
-|              | Click Logout button                                    | Redirects user to logout page                    | Pass      | Confirms logout first                   |
-|              | Click Confirm Logout button                            | Redirects user to home page                      | Pass      |                                         |
-| Profile      |                                                        |                                                  |           |                                         |
-|              | Click on Profile button                                | User will be redirected to the Profile page      | Pass      |                                         |
-|              | Click on the Edit button                               | User will be redirected to the edit profile page | Pass      |                                         |
-|              | Click on the My Orders link                            | User will be redirected to the My Orders page    | Pass      |                                         |
-|              | Brute forcing the URL to get to another user's profile | User should be given an error                    | Pass      | Redirects user back to own profile      |
+| Page | User Action | Expected Result | Pass/Fail | Comments |
+| --- | --- | --- | --- | --- |
+| Home Page | | | | |
+| | Click on Easy button | Redirection to Game page | Pass | |
+| | Click on Medium button | Redirection to Game page | Pass | |
+| | Click on Expert button | Redirection to Game page | Pass | |
+| | Click on How to Play button | Modal popup | Pass | |
+| | Click on Modal 'X' | Closes Modal | Pass | |
+| | Click on Facebook logo | New windows opens Facebook website | Pass | |
+| | Click on Instagram logo | New windows opens Instagram website | Pass | |
+| | Click on Envelope logo | Redirection to Contact page | Pass | |
+| Game Page | | | | |
+| | Click on Home logo | Redirection to Home page | Pass | |
+| | Click on Arrow logo | Resets the game | Pass | |
+| | Click on Question mark logo | Modal popup | Pass | |
+| | Click on Modal 'X' | Closes Modal | Pass | |
+| | Click on Speaker logo | Unmutes or mutes game sounds | Pass | |
+| | Click on Smiley emoji | Resets the game | Pass | |
+| | Click on Facebook logo | New windows opens Facebook website | Pass | |
+| | Click on Instagram logo | New windows opens Instagram website | Pass | |
+| | Click on Envelope logo | Redirection to Contact page | Pass | |
+| | Left Click on a Tile | Uncovers one or more tiles, revealing a number, a blank space or a mines | Pass | |
+| | Right Click on a Tile | Places a flag and disables Left Click | Pass | |
+| | Right Click on a Flagged Tile | Remove the flag and enables Left Click | Pass | |
+| Contact Page | | | | |
+| | Enter first/last name | Field will accept freeform text | Pass | |
+| | Enter valid email address | Field will only accept email address format | Pass | |
+| | Enter message in textarea | Field will accept freeform text | Pass | |
+| | Click the Send Mesage button | Redirects user to Confirmation page | Pass | |
+| | Click the Home Page link | Redirects to Home page | Pass | |
+| | Click on Facebook logo | New windows opens Facebook website | Pass | |
+| | Click on Instagram logo | New windows opens Instagram website | Pass | |
+| | Click on Envelope logo | Redirection to Contact page | Pass | |
 
 ⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
 
