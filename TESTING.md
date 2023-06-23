@@ -20,40 +20,38 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 
-| File         | Jigsaw URL                                                                                              | Screenshot                                             | Notes                              |
-| ------------ | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------- |
-| style.css    | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https://dougyb83.github.io/minesweeper) | ![screenshot](documentation/validation/css-validation-style.png)    | Pass: No Errors  |
+| File      | Jigsaw URL                                                                                      | Screenshot                                                     | Notes           |
+| --------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | --------------- |
+| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https://dougyb83.github.io/minesweeper) | ![screenshot](documentation/validation/css-validation-style.png) | Pass: No Errors |
 
 ### JavaScript
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
-| File               | Screenshot                                             | Notes                                |
-| ------------------ | ------------------------------------------------------ | ------------------------------------ |
-| index.js          | ![screenshot](documentation/validation/js-validation-index.png)    | Pass: No Errors |
-| game.js       | ![screenshot](documentation/validation/js-validation-game.png) | Pass: No Errors (the unused variable is a function created for testing purposes)                     |
-
+| File     | Screenshot                                                    | Notes                                                                            |
+| -------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| index.js | ![screenshot](documentation/validation/js-validation-index.png) | Pass: No Errors                                                                  |
+| game.js  | ![screenshot](documentation/validation/js-validation-game.png)  | Pass: No Errors (the unused variable is a function created for testing purposes) |
 
 ## Browser Compatibility
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
-| Browser           | Screenshot                                     | Screenshot                                     | Screenshot                                     | Notes                                |
-| ----------------- | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | ------------------------------------ |
-| Chrome            | ![screenshot](documentation/browser-compatibility/browser-chrome-home.png)  | ![screenshot](documentation/browser-compatibility/browser-chrome-game.png)  | ![screenshot](documentation/browser-compatibility/browser-chrome-contact.png)  | Works as expected                    |
-| Firefox           | ![screenshot](documentation/browser-compatibility/browser-firefox-home.png) | ![screenshot](documentation/browser-compatibility/browser-firefox-game.png)  | ![screenshot](documentation/browser-compatibility/browser-firefox-contact.png)  | Minor CSS differences                    |
-| Edge              | ![screenshot](documentation/browser-compatibility/browser-edge-home.png)    | ![screenshot](documentation/browser-compatibility/browser-edge-game.png)  | ![screenshot](documentation/browser-compatibility/browser-edge-contact.png)  | Works as expected                    |
-| Aloha            | ![screenshot](documentation/browser-compatibility/browser-aloha-home.png)  | ![screenshot](documentation/browser-compatibility/browser-aloha-game.png)  | ![screenshot](documentation/browser-compatibility/browser-aloha-contact.png)  | Works as expecteds                |
-| Brave             | ![screenshot](documentation/browser-compatibility/browser-brave-home.png)   | ![screenshot](documentation/browser-compatibility/browser-brave-game.png)  | ![screenshot](documentation/browser-compatibility/browser-brave-contact.png)  | Works as expected                    |
-| Opera             | ![screenshot](documentation/browser-compatibility/browser-opera-home.png)   | ![screenshot](documentation/browser-compatibility/browser-opera-game.png)  | ![screenshot](documentation/browser-compatibility/browser-opera-contact.png)  | Works as expected                   |
-
+| Browser | Screenshot                                                                | Screenshot                                                                | Screenshot                                                                   | Notes                 |
+| ------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------------------- |
+| Chrome  | ![screenshot](documentation/browser-compatibility/browser-chrome-home.png)  | ![screenshot](documentation/browser-compatibility/browser-chrome-game.png)  | ![screenshot](documentation/browser-compatibility/browser-chrome-contact.png)  | Works as expected     |
+| Firefox | ![screenshot](documentation/browser-compatibility/browser-firefox-home.png) | ![screenshot](documentation/browser-compatibility/browser-firefox-game.png) | ![screenshot](documentation/browser-compatibility/browser-firefox-contact.png) | Minor CSS differences |
+| Edge    | ![screenshot](documentation/browser-compatibility/browser-edge-home.png)    | ![screenshot](documentation/browser-compatibility/browser-edge-game.png)    | ![screenshot](documentation/browser-compatibility/browser-edge-contact.png)    | Works as expected     |
+| Aloha   | ![screenshot](documentation/browser-compatibility/browser-aloha-home.png)   | ![screenshot](documentation/browser-compatibility/browser-aloha-game.png)   | ![screenshot](documentation/browser-compatibility/browser-aloha-contact.png)   | Works as expecteds    |
+| Brave   | ![screenshot](documentation/browser-compatibility/browser-brave-home.png)   | ![screenshot](documentation/browser-compatibility/browser-brave-game.png)   | ![screenshot](documentation/browser-compatibility/browser-brave-contact.png)   | Works as expected     |
+| Opera   | ![screenshot](documentation/browser-compatibility/browser-opera-home.png)   | ![screenshot](documentation/browser-compatibility/browser-opera-game.png)   | ![screenshot](documentation/browser-compatibility/browser-opera-contact.png)   | Works as expected     |
 
 ## Responsiveness
 
 I've tested my deployed project on multiple devices to check for responsiveness issues.
 
-| Device                   | Screenshot                                                          | Screenshot                                                           | Screenshot                                                         | Notes             |
-| ------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------- |
+| Device                   | Screenshot                                                          | Screenshot                                                          | Screenshot                                                             | Notes             |
+| ------------------------ | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------- |
 | Mobile (DevTools)        | ![screenshot](documentation/testing/responsive-mobile-dev-home.png)   | ![screenshot](documentation/testing/responsive-mobile-dev-game.png)   | ![screenshot](documentation/testing/responsive-mobile-dev-contact.png)   | Works as expected |
 | Tablet (DevTools)        | ![screenshot](documentation/testing/responsive-tablet-dev-home.png)   | ![screenshot](documentation/testing/responsive-tablet-dev-game.png)   | ![screenshot](documentation/testing/responsive-tablet-dev-contact.png)   | Works as expected |
 | Desktop                  | ![screenshot](documentation/testing/responsive-desktop-home.png)      | ![screenshot](documentation/testing/responsive-desktop-game.png)      | ![screenshot](documentation/testing/responsive-desktop-contact.png)      | Works as expected |
@@ -66,67 +64,66 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
-| Page    | Size    | Screenshot                                                | Notes                                   |
-| ------- | ------- | --------------------------------------------------------- | --------------------------------------- |
-| Home    | Mobile  | ![screenshot](documentation/lighthouse/lighthouse-home-mobile.png)     | Some minor warnings                     |
-| Home    | Desktop | ![screenshot](documentation/lighthouse/lighthouse-home-desktop.png)    | Some minor warnings                            |
-| Game   | Mobile  | ![screenshot](documentation/lighthouse/lighthouse-game-mobile.png)    | Some minor warnings                     |
-| Game   | Desktop | ![screenshot](documentation/lighthouse/lighthouse-game-desktop.png)   | Some minor warnings                           |
-| Contact | Mobile  | ![screenshot](documentation/lighthouse/lighthouse-contact-mobile.png)  | No major problems  |
-| Contact | Desktop | ![screenshot](documentation/lighthouse/lighthouse-contact-desktop.png) | No major problems  |
-
+| Page    | Size    | Screenshot                                                           | Notes               |
+| ------- | ------- | -------------------------------------------------------------------- | ------------------- |
+| Home    | Mobile  | ![screenshot](documentation/lighthouse/lighthouse-home-mobile.png)     | Some minor warnings |
+| Home    | Desktop | ![screenshot](documentation/lighthouse/lighthouse-home-desktop.png)    | Some minor warnings |
+| Game    | Mobile  | ![screenshot](documentation/lighthouse/lighthouse-game-mobile.png)     | Some minor warnings |
+| Game    | Desktop | ![screenshot](documentation/lighthouse/lighthouse-game-desktop.png)    | Some minor warnings |
+| Contact | Mobile  | ![screenshot](documentation/lighthouse/lighthouse-contact-mobile.png)  | No major problems   |
+| Contact | Desktop | ![screenshot](documentation/lighthouse/lighthouse-contact-desktop.png) | No major problems   |
 
 ## Defensive Programming
 
 Defensive programming was manually tested with the below user acceptance testing:
 
-| Page | User Action | Expected Result | Pass/Fail | Comments |
-| --- | --- | --- | --- | --- |
-| Home Page | | | | |
-| | Click on Easy button | Redirection to Game page | Pass | |
-| | Click on Medium button | Redirection to Game page | Pass | |
-| | Click on Expert button | Redirection to Game page | Pass | |
-| | Click on How to Play button | Modal popup | Pass | |
-| | Click on Modal 'X' | Closes Modal | Pass | |
-| | Click on Facebook logo | New windows opens Facebook website | Pass | |
-| | Click on Instagram logo | New windows opens Instagram website | Pass | |
-| | Click on Envelope logo | Redirection to Contact page | Pass | |
-| Game Page | | | | |
-| | Click on Home logo | Redirection to Home page | Pass | |
-| | Click on Arrow logo | Resets the game | Pass | |
-| | Click on Question mark logo | Modal popup | Pass | |
-| | Click on Modal 'X' | Closes Modal | Pass | |
-| | Click on Speaker logo | Unmutes or mutes game sounds | Pass | |
-| | Click on Smiley emoji | Resets the game | Pass | |
-| | Click on Facebook logo | New windows opens Facebook website | Pass | |
-| | Click on Instagram logo | New windows opens Instagram website | Pass | |
-| | Click on Envelope logo | Redirection to Contact page | Pass | |
-| | Left Click on a Tile | Uncovers one or more tiles, revealing a number, a blank space or a mines | Pass | |
-| | Right Click on a Tile | Places a flag and disables Left Click | Pass | |
-| | Right Click on a Flagged Tile | Remove the flag and enables Left Click | Pass | |
-| Contact Page | | | | |
-| | Enter first/last name | Field will accept freeform text | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter message in textarea | Field will accept freeform text | Pass | |
-| | Click the Send Mesage button | Redirects user to Confirmation page | Pass | |
-| | Click the Home Page link | Redirects to Home page | Pass | |
-| | Click on Facebook logo | New windows opens Facebook website | Pass | |
-| | Click on Instagram logo | New windows opens Instagram website | Pass | |
-| | Click on Envelope logo | Redirection to Contact page | Pass | |
+| Page         | User Action                   | Expected Result                                                          | Pass/Fail | Comments |
+| ------------ | ----------------------------- | ------------------------------------------------------------------------ | --------- | -------- |
+| Home Page    |                               |                                                                          |           |          |
+|              | Click on Easy button          | Redirection to Game page                                                 | Pass      |          |
+|              | Click on Medium button        | Redirection to Game page                                                 | Pass      |          |
+|              | Click on Expert button        | Redirection to Game page                                                 | Pass      |          |
+|              | Click on How to Play button   | Modal popup                                                              | Pass      |          |
+|              | Click on Modal 'X'            | Closes Modal                                                             | Pass      |          |
+|              | Click on Facebook logo        | New windows opens Facebook website                                       | Pass      |          |
+|              | Click on Instagram logo       | New windows opens Instagram website                                      | Pass      |          |
+|              | Click on Envelope logo        | Redirection to Contact page                                              | Pass      |          |
+| Game Page    |                               |                                                                          |           |          |
+|              | Click on Home logo            | Redirection to Home page                                                 | Pass      |          |
+|              | Click on Arrow logo           | Resets the game                                                          | Pass      |          |
+|              | Click on Question mark logo   | Modal popup                                                              | Pass      |          |
+|              | Click on Modal 'X'            | Closes Modal                                                             | Pass      |          |
+|              | Click on Speaker logo         | Unmutes or mutes game sounds                                             | Pass      |          |
+|              | Click on Smiley emoji         | Resets the game                                                          | Pass      |          |
+|              | Click on Facebook logo        | New windows opens Facebook website                                       | Pass      |          |
+|              | Click on Instagram logo       | New windows opens Instagram website                                      | Pass      |          |
+|              | Click on Envelope logo        | Redirection to Contact page                                              | Pass      |          |
+|              | Left Click on a Tile          | Uncovers one or more tiles, revealing a number, a blank space or a mines | Pass      |          |
+|              | Right Click on a Tile         | Places a flag and disables Left Click                                    | Pass      |          |
+|              | Right Click on a Flagged Tile | Remove the flag and enables Left Click                                   | Pass      |          |
+| Contact Page |                               |                                                                          |           |          |
+|              | Enter first/last name         | Field will accept freeform text                                          | Pass      |          |
+|              | Enter valid email address     | Field will only accept email address format                              | Pass      |          |
+|              | Enter message in textarea     | Field will accept freeform text                                          | Pass      |          |
+|              | Click the Send Mesage button  | Redirects user to Confirmation page                                      | Pass      |          |
+|              | Click the Home Page link      | Redirects to Home page                                                   | Pass      |          |
+|              | Click on Facebook logo        | New windows opens Facebook website                                       | Pass      |          |
+|              | Click on Instagram logo       | New windows opens Instagram website                                      | Pass      |          |
+|              | Click on Envelope logo        | Redirection to Contact page                                              | Pass      |          |
 
 ## User Story Testing
 
-| User Story                                                                             | Screenshot                               |
-| -------------------------------------------------------------------------------------- | ---------------------------------------- |
-| As a new site user, I would like to easily understand the rules and objective of the game, so that I can start playing without confusion or hesitation. | ![screenshot](documentation/features/feature02.png) |
-| As a new site user, I would like to have a responsive design that allows me to play the game on different devices. | ![screenshot](documentation/features/feature11.png) |
-| As a new site user, I would like to have clear and intuitive controls, so that I can navigate the game effortlessly. | ![screenshot](documentation/features/feature05.png) |
-| As a returning site user, I would like to I would like to choose the difficulty level, so that I can tailor the gameplay experience to my skill level. | ![screenshot](documentation/features/feature01.png) |
-| As a returning site user, I would like to see my 'best time' so that i can track my progress. | ![screenshot](documentation/features/feature04.png) |
-| As a returning site user, I would like to have the option to customize certain game aspects, such as the sound settings, so that I can tailor the game experience to my preferences. | ![screenshot](documentation/features/feature01.png) |
-| As a returning site user, I would like to have access to social media groups dedicated to the game, so that I can interact with other players, share experiences, and discuss strategies. | ![screenshot](documentation/features/feature10.png) |
-| As a site administrator, I should be able to gather user feedback and suggestions, so that I can understand the user's perspective, identify areas for improvement, and enhance the overall user experience. | ![screenshot](documentation/features/feature07.png) |
-| As a site administrator, I should be able to communicate with the user community through announcements, newsletters, or notifications, so that I can keep the users informed about important updates, events, or changes in the game. | ![screenshot](documentation/features/feature07.png) |  
+| User Story                                                                                                                                                                                                                            | Screenshot                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| As a new site user, I would like to easily understand the rules and objective of the game, so that I can start playing without confusion or hesitation.                                                                               | ![screenshot](documentation/features/feature02.png) |
+| As a new site user, I would like to have a responsive design that allows me to play the game on different devices.                                                                                                                    | ![screenshot](documentation/features/feature11.png) |
+| As a new site user, I would like to have clear and intuitive controls, so that I can navigate the game effortlessly.                                                                                                                  | ![screenshot](documentation/features/feature05.png) |
+| As a returning site user, I would like to I would like to choose the difficulty level, so that I can tailor the gameplay experience to my skill level.                                                                                | ![screenshot](documentation/features/feature01.png) |
+| As a returning site user, I would like to see my 'best time' so that i can track my progress.                                                                                                                                         | ![screenshot](documentation/features/feature04.png) |
+| As a returning site user, I would like to have the option to customize certain game aspects, such as the sound settings, so that I can tailor the game experience to my preferences.                                                  | ![screenshot](documentation/features/feature01.png) |
+| As a returning site user, I would like to have access to social media groups dedicated to the game, so that I can interact with other players, share experiences, and discuss strategies.                                             | ![screenshot](documentation/features/feature10.png) |
+| As a site administrator, I should be able to gather user feedback and suggestions, so that I can understand the user's perspective, identify areas for improvement, and enhance the overall user experience.                          | ![screenshot](documentation/features/feature07.png) |
+| As a site administrator, I should be able to communicate with the user community through announcements, newsletters, or notifications, so that I can keep the users informed about important updates, events, or changes in the game. | ![screenshot](documentation/features/feature07.png) |
 
 ## Automated Testing
 
@@ -219,24 +216,12 @@ This can be used for both "fixed" and "unresolved" issues.
 
 ## Bugs
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-It's very important to document any bugs you've discovered while developing the project.
-Make sure to include any necessary steps you've implemented to fix the bug(s) as well.
-
-For JavaScript and Python applications, it's best to screenshot the errors to include them as well.
-
-**PRO TIP**: screenshots of bugs are extremely helpful, and go a long way!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 - JS Uncaught RangeError: Maximum call stack size exceeded
 
   ![screenshot](documentation/bugs/bug01.png)
-  
+
   - This was caused after clicking a tile that contained a blank space. When a blank space is found the `checkSurroundingTiles()` function then searches the 8 tiles around the clicked tile. Any of those 8 subsequent tiles found to also be blank then have the same logic passed on them. This created an infinite loop because once a blank was found and revealed there was no logic in place to stop the function checking the same tiles again.
   - To fix this, I added a class of 'clicked' to every tile div that had been either clicked by the user or revealed by the function. Then adding this line of code `if (tile.classList.contains("clicked")) {   return;   }` to the `checkTile()` function which ends the search if the tile has this class.
-  
 - Last square on the board grid was not forming correctly.
 
   ![screenshot](documentation/bugs/bug02-1.png)
@@ -244,107 +229,28 @@ For JavaScript and Python applications, it's best to screenshot the errors to in
 
   - To fix this, I used dev tools to discover that the last div was not having the width and height attributes applied to it (pictured). I then found that one of my jQuery statements was trying to apply the attributes to the div before the div was actually created.
   - To fix this, I simply moved the jQuery statement to the end of the `createGrid()` function and after the creation of the div.
-  
 - Incorrect quantity of mines being generated.
 
   ![screenshot](documentation/bugs/bug03.png)
   ![screenshot](documentation/bugs/bug03-1.png)
-  
+
   - After using dev tools I discovered that the `randomIndex` within the `setMines()` function was generating multiples of the same index. This meant that mines were being placed more than once in the same index resulting in less mines actually being generated.
   - To fix this, I added a while loop after the randonIndex had been created. This while loop checks if the random index has already been used, if it has then a new randomIndex is generated.
-  
 - Timer would increase at an erratic rate.
 
   ![screenshot](documentation/bugs/bug04.png)
   ![screenshot](documentation/bugs/bug04-1.png)
-  
+
   - This occured when more than one tile was clicked before the timer reached a value higher than '0'. As seen in the code snippet above if the timer was equal to '0' then a new interval was created. so each time a tile was clciked and the timer was '0' multiple interval timers became active.
-  - To fix this, I I had the timer immediately change to '1' once a tile was clicked (see below).
- 
-   ![screenshot](documentation/bugs/bug04-2.png)
-  
+  - To fix this, I had the timer immediately change to '1' once a tile was clicked (see below).
+
+  ![screenshot](documentation/bugs/bug04-2.png)
 - Modal displays that user has won the game when game is lost.
 
   ![screenshot](documentation/bugs/bug05.png)
-  
+
   - To fix this, I added a return statement after `gameOver()` is called within the `tileClick()` function. This halted the tileClick() function from running any logic statements after that point, including the statement that allows the modal to be shown.
 
-### GitHub **Issues**
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-An improved way to manage bugs is to use the built-in **Issues** tracker on your GitHub repository.
-To access your Issues, click on the "Issues" tab at the top of your repository.
-Alternatively, use this link: https://github.com/dougyb83/minesweeper/issues
-
-If using the Issues tracker for your bug management, you can simplify the documentation process.
-Issues allow you to directly paste screenshots into the issue without having to first save the screenshot locally,
-then uploading into your project.
-
-You can add labels to your issues (`bug`), assign yourself as the owner, and add comments/updates as you progress with fixing the issue(s).
-
-Once you've sorted the issue, you should then "Close" it.
-
-When showcasing your bug tracking for assessment, you can use the following format:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-**Fixed Bugs**
-
-All previously closed/fixed bugs can be tracked [here](https://github.com/dougyb83/minesweeper/issues?q=is%3Aissue+is%3Aclosed).
-
-| Bug                                                                                                                                  | Status |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------ |
-| [JS Uncaught ReferenceError: `foobar` is undefined/not defined](https://github.com/dougyb83/minesweeper/issues/1)                     | Closed |
-| [Python `'ModuleNotFoundError'` when trying to import module from imported package](https://github.com/dougyb83/minesweeper/issues/2) | Closed |
-| [Django `TemplateDoesNotExist` at /appname/path appname/template_name.html](https://github.com/dougyb83/minesweeper/issues/3)         | Closed |
-
-**Open Issues**
-
-Any remaining open issues can be tracked [here](https://github.com/dougyb83/minesweeper/issues).
-
-| Bug                                                                                                                                                                                                                                 | Status |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| [JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).](https://github.com/dougyb83/minesweeper/issues/4) | Open   |
-| [Python `E501 line too long` (93 &gt; 79 characters)](https://github.com/dougyb83/minesweeper/issues/5)                                                                                                                              | Open   |
-
 ## Unfixed Bugs
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-You will need to mention unfixed bugs and why they were not fixed.
-This section should include shortcomings of the frameworks or technologies used.
-Although time can be a big variable to consider, paucity of time and difficulty understanding
-implementation is not a valid reason to leave bugs unfixed.
-
-If you've identified any unfixed bugs, no matter how small, be sure to list them here.
-It's better to be honest and list them, because if it's not documented and an assessor finds the issue,
-they need to know whether or not you're aware of them as well, and why you've not corrected/fixed them.
-
-Some examples:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- On devices smaller than 375px, the page starts to have `overflow-x` scrolling.
-
-  ![screenshot](documentation/unfixed-bug01.png)
-
-  - Attempted fix: I tried to add additional media queries to handle this, but things started becoming too small to read.
-- For PP3, when using a helper `clear()` function, any text above the height of the terminal does not clear, and remains when you scroll up.
-
-  ![screenshot](documentation/unfixed-bug02.png)
-
-  - Attempted fix: I tried to adjust the terminal size, but it only resizes the actual terminal, not the allowable area for text.
-- When validating HTML with a semantic `section` element, the validator warns about lacking a header `h2-h6`. This is acceptable.
-
-  ![screenshot](documentation/unfixed-bug03.png)
-
-  - Attempted fix: this is a known warning and acceptable, and my section doesn't require a header since it's dynamically added via JS.
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-If you legitimately cannot find any unfixed bugs or warnings, then use the following sentence:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 There are no remaining bugs that I am aware of.
