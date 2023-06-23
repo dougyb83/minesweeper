@@ -230,31 +230,44 @@ For JavaScript and Python applications, it's best to screenshot the errors to in
 
 🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
-- JS Uncaught ReferenceError: `foobar` is undefined/not defined
+- JS Uncaught RangeError: Maximum call stack size exceeded
 
-  ![screenshot](documentation/bug01.png)
+  ![screenshot](documentation/bugs/bug01.png)
+  
+  - This was caused after clicking a tile that contained a blank space. When a blank space is found the `checkSurroundingTiles()` function then searches the 8 tiles around the clicked tile. Any of those 8 subsequent tiles found to also be blank then have the same logic passed on them. This created an infinite loop because once a blank was found and revealed there was no logic in place to stop the function checking the same tiles again.
+  - To fix this, I added a class of 'clicked' to every tile div that had been either clicked by the user or revealed by the function. Then adding this line of code `if (tile.classList.contains("clicked")) {   return;   }` to the `checkTile()` function which ends the search if the tile has this class.
+  
+- Last square on the board grid was not forming correctly.
 
-  - To fix this, I _____________________.
-- JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).
+  ![screenshot](documentation/bugs/bug02-1.png)
+  ![screenshot](documentation/bugs/bug02.png)
 
-  ![screenshot](documentation/bug02.png)
+  - To fix this, I used dev tools to discover that the last div was not having the width and height attributes applied to it (pictured). I then found that one of my jQuery statements was trying to apply the attributes to the div before the div was actually created.
+  - To fix this, I simply moved the jQuery statement to the end of the `createGrid()` function and after the creation of the div.
+  
+- Incorrect quantity of mines being generated.
 
-  - To fix this, I _____________________.
-- Python `'ModuleNotFoundError'` when trying to import module from imported package
+  ![screenshot](documentation/bugs/bug03.png)
+  ![screenshot](documentation/bugs/bug03-1.png)
+  
+  - After using dev tools I discovered that the `randomIndex` within the `setMines()` function was generating multiples of the same index. This meant that mines were being placed more than once in the same index resulting in less mines actually being generated.
+  - To fix this, I added a while loop after the randonIndex had been created. This while loop checks if the random index has already been used, if it has then a new randomIndex is generated.
+  
+- Timer would increase at an erratic rate.
 
-  ![screenshot](documentation/bug03.png)
+  ![screenshot](documentation/bugs/bug04.png)
+  ![screenshot](documentation/bugs/bug04-1.png)
+  
+  - This occured when more than one tile was clicked before the timer reached a value higher than '0'. As seen in the code snippet above if the timer was equal to '0' then a new interval was created. so each time a tile was clciked and the timer was '0' multiple interval timers became active.
+  - To fix this, I I had the timer immediately change to '1' once a tile was clicked (see below).
+ 
+   ![screenshot](documentation/bugs/bug04-2.png)
+  
+- Modal displays that user has won the game when game is lost.
 
-  - To fix this, I _____________________.
-- Django `TemplateDoesNotExist` at /appname/path appname/template_name.html
-
-  ![screenshot](documentation/bug04.png)
-
-  - To fix this, I _____________________.
-- Python `E501 line too long` (93 > 79 characters)
-
-  ![screenshot](documentation/bug04.png)
-
-  - To fix this, I _____________________.
+  ![screenshot](documentation/bugs/bug05.png)
+  
+  - To fix this, I added a return statement after `gameOver()` is called within the `tileClick()` function. This halted the tileClick() function from running any logic statements after that point, including the statement that allows the modal to be shown.
 
 ### GitHub **Issues**
 
