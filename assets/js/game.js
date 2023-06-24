@@ -112,8 +112,8 @@ $(window).on('resize', function(){ // Event handler for window resize
     document.getElementsByClassName("mine-count")[0].innerHTML = mines;
 
     // populates the game board
-    createGrid();
-    setMines();
+    boardArr = createGrid();
+    mineLocation = setMines();
     placeMineHints();
 });
 
@@ -129,13 +129,15 @@ function resetGame() {
     flatArr = [];
     mineLocation = [];
     $("#game-board").empty();
-    createGrid();
-    setMines(boardArr);
+    boardArr = createGrid();
+    mineLocation = setMines();
     placeMineHints();
 }
 
 // populates the gameboard with tiles
 function createGrid() {
+    // temporary array before returning
+    let tempGridArr = [];
     //creates a 2d array
     for (let i = 0; i < tileCount; i++) {
         // create a row array
@@ -158,15 +160,18 @@ function createGrid() {
             row.push(cell.id);
         }
         // add each row to the boardArr array
-        boardArr.push(row);
+        tempGridArr.push(row);
     }
     // divide each tiles height and width equally dependant on number of tiles in the grid
     $(".cell").css("width", 96 / tileCount + "%");
     $(".cell").css("height", 96 / tileCount + "%");
+    return tempGridArr;
 }
 
 // randomly chooses mine positions
 function setMines() {
+    // temporary array before returning
+    let tempMineArr = [];
     // flattens the 2d array into a 1d array
     flatArr = boardArr.flat();
     for (let i = 0; i < mines; i++) {
@@ -179,8 +184,9 @@ function setMines() {
         // index into the flatArr and grab the data(id)
         let randomPosition = flatArr[randomIndex];
         // add the id to the mineLocation array
-        mineLocation.push(randomPosition);
+        tempMineArr.push(randomPosition);
     }
+    return tempMineArr;
 }
 
 // creates a mine hint for each tile that has one or more mins surrounfing it and stores the hint in an array
@@ -882,4 +888,4 @@ function instantWin() {
     }
 }
 
-module.exports = { resetGame, gameOverCalled, seconds, boardArr, flatArr, mineLocation, tileCount };
+module.exports = { resetGame, setMines, gameOverCalled, seconds, boardArr, flatArr, mineLocation, tileCount };
