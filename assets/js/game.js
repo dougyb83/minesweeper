@@ -29,7 +29,6 @@ const mineExplodeSound = new Audio('assets/sounds/mine-explode.wav');
 const flagInSound = new Audio("assets/sounds/flag-in.ogg");
 const flagOutSound = new Audio("assets/sounds/flag-out.ogg");
 
-
 // closes modal when button pressed
 closeButton.addEventListener("click", () => {
     howToPlayModal.close();
@@ -46,21 +45,23 @@ $(".home").click(function () {
 });
 
 // resets the game
-$(".reset").click(function () {
-    gameOverCalled = false;
-    clearInterval(timer); // stops the timer
-    seconds = 0;
-    document.getElementById("timer").innerHTML = seconds; // reset timer display to 0
-    document.getElementsByClassName("mine-count")[0].innerHTML = mines; //reset mine display
-    document.getElementsByClassName("smiley-button")[0].innerHTML = "😀";
-    boardArr = [];
-    flatArr = [];
-    mineLocation = [];
-    $("#game-board").empty();
-    createGrid();
-    setMines(boardArr);
-    placeMineHints();
-});
+$(".reset").click(resetGame);
+
+function resetGame() {
+        gameOverCalled = false;
+        clearInterval(timer); // stops the timer
+        seconds = 0;
+        document.getElementById("timer").innerHTML = seconds; // reset timer display to 0
+        document.getElementsByClassName("mine-count")[0].innerHTML = mines; //reset mine display
+        document.getElementsByClassName("smiley-button")[0].innerHTML = "😀";
+        boardArr = [];
+        flatArr = [];
+        mineLocation = [];
+        $("#game-board").empty();
+        createGrid();
+        setMines(boardArr);
+        placeMineHints();
+}
 
 // displays how to play modal
 $(".how-to-play").click(function () {
@@ -76,8 +77,25 @@ $(".volume").click(function () {
     else {
         $(this).removeClass("fa-volume-high").addClass("fa-volume-xmark");
         mute = true;
+    }    
+});
+
+// error handling if desktop expert game window resized
+$(window).on('resize', function(){ // Event handler for window resize
+    let win = $(this);
+    // if 16 x 16 grid is selected and the screen is made smaller, display a warning message
+    if (win.width() <= 425 && tileCount === 16) {
+        // Display line of text
+        $(".game-board").html(`<p><strong>Can't play 16 X 16 grid on this screen size!</strong><br>Either select a bigger screen size,<br>or go 
+            back to the <a href="index.html"><strong>HomePage</strong></a><br>and select the revised Expert game!</p>`).css("text-align", "center");
     }
-    
+    // when screen is made bigger add the game grid back 
+    if (win.width() > 425 && tileCount === 16 && !$(".game-board").html().includes("div")) {
+        // clear the html content
+        $(".game-board").empty();
+        // Restore original HTML content
+        resetGame() 
+    }
 });
 
 // when page is loaded
