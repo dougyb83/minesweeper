@@ -47,22 +47,6 @@ $(".home").click(function () {
 // resets the game
 $(".reset").click(resetGame);
 
-function resetGame() {
-        gameOverCalled = false;
-        clearInterval(timer); // stops the timer
-        seconds = 0;
-        document.getElementById("timer").innerHTML = seconds; // reset timer display to 0
-        document.getElementsByClassName("mine-count")[0].innerHTML = mines; //reset mine display
-        document.getElementsByClassName("smiley-button")[0].innerHTML = "😀";
-        boardArr = [];
-        flatArr = [];
-        mineLocation = [];
-        $("#game-board").empty();
-        createGrid();
-        setMines(boardArr);
-        placeMineHints();
-}
-
 // displays how to play modal
 $(".how-to-play").click(function () {
     howToPlayModal.showModal();
@@ -99,7 +83,8 @@ $(window).on('resize', function(){ // Event handler for window resize
 });
 
 // when page is loaded
-$(document).ready(function () {
+// $(document).ready(function () {
+    document.addEventListener("DOMContentLoaded", function () {
     // check if local storage exists
     if (localStorage.getItem("tileCount")) {
         lsTileCount = JSON.parse(localStorage.getItem("tileCount"));  // get object from local storage
@@ -132,6 +117,23 @@ $(document).ready(function () {
     setMines();
     placeMineHints();
 });
+
+// resets the game
+function resetGame() {
+    gameOverCalled = false;
+    clearInterval(timer); // stops the timer
+    seconds = 0;
+    document.getElementById("timer").innerHTML = seconds; // reset timer display to 0
+    document.getElementsByClassName("mine-count")[0].innerHTML = mines; //reset mine display
+    document.getElementsByClassName("smiley-button")[0].innerHTML = "😀";
+    boardArr = [];
+    flatArr = [];
+    mineLocation = [];
+    $("#game-board").empty();
+    createGrid();
+    setMines(boardArr);
+    placeMineHints();
+}
 
 // populates the gameboard with tiles
 function createGrid() {
@@ -880,3 +882,5 @@ function instantWin() {
         });
     }
 }
+
+module.exports = { resetGame, gameOverCalled, seconds, boardArr, flatArr, mineLocation };
