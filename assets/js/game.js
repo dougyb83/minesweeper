@@ -24,7 +24,6 @@ const closeButton = document.querySelector("[data-close-modal]");
 
 // sounds
 const revealTileSound = new Audio('assets/sounds/reveal-tile.wav');
-revealTileSound.volume = 0.1;
 const mineExplodeSound = new Audio('assets/sounds/mine-explode.wav');
 const flagInSound = new Audio("assets/sounds/flag-in.ogg");
 const flagOutSound = new Audio("assets/sounds/flag-out.ogg");
@@ -40,20 +39,20 @@ howToPlayModal.addEventListener("click", () => {
 });
 
 // return to home page
-$(".home").click(function () {
+$(".home").on("click", function () {
     window.location.href = "index.html";
 });
 
 // resets the game
-$(".reset").click(resetGame);
+$(".reset").on("click", resetGame);
 
 // displays how to play modal
-$(".how-to-play").click(function () {
+$(".how-to-play").on("click", function () {
     howToPlayModal.showModal();
 });
 
 // toggles volume icon
-$(".volume").click(function () {
+$(".volume").on("click", function () {
     if (this.classList.contains("fa-volume-xmark")) {
         $(this).removeClass("fa-volume-xmark").addClass("fa-volume-high");
         mute = false;
@@ -90,8 +89,8 @@ $(window).on('resize', function(){ // Event handler for window resize
         lsTileCount = JSON.parse(localStorage.getItem("tileCount"));  // get object from local storage
         // if local storage exists extract data and set variables
         if (lsTileCount.count) {
-            if (lsTileCount.count === 8) {
-                mines = lsTileCount.count; // set mines to 8
+            if (lsTileCount.count === 16) {
+                mines = 40; // set mines to 40
                 tileCount = lsTileCount.count; // set tileCount, used to set grid size
             } else if (lsTileCount.count === 9) {
                 mines = 10; // set mines to 10
@@ -100,8 +99,8 @@ $(window).on('resize', function(){ // Event handler for window resize
                 mines = 30; // set mines to 30
                 tileCount = lsTileCount.count;  
             } else {
-                mines = 40;  // otherwise set mines to 40 
-                tileCount = 16;
+                mines = 8;  // otherwise set mines to 8 
+                tileCount = 8;
             }
         }
     } else { // if no local storage, set default game
@@ -883,4 +882,4 @@ function instantWin() {
     }
 }
 
-module.exports = { resetGame, gameOverCalled, seconds, boardArr, flatArr, mineLocation };
+module.exports = { resetGame, gameOverCalled, seconds, boardArr, flatArr, mineLocation, tileCount };
