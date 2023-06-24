@@ -78,7 +78,7 @@ $(window).on('resize', function(){ // Event handler for window resize
         // clear the html content
         $(".game-board").empty();
         // Restore original HTML content
-        resetGame() 
+        resetGame();
     }
 });
 

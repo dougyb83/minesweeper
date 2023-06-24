@@ -31,7 +31,7 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | File     | Screenshot                                                    | Notes                                                                            |
 | -------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | index.js | ![screenshot](documentation/validation/js-validation-index.png) | Pass: No Errors                                                                  |
-| game.js  | ![screenshot](documentation/validation/js-validation-game.png)  | Pass: No Errors (the unused variable is a function created for testing purposes) |
+| game.js  | ![screenshot](documentation/validation/js-validation-game.png)  | Pass: No Errors (instantWin and module are for testing purposes) |
 
 ## Browser Compatibility
 

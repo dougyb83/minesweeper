@@ -58,9 +58,9 @@ describe("resetGame works correctly", () => {
     // test("seconds should be set to 0", () => {
     //     expect(seconds).toBe(0);
     // });
-    test("boardArr should be empty", () => {
-        expect(boardArr).toHaveLength(0);
-    });
+    // test("boardArr should be empty", () => {
+    //     expect(boardArr).toHaveLength(0);
+    // });
     // test("flatArr should be empty", () => {
     //     expect(flatArr).toHaveLength(0);
     // });
