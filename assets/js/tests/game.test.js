@@ -7,6 +7,9 @@ let setMines;
 let createGrid;
 let gameOverCalled;
 let seconds;
+let checkForMine;
+let placeMineHints;
+let mineLocation;
 
 beforeEach(() => {
     let fs = require("fs");
@@ -17,8 +20,10 @@ beforeEach(() => {
     setMines = require('../game.js').setMines;
     createGrid = require('../game.js').createGrid;
     gameOverCalled = require('../game.js').gameOverCalled;
+    checkForMine = require('../game.js').checkForMine;
     seconds = require('../game.js').seconds;
-    
+    placeMineHints = require('../game.js').placeMineHints;
+    mineLocation = require('../game.js').mineLocation;
     document.close();
 });
 
@@ -56,23 +61,19 @@ describe("resetGame works correctly", () => {
 });
 
 describe("setMines works correctly", () => {
-    beforeAll(() => {
-        mineLocation = [];
-        mines = 8;
-        mineLocation = setMines();
-    });
     test("mineLocation length is 8", () => {
+        boardArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        mines = 8;
+        mineLocation = setMines(mines, boardArr);
         expect(mineLocation).toHaveLength(8);
     });
 });
 
 describe("createGrid works correctly", () => {
-    beforeAll(() => {
+    test("boardArr length is 8", () => {
         boardArr = [];
         tileCount = 8;
-        boardArr = createGrid();
-    });
-    test("boardArr length is 8", () => {
+        boardArr = createGrid(tileCount);
         expect(boardArr).toHaveLength(8);
     });
 });

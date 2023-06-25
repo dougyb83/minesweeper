@@ -112,8 +112,8 @@ $(window).on('resize', function(){ // Event handler for window resize
     document.getElementsByClassName("mine-count")[0].innerHTML = mines;
 
     // populates the game board
-    boardArr = createGrid();
-    mineLocation = setMines();
+    boardArr = createGrid(tileCount);
+    mineLocation = setMines(mines, boardArr);
     placeMineHints();
 });
 
@@ -129,13 +129,13 @@ function resetGame() {
     flatArr = [];
     mineLocation = [];
     $("#game-board").empty();
-    boardArr = createGrid();
-    mineLocation = setMines();
+    boardArr = createGrid(tileCount);
+    mineLocation = setMines(mines, boardArr);
     placeMineHints();
 }
 
 // populates the gameboard with tiles
-function createGrid() {
+function createGrid(tileCount) {
     // temporary array before returning
     let tempGridArr = [];
     //creates a 2d array
@@ -169,7 +169,7 @@ function createGrid() {
 }
 
 // randomly chooses mine positions
-function setMines() {
+function setMines(mines, boardArr) {
     // temporary array before returning
     let tempMineArr = [];
     // flattens the 2d array into a 1d array
@@ -736,7 +736,9 @@ function checkSurroundingTiles(row, col, type) {
 function checkForMine(row, col) {
     let id = row.toString() + "-" + col.toString();
     if (mineLocation.includes(id)) {
-    return true;
+        return true;
+    } else {
+        return false
     }
 }
 
@@ -888,4 +890,4 @@ function instantWin() {
     }
 }
 
-module.exports = { resetGame, setMines, gameOverCalled, seconds, boardArr, flatArr, mineLocation, tileCount };
+module.exports = { resetGame, setMines, gameOverCalled, seconds, createGrid, checkForMine, placeMineHints, mineLocation };
