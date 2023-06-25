@@ -2,6 +2,17 @@
  * @jest-environment jsdom
  */
 
+// const { test, expect } = require("@jest/globals");
+// const { resetGame, setMines, createGrid, gameOverCalled, seconds, checkForMine, placeMineHints, mineLocation } = require("../game.js");
+
+// beforeAll(() => {
+//     let fs = require("fs");
+//     let fileContents = fs.readFileSync("game.html", "utf-8");
+//     document.open();
+//     document.write(fileContents);
+//     document.close();
+// });
+
 let resetGame;
 let setMines;
 let createGrid;

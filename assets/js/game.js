@@ -890,4 +890,6 @@ function instantWin() {
     }
 }
 
-module.exports = { resetGame, setMines, gameOverCalled, seconds, createGrid, checkForMine, placeMineHints, mineLocation };
+if (typeof module !== "undefined") module.exports = {
+    resetGame, setMines, gameOverCalled, seconds, createGrid, checkForMine, placeMineHints, mineLocation
+};
