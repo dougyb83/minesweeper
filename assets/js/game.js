@@ -82,8 +82,7 @@ $(window).on('resize', function(){ // Event handler for window resize
 });
 
 // when page is loaded
-// $(document).ready(function () {
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     // check if local storage exists
     if (localStorage.getItem("tileCount")) {
         lsTileCount = JSON.parse(localStorage.getItem("tileCount"));  // get object from local storage
@@ -738,7 +737,7 @@ function checkForMine(row, col) {
     if (mineLocation.includes(id)) {
         return true;
     } else {
-        return false
+        return false;
     }
 }
 
