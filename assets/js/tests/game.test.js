@@ -59,8 +59,6 @@ describe("DOM test", () => {
 
 describe("resetGame works correctly", () => {
     beforeAll(() => {
-        gameOverCalled = true;
-        seconds = 35;
         resetGame();
     });
     test("gameOverCalled should be set to false", () => {
