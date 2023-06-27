@@ -480,6 +480,7 @@ function tileClick() {
         clearInterval(timer); // stops the timer
         disableClick(); // calls function to disable all click events
         document.getElementsByClassName("smiley-button")[0].innerHTML = "🥳";
+        document.getElementsByClassName("mine-count")[0].innerHTML = 0;
         // set the best time
         getBestTime();
         // displays modal
