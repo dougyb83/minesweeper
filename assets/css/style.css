@@ -602,8 +602,8 @@ footer {
     }
 
     .game-board {
-        height: 100vw;
-        width: 100vw; 
+        height: 94vw;
+        width: 94vw; 
         margin-top: 30px;
         margin-bottom: 10px;   
         border: 2px solid;   
