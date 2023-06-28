@@ -4,6 +4,8 @@
  * @jest-environment jsdom
  */
 
+const { test, expect } = require("@jest/globals");
+
 beforeEach(() => {
     let fs = require("fs");
     let fileContents = fs.readFileSync("index.html", "utf-8");

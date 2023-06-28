@@ -3,17 +3,7 @@
 /**
  * @jest-environment jsdom
  */
-
-// const { test, expect } = require("@jest/globals");
-// const { resetGame, setMines, createGrid, gameOverCalled, seconds, checkForMine, placeMineHints, mineLocation } = require("../game.js");
-
-// beforeAll(() => {
-//     let fs = require("fs");
-//     let fileContents = fs.readFileSync("game.html", "utf-8");
-//     document.open();
-//     document.write(fileContents);
-//     document.close();
-// });
+const { test, expect } = require("@jest/globals");
 
 let resetGame;
 let setMines;
@@ -73,8 +63,8 @@ describe("resetGame works correctly", () => {
 
 describe("setMines works correctly", () => {
     test("mineLocation length is 8", () => {
-        boardArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        mines = 8;
+        let boardArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let mines = 8;
         mineLocation = setMines(mines, boardArr);
         expect(mineLocation).toHaveLength(8);
     });
@@ -82,8 +72,8 @@ describe("setMines works correctly", () => {
 
 describe("createGrid works correctly", () => {
     test("boardArr length is 8", () => {
-        boardArr = [];
-        tileCount = 8;
+        let boardArr = [];
+        let tileCount = 8;
         boardArr = createGrid(tileCount);
         expect(boardArr).toHaveLength(8);
     });
