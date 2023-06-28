@@ -1,3 +1,5 @@
+/* jshint esversion: 11, jquery: true */
+
 /**
  * @jest-environment jsdom
  */
