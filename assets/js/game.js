@@ -177,7 +177,7 @@ function setMines(mines, boardArr) {
         // create a random number used to index into the flatArr array
         let randomIndex = Math.floor(Math.random() * flatArr.length);
         // checks if the index has already been used and produces another random index if it has
-        while (mineLocation.includes(flatArr[randomIndex])) {
+        while (tempMineArr.includes(flatArr[randomIndex])) {
             randomIndex = Math.floor(Math.random() * flatArr.length);
         }
         // index into the flatArr and grab the data(id)
