@@ -8,13 +8,13 @@ Return back to the [README.md](README.md) file.
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
-| Page         | W3C URL                                                                                                 | Screenshot                                                             | Notes                                                   |
-| ------------ | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------- |
-| Home         | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Findex.html)        | ![screenshot](documentation/validation/html-validation-home.png)         | Pass: No Errors                           |
-| Game         | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Fgame.html)         | ![screenshot](documentation/validation/html-validation-game.png)         | 	Section lacks heading h2-h6 warning |
-| Contact      | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Fcontact.html)      | ![screenshot](documentation/validation/html-validation-contact.png)      | Pass: No Errors                                         |
-| Confirmation | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Fconfirmation.html) | ![screenshot](documentation/validation/html-validation-confirmation.png) | Pass: No Errors                                         |
-| 404          | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2F404.html)          | ![screenshot](documentation/validation/html-validation-404.png)          | Pass: No Errors                                         |
+| Page         | W3C URL                                                                                                 | Screenshot                                                             | Notes                               |
+| ------------ | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------- |
+| Home         | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Findex.html)        | ![screenshot](documentation/validation/html-validation-home.png)         | Pass: No Errors                     |
+| Game         | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Fgame.html)         | ![screenshot](documentation/validation/html-validation-game.png)         | Section lacks heading h2-h6 warning |
+| Contact      | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Fcontact.html)      | ![screenshot](documentation/validation/html-validation-contact.png)      | Pass: No Errors                     |
+| Confirmation | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2Fconfirmation.html) | ![screenshot](documentation/validation/html-validation-confirmation.png) | Pass: No Errors                     |
+| 404          | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdougyb83.github.io%2Fminesweeper%2F404.html)          | ![screenshot](documentation/validation/html-validation-404.png)          | Pass: No Errors                     |
 
 ### CSS
 
@@ -28,13 +28,13 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
-| File     | Screenshot                                                    | Notes                                                                            |
-| -------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| index.js | ![screenshot](documentation/validation/js-validation-index.png) | Pass: No Errors                                                                  |
-| game.js  | ![screenshot](documentation/validation/js-validation-game.png)  | Pass: No Errors (instantWin and module are for testing purposes) |
-| index.test.js  | ![screenshot](documentation/validation/js-validation-index-jest.png)  | Pass: No Errors |
-| game.test.js  | ![screenshot](documentation/validation/js-validation-game-jest.png)  | Pass: No Errors |
-| setup-jest.js  | ![screenshot](documentation/validation/js-validation-setup-jest.png)  | Pass: No Errors |
+| File          | Screenshot                                                         | Notes                                                            |
+| ------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| index.js      | ![screenshot](documentation/validation/js-validation-index.png)      | Pass: No Errors                                                  |
+| game.js       | ![screenshot](documentation/validation/js-validation-game.png)       | Pass: No Errors (instantWin and module are for testing purposes) |
+| index.test.js | ![screenshot](documentation/validation/js-validation-index-jest.png) | Pass: No Errors                                                  |
+| game.test.js  | ![screenshot](documentation/validation/js-validation-game-jest.png)  | Pass: No Errors                                                  |
+| setup-jest.js | ![screenshot](documentation/validation/js-validation-setup-jest.png) | Pass: No Errors                                                  |
 
 ## Browser Compatibility
 
@@ -80,39 +80,40 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 Defensive programming was manually tested with the below user acceptance testing:
 
-| Page         | User Action                   | Expected Result                                                          | Pass/Fail | Comments |
-| ------------ | ----------------------------- | ------------------------------------------------------------------------ | --------- | -------- |
-| Home Page    |                               |                                                                          |           |          |
-|              | Click on Easy button          | Redirection to Game page                                                 | Pass      |          |
-|              | Click on Medium button        | Redirection to Game page                                                 | Pass      |          |
-|              | Click on Expert button        | Redirection to Game page                                                 | Pass      |          |
-|              | Click on How to Play button   | Modal popup                                                              | Pass      |          |
-|              | Click on Modal 'X'            | Closes Modal                                                             | Pass      |          |
-|              | Click on Facebook logo        | New windows opens Facebook website                                       | Pass      |          |
-|              | Click on Instagram logo       | New windows opens Instagram website                                      | Pass      |          |
-|              | Click on Envelope logo        | Redirection to Contact page                                              | Pass      |          |
-| Game Page    |                               |                                                                          |           |          |
-|              | Click on Home logo            | Redirection to Home page                                                 | Pass      |          |
-|              | Click on Arrow logo           | Resets the game                                                          | Pass      |          |
-|              | Click on Question mark logo   | Modal popup                                                              | Pass      |          |
-|              | Click on Modal 'X'            | Closes Modal                                                             | Pass      |          |
-|              | Click on Speaker logo         | Unmutes or mutes game sounds                                             | Pass      |          |
-|              | Click on Smiley emoji         | Resets the game                                                          | Pass      |          |
-|              | Click on Facebook logo        | New windows opens Facebook website                                       | Pass      |          |
-|              | Click on Instagram logo       | New windows opens Instagram website                                      | Pass      |          |
-|              | Click on Envelope logo        | Redirection to Contact page                                              | Pass      |          |
-|              | Left Click on a Tile          | Uncovers one or more tiles, revealing a number, a blank space or a mines | Pass      |          |
-|              | Right Click on a Tile         | Places a flag and disables Left Click                                    | Pass      |          |
-|              | Right Click on a Flagged Tile | Remove the flag and enables Left Click                                   | Pass      |          |
-| Contact Page |                               |                                                                          |           |          |
-|              | Enter first/last name         | Field will accept freeform text                                          | Pass      |          |
-|              | Enter valid email address     | Field will only accept email address format                              | Pass      |          |
-|              | Enter message in textarea     | Field will accept freeform text                                          | Pass      |          |
-|              | Click the Send Mesage button  | Redirects user to Confirmation page                                      | Pass      |          |
-|              | Click the Home Page link      | Redirects to Home page                                                   | Pass      |          |
-|              | Click on Facebook logo        | New windows opens Facebook website                                       | Pass      |          |
-|              | Click on Instagram logo       | New windows opens Instagram website                                      | Pass      |          |
-|              | Click on Envelope logo        | Redirection to Contact page                                              | Pass      |          |
+| Page         | User Action                   | Expected Result                                                                | Pass/Fail | Comments |
+| ------------ | ----------------------------- | ------------------------------------------------------------------------------ | --------- | -------- |
+| Home Page    |                               |                                                                                |           |          |
+|              | Click on Easy button          | Redirection to Game page 8 x 8 grid                                            | Pass      |          |
+|              | Click on Medium button        | Redirection to Game page 9 x 9 grid                                            | Pass      |          |
+|              | Click on Expert button        | Redirection to Game page 16 x 16 grid or 12 x 12 grid depending on screen size | Pass      |          |
+|              | Click on How to Play button   | Modal popup                                                                    | Pass      |          |
+|              | Click on Modal 'X'            | Closes Modal                                                                   | Pass      |          |
+|              | Click on Facebook logo        | Facebook website opens in a new tab                                                | Pass      |          |
+|              | Click on Instagram logo       | Instagram website opens in a new tab                                                | Pass      |          |
+|              | Click on Envelope logo        | Redirection to Contact page                                                    | Pass      |          |
+| Game Page    |                               |                                                                                |           |          |
+|              | Click on Home logo            | Redirection to Home page                                                       | Pass      |          |
+|              | Click on Arrow logo           | Resets the game                                                                | Pass      |          |
+|              | Click on Question mark logo   | Modal popup                                                                    | Pass      |          |
+|              | Click on Modal 'X'            | Closes Modal                                                                   | Pass      |          |
+|              | Click on Speaker logo         | Unmutes or mutes game sounds                                                   | Pass      |          |
+|              | Click on Smiley emoji         | Resets the game                                                                | Pass      |          |
+|              | Click on Facebook logo        | Facebook website opens in a new tab                                            | Pass      |          |
+|              | Click on Instagram logo       | Instagram website opens in a new tab                                           | Pass      |          |
+|              | Click on Envelope logo        | Redirection to Contact page                                                    | Pass      |          |
+|              | Left Click on a Tile          | Uncovers one or more tiles, revealing a number, a blank space or a mines       | Pass      |          |
+|              | Right Click on a Tile         | Places a flag and disables Left Click                                          | Pass      |          |
+|              | Right Click on a Flagged Tile | Remove the flag and enables Left Click                                         | Pass      |          |
+| Contact Page |                               |                                                                                |           |          |
+|              | Enter first/last name         | Field will accept freeform text                                                | Pass      |          |
+|              | Enter valid email address     | Field will only accept email address format                                    | Pass      |          |
+|              | Enter message in textarea     | Field will accept freeform text                                                | Pass      |          |
+|              | Click the Send Message button  | Redirects user to Confirmation page                                            | Pass      |          |
+|              | Click the Send Message button with empty form  | Forces user to enter required fields                                            | Pass      |          |
+|              | Click the Home Page link      | Redirects to Home page                                                         | Pass      |          |
+|              | Click on Facebook logo        | Facebook website opens in a new tab                                                | Pass      |          |
+|              | Click on Instagram logo       | Instagram website opens in a new tab                                                | Pass      |          |
+|              | Click on Envelope logo        | Redirection to Contact page                                                    | Pass      |          |
 
 ## User Story Testing
 
@@ -135,12 +136,6 @@ I have conducted a series of automated tests on my application.
 I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
 
 ### JavaScript (Jest Testing)
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Adjust the code below (file names, etc.) to match your own project files/folders.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 I have used the [Jest](https://jestjs.io) JavaScript testing framework to test the application functionality.
 
@@ -201,10 +196,10 @@ Once ready, to run the tests, use this command:
 
 Below are the results from the tests that I've written for this application:
 
-| Test Suites | Tests     | Coverage | Screenshot                                      |
-| ----------- | --------- | -------- | ----------------------------------------------- |
-| 1 passed    | 16 passed | 55%      | ![screenshot](documentation/js-test-coverage.png) |
-| x           | x         | x        | repeat for all remaining tests                  |
+| Test Suites | Tests     | Screenshot                                      |
+| ----------- | --------- | ----------------------------------------------- |
+| 2 passed    | 14 passed | ![screenshot](documentation/testing/js-test-result.png) |
+
 
 #### Jest Test Issues
 
@@ -225,7 +220,6 @@ This can be used for both "fixed" and "unresolved" issues.
 
   - This was caused after clicking a tile that contained a blank space. When a blank space is found the `checkSurroundingTiles()` function then searches the 8 tiles around the clicked tile. Any of those 8 subsequent tiles found to also be blank then have the same logic passed on them. This created an infinite loop because once a blank was found and revealed there was no logic in place to stop the function checking the same tiles again.
   - To fix this, I added a class of 'clicked' to every tile div that had been either clicked by the user or revealed by the function. Then adding this line of code `if (tile.classList.contains("clicked")) {   return;   }` to the `checkTile()` function which ends the search if the tile has this class.
-
 - Last square on the board grid was not forming correctly.
 
   ![screenshot](documentation/bugs/bug02-1.png)
@@ -233,7 +227,6 @@ This can be used for both "fixed" and "unresolved" issues.
 
   - To fix this, I used dev tools to discover that the last div was not having the width and height attributes applied to it (pictured). I then found that one of my jQuery statements was trying to apply the attributes to the div before the div was actually created.
   - To fix this, I simply moved the jQuery statement to the end of the `createGrid()` function and after the creation of the div.
-
 - Incorrect quantity of mines being generated.
 
   ![screenshot](documentation/bugs/bug03.png)
@@ -241,14 +234,12 @@ This can be used for both "fixed" and "unresolved" issues.
 
   - After using dev tools I discovered that the `randomIndex` within the `setMines()` function was generating multiples of the same index. This meant that mines were being placed more than once in the same index resulting in less mines actually being generated.
   - To fix this, I added a while loop after the randonIndex had been created. This while loop checks if the random index has already been used, if it has then a new randomIndex is generated.
-
 - Timer would increase at an erratic rate.
 
   ![screenshot](documentation/bugs/bug04.png)
   ![screenshot](documentation/bugs/bug04-1.png)
 
   - This occured when more than one tile was clicked before the timer reached a value higher than '0'. As seen in the code snippet above if the timer was equal to '0' then a new interval was created. so each time a tile was clciked and the timer was '0' multiple interval timers became active.
-
   - To fix this, I had the timer immediately change to '1' once a tile was clicked (see below).
 
   ![screenshot](documentation/bugs/bug04-2.png)
@@ -257,7 +248,6 @@ This can be used for both "fixed" and "unresolved" issues.
   ![screenshot](documentation/bugs/bug05.png)
 
   - To fix this, I added a return statement after `gameOver()` is called within the `tileClick()` function. This halted the tileClick() function from running any logic statements after that point, including the statement that allows the modal to be shown.
-
 - Incorrect quantity of mines being generated (2nd occurance).
 
   ![screenshot](documentation/bugs/bug06.png)

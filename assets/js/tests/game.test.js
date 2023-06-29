@@ -3,6 +3,7 @@
 /**
  * @jest-environment jsdom
  */
+
 const { test, expect } = require("@jest/globals");
 
 let resetGame;
@@ -10,11 +11,9 @@ let setMines;
 let createGrid;
 let gameOverCalled;
 let seconds;
-let checkForMine;
-let placeMineHints;
 let mineLocation;
 
-beforeEach(() => {
+beforeAll(() => {
     let fs = require("fs");
     let fileContents = fs.readFileSync("game.html", "utf-8");
     document.open();
@@ -25,8 +24,6 @@ beforeEach(() => {
     gameOverCalled = require('../game.js').gameOverCalled;
     checkForMine = require('../game.js').checkForMine;
     seconds = require('../game.js').seconds;
-    placeMineHints = require('../game.js').placeMineHints;
-    mineLocation = require('../game.js').mineLocation;
     document.close();
 });
 

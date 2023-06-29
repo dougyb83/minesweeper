@@ -6,7 +6,7 @@
 
 const { test, expect } = require("@jest/globals");
 
-beforeEach(() => {
+beforeAll(() => {
     let fs = require("fs");
     let fileContents = fs.readFileSync("index.html", "utf-8");
     document.open();
