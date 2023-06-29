@@ -32,6 +32,9 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | -------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | index.js | ![screenshot](documentation/validation/js-validation-index.png) | Pass: No Errors                                                                  |
 | game.js  | ![screenshot](documentation/validation/js-validation-game.png)  | Pass: No Errors (instantWin and module are for testing purposes) |
+| index.test.js  | ![screenshot](documentation/validation/js-validation-index-jest.png)  | Pass: No Errors |
+| game.test.js  | ![screenshot](documentation/validation/js-validation-game-jest.png)  | Pass: No Errors |
+| setup-jest.js  | ![screenshot](documentation/validation/js-validation-setup-jest.png)  | Pass: No Errors |
 
 ## Browser Compatibility
 
