@@ -210,14 +210,17 @@ Below are the results from the tests that I've written for this application:
 #### Jest Test Issues
 
 - TypeError when running jest tests
+
   ![screenshot](documentation/testing/jest-issue01.png)
 
   - When requiring functions and variables in the way that has been taught: `const { function1, function2, function3, etc. } = require("../script-name");` I was experiencing errors with the event listeners that were outside of the `document.addEventListener("DOMContentLoaded", function () {  }` block. After moving these lines within the block I recieved further errors, as follows:
+
   ![screenshot](documentation/testing/jest-issue01-1.png)
   
   - With Tutor supports help it was found that it was necessary to require each function individually from within the `beforeAll()` block. As demonstrated above in the initial configurations above.
 
 - ReferenceError when running jest tests
+
   ![screenshot](documentation/testing/jest-issue02.png)
 
   - Jest would not recognise the Jquery `$` reference. 
