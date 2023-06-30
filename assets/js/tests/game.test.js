@@ -11,7 +11,6 @@ let setMines;
 let createGrid;
 let gameOverCalled;
 let seconds;
-let mineLocation;
 
 beforeAll(() => {
     let fs = require("fs");
@@ -22,7 +21,6 @@ beforeAll(() => {
     setMines = require('../game.js').setMines;
     createGrid = require('../game.js').createGrid;
     gameOverCalled = require('../game.js').gameOverCalled;
-    checkForMine = require('../game.js').checkForMine;
     seconds = require('../game.js').seconds;
     document.close();
 });

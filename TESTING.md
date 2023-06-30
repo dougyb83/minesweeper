@@ -101,7 +101,7 @@ Defensive programming was manually tested with the below user acceptance testing
 |              | Click on Facebook logo        | Facebook website opens in a new tab                                            | Pass      |          |
 |              | Click on Instagram logo       | Instagram website opens in a new tab                                           | Pass      |          |
 |              | Click on Envelope logo        | Redirection to Contact page                                                    | Pass      |          |
-|              | Left Click on a Tile          | Uncovers one or more tiles, revealing a number, a blank space or a mines       | Pass      |          |
+|              | Left Click on a Tile          | Uncovers one or more tiles, revealing a number, a blank space or a mine       | Pass      |          |
 |              | Right Click on a Tile         | Places a flag and disables Left Click                                          | Pass      |          |
 |              | Right Click on a Flagged Tile | Remove the flag and enables Left Click                                         | Pass      |          |
 | Contact Page |                               |                                                                                |           |          |
@@ -160,19 +160,25 @@ Due to a change in Jest's default configuration, you'll need to add the followin
  */
 
 const { test, expect } = require("@jest/globals");
-const { function1, function2, function3, etc. } = require("../script-name");
+
+let function1;
+let function2;
+let function3;
 
 beforeAll(() => {
     let fs = require("fs");
-    let fileContents = fs.readFileSync("index.html", "utf-8");
+    let fileContents = fs.readFileSync("game.html", "utf-8");
     document.open();
     document.write(fileContents);
+    function1 = require('../scrpt-name.js').function1;
+    function2 = require('../scrpt-name.js').function2;
+    function3 = require('../scrpt-name.js').function3;
     document.close();
 });
 ```
 
 Remember to adjust the `fs.readFileSync()` to the specific file you'd like you test.
-The example above is testing the `index.html` file.
+The example above is testing the `game.html` file.
 
 Finally, at the bottom of the script file where your primary scripts are written, include the following at the bottom of the file.
 Make sure to include the name of all of your functions that are being tested in the `.test.js` file.
@@ -203,14 +209,19 @@ Below are the results from the tests that I've written for this application:
 
 #### Jest Test Issues
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+- TypeError when running jest tests
+  ![screenshot](documentation/testing/jest-issue01.png)
 
-Use this section to list any known issues you ran into while writing your Jest tests.
-Remember to include screenshots (where possible), and a solution to the issue (if known).
+  - When requiring functions and variables in the way that has been taught: `const { function1, function2, function3, etc. } = require("../script-name");` I was experiencing errors with the event listeners that were outside of the `document.addEventListener("DOMContentLoaded", function () {  }` block. After moving these lines within the block I recieved further errors, as follows:
+  ![screenshot](documentation/testing/jest-issue01-1.png)
+  
+  - With Tutor supports help it was found that it was necessary to require each function individually from within the `beforeAll()` block. As demonstrated above in the initial configurations above.
 
-This can be used for both "fixed" and "unresolved" issues.
+- ReferenceError when running jest tests
+  ![screenshot](documentation/testing/jest-issue02.png)
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+  - Jest would not recognise the Jquery `$` reference. 
+  - A solution was found on [StackOverflow](https://stackoverflow.com/a/72273012). It was necessary to create a setup file with `const $ = require('jquery');` and `global.$ = global.jQuery = $;` in it and then to reference that file within package.json configuration.
 
 ## Bugs
 
