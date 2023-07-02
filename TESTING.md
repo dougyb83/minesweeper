@@ -119,11 +119,11 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | User Story                                                                                                                                                                                                                            | Screenshot                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| As a new site user, I would like to easily understand the rules and objective of the game, so that I can start playing without confusion or hesitation.                                                                               | ![screenshot](documentation/features/feature02.png) |
+| As a new site user, I would like to easily understand the rules and objectives of the game, so that I can start playing without confusion or hesitation.                                                                               | ![screenshot](documentation/features/feature02.png) |
 | As a new site user, I would like to have a responsive design that allows me to play the game on different devices.                                                                                                                    | ![screenshot](documentation/features/feature11.png) |
 | As a new site user, I would like to have clear and intuitive controls, so that I can navigate the game effortlessly.                                                                                                                  | ![screenshot](documentation/features/feature05.png) |
-| As a returning site user, I would like to I would like to choose the difficulty level, so that I can tailor the gameplay experience to my skill level.                                                                                | ![screenshot](documentation/features/feature01.png) |
-| As a returning site user, I would like to see my 'best time' so that i can track my progress.                                                                                                                                         | ![screenshot](documentation/features/feature04.png) |
+| As a returning site user, I would like to choose the difficulty level so that I can tailor the gameplay experience to my skill level.                                                                                | ![screenshot](documentation/features/feature01.png) |
+| As a returning site user, I would like to see my 'best time' so that I can track my progress.                                                                                                                                         | ![screenshot](documentation/features/feature04.png) |
 | As a returning site user, I would like to have the option to customize certain game aspects, such as the sound settings, so that I can tailor the game experience to my preferences.                                                  | ![screenshot](documentation/features/feature01.png) |
 | As a returning site user, I would like to have access to social media groups dedicated to the game, so that I can interact with other players, share experiences, and discuss strategies.                                             | ![screenshot](documentation/features/feature10.png) |
 | As a site administrator, I should be able to gather user feedback and suggestions, so that I can understand the user's perspective, identify areas for improvement, and enhance the overall user experience.                          | ![screenshot](documentation/features/feature07.png) |
@@ -213,18 +213,18 @@ Below are the results from the tests that I've written for this application:
 
   ![screenshot](documentation/testing/jest-issue01.png)
 
-  - When requiring functions and variables in the way that has been taught: `const { function1, function2, function3, etc. } = require("../script-name");` I was experiencing errors with the event listeners that were outside of the `document.addEventListener("DOMContentLoaded", function () {  }` block. After moving these lines within the block I recieved further errors, as follows:
+  - When requiring functions and variables in the way that has been taught: `const { function1, function2, function3, etc. } = require("../script-name");` I was experiencing errors with the event listeners that were outside of the `document.addEventListener("DOMContentLoaded", function () {  }` block. After moving these lines within the block I received further errors, as follows:
 
   ![screenshot](documentation/testing/jest-issue01-1.png)
   
-  - With Tutor supports help it was found that it was necessary to require each function individually from within the `beforeAll()` block. As demonstrated above in the initial configurations above.
+  - With Tutor supports help it was found that it was necessary to require each function individually from within the `beforeAll()` block. As demonstrated in the initial configurations above.
 
 - ReferenceError when running jest tests
 
   ![screenshot](documentation/testing/jest-issue02.png)
 
   - Jest would not recognise the Jquery `$` reference. 
-  - A solution was found on [StackOverflow](https://stackoverflow.com/a/72273012). It was necessary to create a setup file with `const $ = require('jquery');` and `global.$ = global.jQuery = $;` in it and then to reference that file within package.json configuration.
+  - A solution was found on [StackOverflow](https://stackoverflow.com/a/72273012). It was necessary to create a setup file containing the following lines: `const $ = require('jquery');` and `global.$ = global.jQuery = $;`. And then reference that file within package.json configuration.
 
 ## Bugs
 
@@ -232,42 +232,42 @@ Below are the results from the tests that I've written for this application:
 
   ![screenshot](documentation/bugs/bug01.png)
 
-  - This was caused after clicking a tile that contained a blank space. When a blank space is found the `checkSurroundingTiles()` function then searches the 8 tiles around the clicked tile. Any of those 8 subsequent tiles found to also be blank then have the same logic passed on them. This created an infinite loop because once a blank was found and revealed there was no logic in place to stop the function checking the same tiles again.
+  - This was caused after clicking a tile that contained a blank space. When a blank space is found the `checkSurroundingTiles()` function then searches the 8 tiles around the clicked tile. Any of those 8 subsequent tiles found to also be blank then have the same logic passed on them. This created an infinite loop because once a blank was found and revealed there was no logic in place to stop the function from checking the same tiles again.
   - To fix this, I added a class of 'clicked' to every tile div that had been either clicked by the user or revealed by the function. Then adding this line of code `if (tile.classList.contains("clicked")) {   return;   }` to the `checkTile()` function which ends the search if the tile has this class.
-- Last square on the board grid was not forming correctly.
+- The last square on the board grid was not forming correctly.
 
   ![screenshot](documentation/bugs/bug02-1.png)
   ![screenshot](documentation/bugs/bug02.png)
 
-  - To fix this, I used dev tools to discover that the last div was not having the width and height attributes applied to it (pictured). I then found that one of my jQuery statements was trying to apply the attributes to the div before the div was actually created.
+  - To fix this, I used dev tools to discover that the last div was not having the width and height attributes applied to it (pictured). I then found that one of my jQuery statements was trying to apply the attributes to the div before the div had been created.
   - To fix this, I simply moved the jQuery statement to the end of the `createGrid()` function and after the creation of the div.
 - Incorrect quantity of mines being generated.
 
   ![screenshot](documentation/bugs/bug03.png)
   ![screenshot](documentation/bugs/bug03-1.png)
 
-  - After using dev tools I discovered that the `randomIndex` within the `setMines()` function was generating multiples of the same index. This meant that mines were being placed more than once in the same index resulting in less mines actually being generated.
+  - After using dev tools I discovered that the `randomIndex` within the `setMines()` function was generating multiples of the same index. This meant that mines were being placed more than once in the same index resulting in fewer mines actually being generated.
   - To fix this, I added a while loop after the randonIndex had been created. This while loop checks if the random index has already been used, if it has then a new randomIndex is generated.
 - Timer would increase at an erratic rate.
 
   ![screenshot](documentation/bugs/bug04.png)
   ![screenshot](documentation/bugs/bug04-1.png)
 
-  - This occured when more than one tile was clicked before the timer reached a value higher than '0'. As seen in the code snippet above if the timer was equal to '0' then a new interval was created. so each time a tile was clciked and the timer was '0' multiple interval timers became active.
+  - This occurred when more than one tile was clicked before the timer reached a value higher than '0'. As seen in the code snippet above if the timer was equal to '0' then a new interval was created. so each time a tile was clicked and the timer was '0' multiple interval timers became active.
   - To fix this, I had the timer immediately change to '1' once a tile was clicked (see below).
 
   ![screenshot](documentation/bugs/bug04-2.png)
-- Modal displays that user has won the game when game is lost.
+- Modal displays that the user has won the game when thr game is lost.
 
   ![screenshot](documentation/bugs/bug05.png)
 
   - To fix this, I added a return statement after `gameOver()` is called within the `tileClick()` function. This halted the tileClick() function from running any logic statements after that point, including the statement that allows the modal to be shown.
-- Incorrect quantity of mines being generated (2nd occurance).
+- Incorrect quantity of mines being generated (2nd occurrence).
 
   ![screenshot](documentation/bugs/bug06.png)
   ![screenshot](documentation/bugs/bug06-1.png)
 
-  - This bug was found for a second time after making changes to the `setMines()` function so that it would return an array rather than push items one at a time to the global `mineLocation` array. On further inspection I found that I had not changed the array name within the while loop, from `mineLocation` to `tempMineArr`. When logging `mineLocation` to the console we can see that there are duplicate cell id's. In this case the id of '3-7' was duplicated. Here we can also see the `instantWin()` function being used to debug (see console on the screenshot).
+  - This bug was found for a second time after making changes to the `setMines()` function so that it would return an array rather than push items one at a time to the global `mineLocation` array. On further inspection, I found that I had not changed the array name within the while loop, from `mineLocation` to `tempMineArr`. When logging `mineLocation` to the console we can see that there are duplicate cell id's. In this case, the id of '3-7' was duplicated. Here we can also see the `instantWin()` function being used to debug (see console on the screenshot).
   - To fix this, `mineLocation` within the while loop was changed to `tempMineArr`. The while loop then handles any duplicate entries.
 
 ## Unfixed Bugs
