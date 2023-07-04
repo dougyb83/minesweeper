@@ -45,7 +45,7 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Chrome  | ![screenshot](documentation/browser-compatibility/browser-chrome-home.png)  | ![screenshot](documentation/browser-compatibility/browser-chrome-game.png)  | ![screenshot](documentation/browser-compatibility/browser-chrome-contact.png)  | Works as expected     |
 | Firefox | ![screenshot](documentation/browser-compatibility/browser-firefox-home.png) | ![screenshot](documentation/browser-compatibility/browser-firefox-game.png) | ![screenshot](documentation/browser-compatibility/browser-firefox-contact.png) | Minor CSS differences |
 | Edge    | ![screenshot](documentation/browser-compatibility/browser-edge-home.png)    | ![screenshot](documentation/browser-compatibility/browser-edge-game.png)    | ![screenshot](documentation/browser-compatibility/browser-edge-contact.png)    | Works as expected     |
-| Aloha   | ![screenshot](documentation/browser-compatibility/browser-aloha-home.png)   | ![screenshot](documentation/browser-compatibility/browser-aloha-game.png)   | ![screenshot](documentation/browser-compatibility/browser-aloha-contact.png)   | Works as expecteds    |
+| Aloha   | ![screenshot](documentation/browser-compatibility/browser-aloha-home.png)   | ![screenshot](documentation/browser-compatibility/browser-aloha-game.png)   | ![screenshot](documentation/browser-compatibility/browser-aloha-contact.png)   | Works as expected     |
 | Brave   | ![screenshot](documentation/browser-compatibility/browser-brave-home.png)   | ![screenshot](documentation/browser-compatibility/browser-brave-game.png)   | ![screenshot](documentation/browser-compatibility/browser-brave-contact.png)   | Works as expected     |
 | Opera   | ![screenshot](documentation/browser-compatibility/browser-opera-home.png)   | ![screenshot](documentation/browser-compatibility/browser-opera-game.png)   | ![screenshot](documentation/browser-compatibility/browser-opera-contact.png)   | Works as expected     |
 
@@ -61,7 +61,7 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Google Pixel 4a          | ![screenshot](documentation/testing/responsive-mobile-pixel-home.png) | ![screenshot](documentation/testing/responsive-mobile-pixel-game.png) | ![screenshot](documentation/testing/responsive-mobile-pixel-contact.png) | Works as expected |
 | Samsung Galaxy S8        | ![screenshot](documentation/testing/responsive-mobile-s8-home.png)    | ![screenshot](documentation/testing/responsive-mobile-s8-game.png)    | ![screenshot](documentation/testing/responsive-mobile-s8-contact.png)    | Works as expected |
 | Samsung Galaxy S21 Ultra | ![screenshot](documentation/testing/responsive-mobile-s21-home.png)   | ![screenshot](documentation/testing/responsive-mobile-s21-game.png)   | ![screenshot](documentation/testing/responsive-mobile-s21-contact.png)   | Works as expected |
-| Samsung Galaxy tab 4     | ![screenshot](documentation/testing/responsive-tablet-tab4-home.png)  | ![screenshot](documentation/testing/responsive-tablet-tab4-game.png)  | ![screenshot](documentation/testing/responsive-tablet-tab4-contact.png)  | Works as expected |
+| Samsung Galaxy Tab 4     | ![screenshot](documentation/testing/responsive-tablet-tab4-home.png)  | ![screenshot](documentation/testing/responsive-tablet-tab4-game.png)  | ![screenshot](documentation/testing/responsive-tablet-tab4-contact.png)  | Works as expected |
 
 ## Lighthouse Audit
 
@@ -80,49 +80,49 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 Defensive programming was manually tested with the below user acceptance testing:
 
-| Page         | User Action                   | Expected Result                                                                | Pass/Fail | Comments |
-| ------------ | ----------------------------- | ------------------------------------------------------------------------------ | --------- | -------- |
-| Home Page    |                               |                                                                                |           |          |
-|              | Click on Easy button          | Redirection to Game page 8 x 8 grid                                            | Pass      |          |
-|              | Click on Medium button        | Redirection to Game page 9 x 9 grid                                            | Pass      |          |
-|              | Click on Expert button        | Redirection to Game page 16 x 16 grid or 12 x 12 grid depending on screen size | Pass      |          |
-|              | Click on How to Play button   | Modal popup                                                                    | Pass      |          |
-|              | Click on Modal 'X'            | Closes Modal                                                                   | Pass      |          |
-|              | Click on Facebook logo        | Facebook website opens in a new tab                                                | Pass      |          |
-|              | Click on Instagram logo       | Instagram website opens in a new tab                                                | Pass      |          |
-|              | Click on Envelope logo        | Redirection to Contact page                                                    | Pass      |          |
-| Game Page    |                               |                                                                                |           |          |
-|              | Click on Home logo            | Redirection to Home page                                                       | Pass      |          |
-|              | Click on Arrow logo           | Resets the game                                                                | Pass      |          |
-|              | Click on Question mark logo   | Modal popup                                                                    | Pass      |          |
-|              | Click on Modal 'X'            | Closes Modal                                                                   | Pass      |          |
-|              | Click on Speaker logo         | Unmutes or mutes game sounds                                                   | Pass      |          |
-|              | Click on Smiley emoji         | Resets the game                                                                | Pass      |          |
-|              | Click on Facebook logo        | Facebook website opens in a new tab                                            | Pass      |          |
-|              | Click on Instagram logo       | Instagram website opens in a new tab                                           | Pass      |          |
-|              | Click on Envelope logo        | Redirection to Contact page                                                    | Pass      |          |
-|              | Left Click on a Tile          | Uncovers one or more tiles, revealing a number, a blank space or a mine       | Pass      |          |
-|              | Right Click on a Tile         | Places a flag and disables Left Click                                          | Pass      |          |
-|              | Right Click on a Flagged Tile | Remove the flag and enables Left Click                                         | Pass      |          |
-| Contact Page |                               |                                                                                |           |          |
-|              | Enter first/last name         | Field will accept freeform text                                                | Pass      |          |
-|              | Enter valid email address     | Field will only accept email address format                                    | Pass      |          |
-|              | Enter message in textarea     | Field will accept freeform text                                                | Pass      |          |
-|              | Click the Send Message button  | Redirects user to Confirmation page                                            | Pass      |          |
-|              | Click the Send Message button with empty form  | Forces user to enter required fields                                            | Pass      |          |
-|              | Click the Home Page link      | Redirects to Home page                                                         | Pass      |          |
-|              | Click on Facebook logo        | Facebook website opens in a new tab                                                | Pass      |          |
-|              | Click on Instagram logo       | Instagram website opens in a new tab                                                | Pass      |          |
-|              | Click on Envelope logo        | Redirection to Contact page                                                    | Pass      |          |
+| Page         | User Action                                   | Expected Result                                                                | Pass/Fail | Comments |
+| ------------ | --------------------------------------------- | ------------------------------------------------------------------------------ | --------- | -------- |
+| Home Page    |                                               |                                                                                |           |          |
+|              | Click on Easy button                          | Redirection to Game page 8 x 8 grid                                            | Pass      |          |
+|              | Click on Medium button                        | Redirection to Game page 9 x 9 grid                                            | Pass      |          |
+|              | Click on Expert button                        | Redirection to Game page 16 x 16 grid or 12 x 12 grid depending on screen size | Pass      |          |
+|              | Click on How to Play button                   | Modal popup                                                                    | Pass      |          |
+|              | Click on Modal 'X'                            | Closes Modal                                                                   | Pass      |          |
+|              | Click on Facebook logo                        | Facebook website opens in a new tab                                            | Pass      |          |
+|              | Click on Instagram logo                       | Instagram website opens in a new tab                                           | Pass      |          |
+|              | Click on Envelope logo                        | Redirection to Contact page                                                    | Pass      |          |
+| Game Page    |                                               |                                                                                |           |          |
+|              | Click on Home logo                            | Redirection to Home Page                                                       | Pass      |          |
+|              | Click on Arrow logo                           | Resets the game                                                                | Pass      |          |
+|              | Click on Question mark logo                   | Modal popup                                                                    | Pass      |          |
+|              | Click on Modal 'X'                            | Closes Modal                                                                   | Pass      |          |
+|              | Click on Speaker logo                         | Unmutes or mutes game sounds                                                   | Pass      |          |
+|              | Click on Smiley emoji                         | Resets the game                                                                | Pass      |          |
+|              | Click on Facebook logo                        | Facebook website opens in a new tab                                            | Pass      |          |
+|              | Click on Instagram logo                       | Instagram website opens in a new tab                                           | Pass      |          |
+|              | Click on Envelope logo                        | Redirection to Contact page                                                    | Pass      |          |
+|              | Left Click on a Tile                          | Uncovers one or more tiles, revealing a number, a blank space or a mine        | Pass      |          |
+|              | Right Click on a Tile                         | Places a flag and disables Left Click                                          | Pass      |          |
+|              | Right Click on a Flagged Tile                 | Remove the flag and enables Left Click                                         | Pass      |          |
+| Contact Page |                                               |                                                                                |           |          |
+|              | Enter first/last name                         | Field will accept freeform text                                                | Pass      |          |
+|              | Enter valid email address                     | Field will only accept email address format                                    | Pass      |          |
+|              | Enter message in textarea                     | Field will accept freeform text                                                | Pass      |          |
+|              | Click the Send Message button                 | Redirects user to Confirmation page                                            | Pass      |          |
+|              | Click the Send Message button with empty form | Forces user to enter required fields                                           | Pass      |          |
+|              | Click the Home Page link                      | Redirects to Home Page                                                         | Pass      |          |
+|              | Click on Facebook logo                        | Facebook website opens in a new tab                                            | Pass      |          |
+|              | Click on Instagram logo                       | Instagram website opens in a new tab                                           | Pass      |          |
+|              | Click on Envelope logo                        | Redirection to Contact page                                                    | Pass      |          |
 
 ## User Story Testing
 
 | User Story                                                                                                                                                                                                                            | Screenshot                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| As a new site user, I would like to easily understand the rules and objectives of the game, so that I can start playing without confusion or hesitation.                                                                               | ![screenshot](documentation/features/feature02.png) |
+| As a new site user, I would like to easily understand the rules and objectives of the game, so that I can start playing without confusion or hesitation.                                                                              | ![screenshot](documentation/features/feature02.png) |
 | As a new site user, I would like to have a responsive design that allows me to play the game on different devices.                                                                                                                    | ![screenshot](documentation/features/feature11.png) |
 | As a new site user, I would like to have clear and intuitive controls, so that I can navigate the game effortlessly.                                                                                                                  | ![screenshot](documentation/features/feature05.png) |
-| As a returning site user, I would like to choose the difficulty level so that I can tailor the gameplay experience to my skill level.                                                                                | ![screenshot](documentation/features/feature01.png) |
+| As a returning site user, I would like to choose the difficulty level so that I can tailor the gameplay experience to my skill level.                                                                                                 | ![screenshot](documentation/features/feature01.png) |
 | As a returning site user, I would like to see my 'best time' so that I can track my progress.                                                                                                                                         | ![screenshot](documentation/features/feature04.png) |
 | As a returning site user, I would like to have the option to customize certain game aspects, such as the sound settings, so that I can tailor the game experience to my preferences.                                                  | ![screenshot](documentation/features/feature01.png) |
 | As a returning site user, I would like to have access to social media groups dedicated to the game, so that I can interact with other players, share experiences, and discuss strategies.                                             | ![screenshot](documentation/features/feature10.png) |
@@ -202,10 +202,9 @@ Once ready, to run the tests, use this command:
 
 Below are the results from the tests that I've written for this application:
 
-| Test Suites | Tests     | Screenshot                                      |
-| ----------- | --------- | ----------------------------------------------- |
+| Test Suites | Tests     | Screenshot                                            |
+| ----------- | --------- | ----------------------------------------------------- |
 | 2 passed    | 14 passed | ![screenshot](documentation/testing/js-test-result.png) |
-
 
 #### Jest Test Issues
 
@@ -216,14 +215,13 @@ Below are the results from the tests that I've written for this application:
   - When requiring functions and variables in the way that has been taught: `const { function1, function2, function3, etc. } = require("../script-name");` I was experiencing errors with the event listeners that were outside of the `document.addEventListener("DOMContentLoaded", function () {  }` block. After moving these lines within the block I received further errors, as follows:
 
   ![screenshot](documentation/testing/jest-issue01-1.png)
-  
-  - With Tutor supports help it was found that it was necessary to require each function individually from within the `beforeAll()` block. As demonstrated in the initial configurations above.
 
+  - With Tutor supports help it was found that it was necessary to require each function individually from within the `beforeAll()` block. As demonstrated in the initial configurations above.
 - ReferenceError when running jest tests
 
   ![screenshot](documentation/testing/jest-issue02.png)
 
-  - Jest would not recognise the Jquery `$` reference. 
+  - Jest would not recognise the Jquery `$` reference.
   - A solution was found on [StackOverflow](https://stackoverflow.com/a/72273012). It was necessary to create a setup file containing the following lines: `const $ = require('jquery');` and `global.$ = global.jQuery = $;`. And then reference that file within package.json configuration.
 
 ## Bugs
@@ -257,7 +255,7 @@ Below are the results from the tests that I've written for this application:
   - To fix this, I had the timer immediately change to '1' once a tile was clicked (see below).
 
   ![screenshot](documentation/bugs/bug04-2.png)
-- Modal displays that the user has won the game when thr game is lost.
+- Modal displays that the user has won the game when the game is lost.
 
   ![screenshot](documentation/bugs/bug05.png)
 
